@@ -24,24 +24,22 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Sushen Kumar | Cybersecurity Researcher & AI Security Engineer Portfolio',
-  description: 'Sushen Kumar (sushen.pvt) is a cybersecurity researcher, ethical hacker, and software developer. Specializing in penetration testing, AI security, threat research, and platform engineering.',
+  title: 'Sushen Kumar | Cybersecurity Researcher & AI Security Engineer',
+  description: 'Portfolio of Sushen Kumar (sushen.pvt), a cybersecurity researcher and AI security engineer specializing in penetration testing, threat research, and secure software development.',
   keywords: [
     'sushen kumar',
     'sushen',
-    'sushen lpu',
-    'sushen vanshika',
-    'sushen hacker',
-    'sushen bug bounty',
-    'sushen banglore',
-    'sushen ethical hacker',
-    'vanshika negi sushen',
     'sushen.pvt',
-    'sushen suman'
+    'cybersecurity researcher',
+    'security engineer',
+    'ai security',
+    'ethical hacker',
+    'penetration tester',
+    'security portfolio'
   ],
   openGraph: {
     title: 'Sushen Kumar | Cybersecurity Researcher & AI Security Engineer',
-    description: 'Sushen Kumar (sushen.pvt) — Cybersecurity Researcher, Ethical Hacker, and Software Engineer.',
+    description: 'Portfolio of Sushen Kumar (sushen.pvt) — Cybersecurity Researcher, Ethical Hacker, and Software Engineer.',
     type: 'website',
   },
 };
@@ -51,15 +49,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // JSON-LD Person/Profile Schema to boost ranking for the specified keywords
+  // JSON-LD Person/Profile Schema to boost ranking for search engines
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',
     'name': 'Sushen Kumar',
-    'url': 'https://sushen-portfolio.vercel.app', // Template URL (will resolve dynamically on deploy)
-    'alternateName': ['sushen', 'sushen.pvt', 'sushen suman', 'sushen vanshika', 'vanshika negi sushen'],
+    'url': 'https://sushen-kumar.vercel.app', // Updated to the custom domain
+    'alternateName': ['sushen', 'sushen.pvt'],
     'jobTitle': 'Cybersecurity Researcher & AI Security Engineer',
-    'description': 'Sushen Kumar is a cybersecurity researcher, developer, and security engineer specializing in AI security, software engineering, and defensive operations.'
+    'description': 'Sushen Kumar (sushen.pvt) is a cybersecurity researcher, developer, and security engineer specializing in AI security, software engineering, and defensive operations.'
   };
 
   return (
