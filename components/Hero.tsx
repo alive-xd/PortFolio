@@ -31,8 +31,8 @@ export const Hero: React.FC = () => {
               Get In Touch
             </a>
             <a 
-              href="/Sushen_Kumar_CV.docx" 
-              download="Sushen_Kumar_CV.docx"
+              href="/Sushen_Kumar_CV.pdf" 
+              download="Sushen_Kumar_CV.pdf"
               className="btn btn-outline" 
               id="resumeBtn"
             >
