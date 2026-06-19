@@ -107,6 +107,7 @@ html {
   -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  background-color: var(--bg);
 }
 
 body {
@@ -118,6 +119,9 @@ body {
   background-image: var(--dot-grid);
   background-size: var(--dot-grid-size);
   transition: background-color var(--transition-speed), color var(--transition-speed);
+  max-width: 1440px;
+  margin: 0 auto;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.03);
 }
 
 img {
@@ -259,8 +263,10 @@ ul[role="list"] {
 .header {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
+  max-width: 1440px;
   z-index: 1000;
   transition: all var(--transition-speed) ease;
   background: transparent;
