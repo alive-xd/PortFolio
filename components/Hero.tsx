@@ -12,7 +12,7 @@ export const Hero: React.FC = () => {
             <div className="hero-badges">
               <div className="hero-badge">
                 <span className="badge-dot"></span>
-                <span>A Tech Guy</span>
+                <span>A tech guy</span>
               </div>
               <div className="hero-badge availability-badge">
                 <span className="badge-dot pulse-green"></span>

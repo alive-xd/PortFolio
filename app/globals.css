@@ -93,6 +93,11 @@
   --timeline-line-color: rgba(255, 255, 255, 0.1);
 }
 
+/* Smooth theme transitions */
+body, .header, .footer, .btn, .social-link, .skill-row-card, .cert-card, .project-card-small, .proj-feat-card, .sandbox-card, .web-glass-card, .sec-terminal, .form-input, .back-to-top {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
 /* ── 2. BASE RESETS & GLOBAL STYLES ───────────────── */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -1354,6 +1359,13 @@ ul[role="list"] {
   text-transform: lowercase;
 }
 
+@media (max-width: 768px) {
+  .skill-row-pill {
+    font-size: 0.65rem;
+    padding: 2px 8px;
+  }
+}
+
 /* Pill background adaptations on row hover */
 .skill-row-card:hover .skill-row-pill {
   color: var(--text-primary);
@@ -1851,6 +1863,16 @@ ul[role="list"] {
   color: var(--text-secondary);
   margin-bottom: 16px;
   line-height: 1.5;
+}
+
+.project-desc {
+  min-height: 120px;
+}
+
+@media (max-width: 992px) {
+  .project-desc {
+    min-height: auto;
+  }
 }
 
 .project-features,
