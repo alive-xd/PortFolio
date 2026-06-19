@@ -157,79 +157,197 @@ const TerminalMockup: React.FC = () => {
 };
 
 export const Projects: React.FC = () => {
+  const [currentIdx, setCurrentIdx] = useState(0);
+  const [animClass, setAnimClass] = useState('proj-anim-active');
+  const [animDir, setAnimDir] = useState<'left' | 'right' | 'in'>('in');
+  const touchStartX = useRef(0);
+
+  const n = PROJECTS.length;
+
+  const goTo = (idx: number, dir: 'left' | 'right' | 'in') => {
+    const targetIdx = ((idx % n) + n) % n;
+    
+    // Set out state
+    setAnimClass(`proj-anim-out-${dir === 'right' ? 'left' : 'right'}`);
+    
+    setTimeout(() => {
+      setCurrentIdx(targetIdx);
+      setAnimDir(dir);
+      setAnimClass(`proj-anim-${dir}`);
+      
+      // Force layout recalculation and set active
+      setTimeout(() => {
+        setAnimClass('proj-anim-active');
+      }, 50);
+    }, 150);
+  };
+
+  // Keyboard navigation when section is focused/visible
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Check if project section is currently visible in viewport
+      const el = document.getElementById('projects');
+      if (!el) return;
+      
+      const rect = el.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+      
+      if (isVisible) {
+        if (e.key === 'ArrowLeft') goTo(currentIdx - 1, 'left');
+        if (e.key === 'ArrowRight') goTo(currentIdx + 1, 'right');
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [currentIdx]);
+
+  const p = PROJECTS[currentIdx];
+
+  // Render the three small preview cards
+  const smallCards = [];
+  for (let i = 1; i <= 3; i++) {
+    const smallProjIdx = (currentIdx + i) % n;
+    const sp = PROJECTS[smallProjIdx];
+    smallCards.push(
+      <article
+        key={sp.name}
+        className="project-card-small"
+        style={{ cursor: 'pointer', background: sp.bg }}
+        onClick={() => goTo(smallProjIdx, 'right')}
+      >
+        <div className="project-small-header">
+          <span 
+            className="project-tag-small" 
+            style={{ color: sp.color, borderColor: `${sp.color}33`, background: `${sp.color}12`, padding: '4px 8px', borderRadius: '4px', fontSize: '0.72rem', fontWeight: 700 }}
+          >
+            {sp.tag}
+          </span>
+          {sp.github && (
+            <a 
+              href={sp.github} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="project-small-link" 
+              aria-label="GitHub"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {GH_ICON}
+            </a>
+          )}
+        </div>
+        <h4 className="project-small-name">{sp.name}</h4>
+        <p className="project-small-desc">{sp.desc}</p>
+      </article>
+    );
+  }
+
+  // Touch Swipe Handlers
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    if (Math.abs(dx) > 50) {
+      goTo(dx < 0 ? currentIdx + 1 : currentIdx - 1, dx < 0 ? 'right' : 'left');
+    }
+  };
+
   return (
     <section id="projects" className="section projects-section">
       <div className="container">
-        <h2 className="section-title-centered reveal">Projects</h2>
-
-        <div className="projects-grid">
-          {PROJECTS.map((proj, idx) => (
-            <article 
-              key={proj.name} 
-              className="project-card reveal" 
-              style={{ 
-                '--project-color': proj.color,
-                transitionDelay: `${idx * 0.1}s`
-              } as React.CSSProperties}
+        
+        {/* Header row with prev/next controls */}
+        <div className="proj-section-head reveal">
+          <h2 className="section-title-centered">Projects</h2>
+          <div className="proj-nav-controls">
+            <button 
+              id="projPrev" 
+              className="proj-nav-btn" 
+              aria-label="Previous project"
+              onClick={() => goTo(currentIdx - 1, 'left')}
             >
-              {/* Header: Icon & Title Group */}
-              <div className="project-card-header">
-                <div className="project-card-icon-wrap" style={{ background: proj.bg, color: proj.color }}>
-                  {proj.icon}
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <span className="proj-counter">
+              <span id="projCurrent">{currentIdx + 1}</span>
+              <span className="proj-counter-sep">/</span>
+              <span id="projTotal">{n}</span>
+            </span>
+            <button 
+              id="projNext" 
+              className="proj-nav-btn" 
+              aria-label="Next project"
+              onClick={() => goTo(currentIdx + 1, 'right')}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        {/* Featured big card */}
+        <div 
+          id="projFeatured" 
+          className="proj-featured-wrap" 
+          aria-live="polite"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
+          <article className={`proj-feat-card ${animClass}`}>
+            <div className="proj-feat-inner">
+              <div className="project-left-details" style={{ background: p.bg }}>
+                <span className="project-tag-featured">{p.tag}</span>
+                <h3 className="project-name">{p.name}</h3>
+                <p className="project-desc">{p.desc}</p>
+                <div className="project-stack">
+                  {p.stack.map((s, i) => <span key={i} className="stack-chip">{s}</span>)}
                 </div>
-                <div className="project-card-title-group">
-                  <span className="project-card-tag">{proj.tag}</span>
-                  <h3 className="project-card-name">{proj.name}</h3>
+                <div className="project-cta">
+                  {p.live && (
+                    <a href={p.live} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">
+                      {EXT_ICON} Live Demo
+                    </a>
+                  )}
+                  {p.github && (
+                    <a href={p.github} target="_blank" rel="noopener noreferrer" className="btn btn-ghost btn-sm">
+                      {GH_ICON} GitHub
+                    </a>
+                  )}
                 </div>
               </div>
-
-              {/* Description */}
-              <p className="project-card-desc">{proj.desc}</p>
-
-              {/* Technical Highlights */}
-              <div className="project-card-highlights">
-                <h4 className="highlights-title">Technical Highlights</h4>
-                <ul className="highlights-list">
-                  {proj.featuresDetail.slice(0, 3).map((feat, i) => (
-                    <li key={i}>
-                      <strong>{feat.title}:</strong> {feat.desc}
+              
+              <div className="project-right-details">
+                <h4 className="project-details-title">Technical Highlights</h4>
+                <ul className="project-features" style={{ marginBottom: 0 }}>
+                  {p.featuresDetail.map((f, i) => (
+                    <li key={i} style={{ marginBottom: '14px' }}>
+                      <strong style={{ display: 'inline-block', color: 'var(--text-primary)' }}>{f.title}</strong>
+                      <span style={{ display: 'block', fontSize: '0.85rem', color: 'var(--text-secondary)', marginTop: '2px', lineHeight: 1.4 }}>{f.desc}</span>
                     </li>
                   ))}
                 </ul>
               </div>
+            </div>
+          </article>
+        </div>
 
-              {/* Footer: Tech Stack & CTA Actions */}
-              <div className="project-card-footer">
-                <div className="project-card-stack">
-                  {proj.stack.map((tech) => (
-                    <span key={tech} className="stack-chip">{tech}</span>
-                  ))}
-                </div>
+        {/* 3 small cards */}
+        <div id="projSmallRow" className="small-projects-row">
+          {smallCards}
+        </div>
 
-                <div className="project-card-actions">
-                  {proj.github && (
-                    <a 
-                      href={proj.github} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className={`btn btn-ghost btn-sm ${!proj.live ? 'btn-full-width' : ''}`}
-                    >
-                      {GH_ICON} Code
-                    </a>
-                  )}
-                  {proj.live && (
-                    <a 
-                      href={proj.live} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="btn btn-primary btn-sm"
-                    >
-                      {EXT_ICON} Demo
-                    </a>
-                  )}
-                </div>
-              </div>
-            </article>
+        {/* Dot indicators */}
+        <div id="projDots" className="proj-dots" role="tablist" aria-label="Project pagination">
+          {PROJECTS.map((_, i) => (
+            <button
+              key={i}
+              className={`proj-dot ${i === currentIdx ? 'active' : ''}`}
+              role="tab"
+              aria-selected={i === currentIdx}
+              aria-label={`Project ${i + 1}`}
+              onClick={() => goTo(i, i > currentIdx ? 'right' : 'left')}
+            />
           ))}
         </div>
 
@@ -240,181 +358,6 @@ export const Projects: React.FC = () => {
           </a>
         </div>
       </div>
-
-      <style>{`
-        .projects-grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 30px;
-          margin-top: 40px;
-          margin-bottom: 50px;
-        }
-
-        .project-card {
-          background: var(--card-bg);
-          border: 1px solid var(--card-border);
-          border-radius: var(--radius-lg);
-          padding: 35px;
-          box-shadow: var(--card-shadow);
-          transition: all 0.3s ease;
-          display: flex;
-          flex-direction: column;
-          height: 100%;
-          position: relative;
-          overflow: hidden;
-        }
-
-        .project-card:hover {
-          transform: translateY(-6px);
-          border-color: var(--project-color);
-          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08), 0 0 20px rgba(109, 131, 242, 0.1);
-        }
-
-        .project-card-header {
-          display: flex;
-          align-items: center;
-          gap: 20px;
-          margin-bottom: 20px;
-        }
-
-        .project-card-icon-wrap {
-          width: 54px;
-          height: 54px;
-          border-radius: 12px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-shrink: 0;
-        }
-
-        .project-card-icon-wrap svg {
-          width: 28px;
-          height: 28px;
-        }
-
-        .project-card-title-group {
-          display: flex;
-          flex-direction: column;
-        }
-
-        .project-card-tag {
-          font-family: var(--font-sans);
-          font-size: 0.72rem;
-          font-weight: 700;
-          letter-spacing: 0.08em;
-          text-transform: uppercase;
-          color: var(--project-color);
-          margin-bottom: 4px;
-        }
-
-        .project-card-name {
-          font-family: var(--font-sans);
-          font-size: 1.4rem;
-          font-weight: 800;
-          color: var(--text-primary);
-          margin: 0;
-          letter-spacing: -0.01em;
-        }
-
-        .project-card-desc {
-          font-size: 0.95rem;
-          color: var(--text-secondary);
-          line-height: 1.6;
-          margin-bottom: 24px;
-        }
-
-        .project-card-highlights {
-          background: rgba(0, 0, 0, 0.02);
-          border-radius: var(--radius-md);
-          padding: 20px;
-          margin-bottom: 24px;
-          border: 1px solid var(--border);
-        }
-
-        [data-theme="dark"] .project-card-highlights {
-          background: rgba(255, 255, 255, 0.02);
-        }
-
-        .highlights-title {
-          font-family: var(--font-sans);
-          font-size: 0.85rem;
-          font-weight: 800;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-          color: var(--project-color);
-          margin-bottom: 12px;
-        }
-
-        .highlights-list {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-        }
-
-        .highlights-list li {
-          font-size: 0.85rem;
-          color: var(--text-secondary);
-          position: relative;
-          padding-left: 20px;
-          margin-bottom: 8px;
-          line-height: 1.4;
-          text-align: left;
-        }
-
-        .highlights-list li:last-child {
-          margin-bottom: 0;
-        }
-
-        .highlights-list li::before {
-          content: "✓";
-          position: absolute;
-          left: 0;
-          color: #10b981;
-          font-weight: 700;
-        }
-
-        .project-card-footer {
-          margin-top: auto;
-          display: flex;
-          flex-direction: column;
-          gap: 20px;
-        }
-
-        .project-card-stack {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 6px;
-        }
-
-        .project-card-actions {
-          display: flex;
-          gap: 12px;
-          width: 100%;
-        }
-
-        .project-card-actions a {
-          flex: 1;
-        }
-
-        .btn-full-width {
-          flex: none !important;
-          width: 100% !important;
-        }
-
-        .projects-footer {
-          text-align: center;
-        }
-
-        @media (max-width: 900px) {
-          .projects-grid {
-            grid-template-columns: 1fr;
-            gap: 24px;
-          }
-          .project-card {
-            padding: 24px;
-          }
-        }
-      `}</style>
     </section>
   );
 };

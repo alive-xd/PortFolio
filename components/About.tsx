@@ -37,15 +37,6 @@ export const About: React.FC = () => {
         <h2 className="section-title-centered white-title">About Me</h2>
         <div className="about-layout-grid">
           <div className="about-left-side">
-            <div className="photo-wrapper">
-              <img
-                src="assets/profile.png"
-                alt="Sushen Kumar"
-                className="about-photo"
-                width="200"
-                height="200"
-              />
-            </div>
             <p className="about-p-main">
               Hi, I'm <strong>Sushen Kumar</strong>, a cybersecurity researcher, security automation engineer, and AI specialist. I design secure systems, build intelligent automation workflows, and audit digital environments to make infrastructure resilient, fast, and completely secure.
             </p>
