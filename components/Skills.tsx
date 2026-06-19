@@ -12,16 +12,16 @@ interface SkillRow {
 export const Skills: React.FC = () => {
   const skillsList: SkillRow[] = [
     {
-      category: 'AI & SECURITY',
-      title: 'AI Security & Intelligent Systems',
-      tags: ['llm engineering', 'ai security', 'rag', 'machine learning', 'neural networks'],
-      tintClass: 'tint-purple'
-    },
-    {
       category: 'OFFENSIVE OPS',
       title: 'Offensive Security & Threat Research',
       tags: ['pen testing', 'vulnerability research', 'malware analysis', 'forensics', 'recon'],
       tintClass: 'tint-cyan'
+    },
+    {
+      category: 'AI & SECURITY',
+      title: 'AI Security & Intelligent Systems',
+      tags: ['llm engineering', 'ai security', 'rag', 'machine learning', 'neural networks'],
+      tintClass: 'tint-purple'
     },
     {
       category: 'PLATFORM ENG',
@@ -30,10 +30,10 @@ export const Skills: React.FC = () => {
       tintClass: 'tint-blue'
     },
     {
-      category: 'FRONTEND & UX',
-      title: 'Frontend & Experience Engineering',
-      tags: ['ui/ux systems', 'design systems', 'creative code', 'interactive dev'],
-      tintClass: 'tint-emerald'
+      category: 'CORE TECH',
+      title: 'Languages & Frameworks',
+      tags: ['python', 'java', 'javascript', 'go', 'c++', 'next.js', 'pytorch', 'docker'],
+      tintClass: 'tint-violet'
     },
     {
       category: 'INFRASTRUCTURE',
@@ -42,10 +42,10 @@ export const Skills: React.FC = () => {
       tintClass: 'tint-indigo'
     },
     {
-      category: 'CORE TECH',
-      title: 'Languages & Frameworks',
-      tags: ['python', 'java', 'javascript', 'go', 'c++', 'next.js', 'pytorch', 'docker'],
-      tintClass: 'tint-violet'
+      category: 'FRONTEND & UX',
+      title: 'Frontend & Experience Engineering',
+      tags: ['ui/ux systems', 'design systems', 'creative code', 'interactive dev'],
+      tintClass: 'tint-emerald'
     }
   ];
 

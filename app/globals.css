@@ -30,7 +30,7 @@
   --border:              rgba(0, 0, 0, 0.08);
   --nav-bg:              rgba(248, 248, 248, 0.85);
   
-  --dot-grid:            radial-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+  --dot-grid:            radial-gradient(rgba(0, 0, 0, 0.12) 1px, transparent 1px);
   --dot-grid-size:       20px 20px;
   
   --title-color:         #6D83F2; /* Centered title color */
@@ -44,8 +44,10 @@
   --timeline-line-color: rgba(0, 0, 0, 0.1);
   --timeline-dot-border: var(--bg);
   
-  /* Gradient */
+  /* Gradients */
   --blue-gradient:       linear-gradient(134deg, #6A98F0 0%, #4961DC 99%);
+  --cert-gradient:       linear-gradient(134deg, #7c3aed 0%, #4f46e5 99%);
+  --contact-gradient:    linear-gradient(134deg, #172554 0%, #020617 99%);
   
   /* Scroll & Sizes */
   --container-max-width: 1100px;
@@ -989,6 +991,14 @@ ul[role="list"] {
   background: var(--blue-gradient);
   clip-path: polygon(0 60px, 100% 0, 100% calc(100% - 60px), 0 100%);
   z-index: 1;
+}
+
+.certs-section .skew-bg {
+  background: var(--cert-gradient) !important;
+}
+
+.contact-section .skew-bg {
+  background: var(--contact-gradient) !important;
 }
 
 .about-section .container,
@@ -2051,10 +2061,10 @@ ul[role="list"] {
 }
 
 .contact-card-box {
-  background: var(--blue-gradient);
+  background: var(--contact-gradient);
   border-radius: var(--radius-lg);
   padding: 60px;
-  box-shadow: 0 20px 50px rgba(73, 97, 220, 0.25);
+  box-shadow: 0 20px 50px rgba(2, 6, 23, 0.4);
   color: #FFFFFF;
 }
 
