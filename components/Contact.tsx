@@ -51,10 +51,9 @@ export const Contact: React.FC = () => {
   ];
 
   return (
-    <section id="contact" className="section contact-section blue-slanted-section">
-      <div className="skew-bg"></div>
+    <section id="contact" className="section contact-section">
       <div className="container">
-        <h2 className="section-title-centered white-title reveal">Contact Me</h2>
+        <h2 className="section-title-centered reveal">Contact Me</h2>
         
         <p className="contact-subtitle reveal">
           Whether you want to audit your systems, automate workflows, or kick off a new project — connect with me on any platform.
@@ -88,7 +87,7 @@ export const Contact: React.FC = () => {
           text-align: center;
           max-width: 600px;
           margin: -10px auto 40px auto;
-          color: rgba(255, 255, 255, 0.85);
+          color: var(--text-secondary);
           font-size: 1.05rem;
           line-height: 1.6;
         }
@@ -100,8 +99,8 @@ export const Contact: React.FC = () => {
         }
 
         .contact-box-card {
-          background: rgba(255, 255, 255, 0.18);
-          border: 1px solid rgba(255, 255, 255, 0.25);
+          background: var(--card-bg);
+          border: 1px solid var(--card-border);
           border-radius: var(--radius-lg);
           padding: 30px 24px;
           text-align: center;
@@ -110,7 +109,7 @@ export const Contact: React.FC = () => {
           align-items: center;
           justify-content: space-between;
           min-height: 220px;
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+          box-shadow: var(--card-shadow);
           backdrop-filter: blur(10px);
           -webkit-backdrop-filter: blur(10px);
           transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
@@ -119,21 +118,20 @@ export const Contact: React.FC = () => {
 
         .contact-box-card:hover {
           transform: translateY(-5px);
-          background: rgba(255, 255, 255, 0.26);
-          border-color: rgba(255, 255, 255, 0.35);
-          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+          border-color: var(--accent);
+          box-shadow: var(--card-shadow);
         }
 
         .contact-box-icon-wrap {
           width: 56px;
           height: 56px;
-          background: rgba(255, 255, 255, 0.18);
+          background: var(--bg);
           border-radius: var(--radius-md);
           display: flex;
           align-items: center;
           justify-content: center;
           transition: background-color 0.3s ease, transform 0.3s ease;
-          border: 1px solid rgba(255, 255, 255, 0.25);
+          border: 1px solid var(--border);
         }
 
         .contact-box-card:hover .contact-box-icon-wrap {
@@ -144,7 +142,7 @@ export const Contact: React.FC = () => {
           font-family: var(--font-sans);
           font-size: 1.25rem;
           font-weight: 700;
-          color: #ffffff;
+          color: var(--text-primary);
           margin-top: 16px;
           margin-bottom: 6px;
         }
@@ -152,7 +150,7 @@ export const Contact: React.FC = () => {
         .contact-box-value {
           font-family: var(--font-mono);
           font-size: 0.82rem;
-          color: rgba(255, 255, 255, 0.7);
+          color: var(--text-secondary);
           margin-bottom: 16px;
           word-break: break-all;
         }
@@ -164,7 +162,7 @@ export const Contact: React.FC = () => {
           font-family: var(--font-sans);
           font-size: 0.88rem;
           font-weight: 700;
-          color: #ffffff;
+          color: var(--text-primary);
           transition: gap 0.2s ease;
         }
 

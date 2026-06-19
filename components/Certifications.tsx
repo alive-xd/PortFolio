@@ -61,10 +61,9 @@ export const Certifications: React.FC = () => {
   ];
 
   return (
-    <section id="certs" className="section certs-section blue-slanted-section">
-      <div className="skew-bg"></div>
+    <section id="certs" className="section certs-section">
       <div className="container">
-        <h2 className="section-title-centered white-title reveal">Certifications</h2>
+        <h2 className="section-title-centered reveal">Certifications</h2>
 
         <div className="certs-timeline-container">
           <div className="certs-timeline-line"></div>

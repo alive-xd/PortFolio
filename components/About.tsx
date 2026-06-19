@@ -32,9 +32,8 @@ export const About: React.FC = () => {
 
   return (
     <section id="about" className="section about-section">
-      <div className="skew-bg"></div>
       <div className="container reveal">
-        <h2 className="section-title-centered white-title">About Me</h2>
+        <h2 className="section-title-centered">About Me</h2>
         <div className="about-layout-grid">
           <div className="about-left-side">
             <p className="about-p-main">

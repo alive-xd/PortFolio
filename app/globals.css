@@ -982,84 +982,15 @@ ul[role="list"] {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ── 7. SLANTED SECTIONS (ABOUT & OTHERS) ────────── */
-.about-section,
-.blue-slanted-section {
+/* ── 7. SECTION DIVIDERS & DIVISIONS ──────────────── */
+.section {
+  padding: 6rem 0;
   position: relative;
-  overflow: hidden;
-  padding: 8rem 0;
-  background: transparent !important;
-  border: none !important;
+  border-bottom: 1px solid var(--border);
 }
 
-.about-section .skew-bg,
-.blue-slanted-section .skew-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--blue-gradient);
-  clip-path: polygon(0 4.5rem, 100% 0, 100% calc(100% - 4.5rem), 0 100%);
-  z-index: 1;
-}
-
-.certs-section .skew-bg {
-  background: var(--cert-gradient) !important;
-}
-
-.contact-section .skew-bg {
-  background: var(--contact-gradient) !important;
-}
-
-.about-section .container,
-.blue-slanted-section .container {
-  position: relative;
-  z-index: 2;
-}
-
-/* Redefine variables inside slanted blue sections to force white/glass styles */
-.blue-slanted-section {
-  --bg: transparent;
-  --text-primary: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.75);
-  --text-muted: rgba(255, 255, 255, 0.6);
-  --card-bg: rgba(255, 255, 255, 0.18);
-  --card-border: rgba(255, 255, 255, 0.25);
-  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-  --border: rgba(255, 255, 255, 0.25);
-  --title-color: #ffffff;
-}
-
-/* Glassmorphism for cert cards in blue section */
-.blue-slanted-section .cert-card {
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-}
-
-.blue-slanted-section .cert-card:hover {
-  background-color: rgba(255, 255, 255, 0.26);
-  border-color: rgba(255, 255, 255, 0.35);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
-}
-
-.blue-slanted-section .cert-dates,
-.blue-slanted-section .cert-id {
-  color: rgba(255, 255, 255, 0.65);
-}
-
-/* High contrast primary buttons on blue background */
-.blue-slanted-section .btn-primary {
-  background-color: #ffffff !important;
-  color: var(--accent) !important;
-  border-color: #ffffff !important;
-}
-
-.blue-slanted-section .btn-primary:hover {
-  background-color: rgba(255, 255, 255, 0.9) !important;
-  color: var(--accent-hover) !important;
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.35) !important;
+.contact-section {
+  border-bottom: none;
 }
 
 
@@ -1075,7 +1006,7 @@ ul[role="list"] {
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .photo-wrapper {
@@ -1104,12 +1035,12 @@ ul[role="list"] {
 .about-p-main {
   font-size: 1.05rem;
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--text-secondary);
   max-width: 480px;
 }
 
 .about-p-main strong {
-  color: #fff;
+  color: var(--text-primary);
   font-weight: 700;
 }
 
@@ -1121,26 +1052,25 @@ ul[role="list"] {
 }
 
 .strength-card {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   border-radius: var(--radius-lg);
   padding: 24px 30px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--card-shadow);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   display: flex;
   gap: 20px;
   align-items: flex-start;
   transition: all 0.3s ease;
-  color: #fff;
+  color: var(--text-primary);
   text-align: left;
 }
 
 .strength-card:hover {
   transform: translateX(8px);
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  border-color: var(--accent);
+  box-shadow: var(--card-shadow);
 }
 
 .strength-icon {
@@ -1173,13 +1103,13 @@ ul[role="list"] {
   font-size: 1.2rem;
   font-weight: 800;
   margin-bottom: 8px;
-  color: #ffffff;
+  color: var(--text-primary);
 }
 
 .strength-desc {
   font-size: 0.92rem;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--text-secondary);
 }
 
 .white-title {
