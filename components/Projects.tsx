@@ -319,7 +319,7 @@ export const Projects: React.FC = () => {
                 <h4 className="project-details-title">Technical Highlights</h4>
                 <ul className="project-features" style={{ marginBottom: 0 }}>
                   {p.featuresDetail.map((f, i) => (
-                    <li key={i} style={{ marginBottom: '14px' }}>
+                    <li key={i} style={{ marginBottom: '8px' }}>
                       <strong style={{ display: 'inline-block', color: 'var(--text-primary)' }}>{f.title}</strong>
                       <span style={{ display: 'block', fontSize: '0.85rem', color: 'var(--text-secondary)', marginTop: '2px', lineHeight: 1.4 }}>{f.desc}</span>
                     </li>
