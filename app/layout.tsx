@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     description: 'Sushen Kumar — Cybersecurity Researcher, SOC Analyst Track, and Penetration Tester based in Bangalore. Specialising in offensive security, OSINT tooling, digital forensics, and security automation. Fresher open to remote and on-site roles across India.',
   },
   verification: {
-    google: 'google578c9bfc940f574f',
+    google: 'SwAF9DsUXtpz96PNAOBCTzcWeC7s2FocZ9JL-C5jf44',
   }
 };
 
