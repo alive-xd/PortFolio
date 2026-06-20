@@ -11,7 +11,7 @@
   --font-mono:  'JetBrains Mono', monospace;
 
   /* Colors - Light Theme */
-  --bg:                  #FFFFFF;
+  --bg:                  #F8F8F8;
   --text-primary:        #2D2D2D;
   --text-secondary:      #5E5E5E;
   --text-muted:          #8E8E8E;
@@ -28,9 +28,9 @@
   --card-border:         rgba(0, 0, 0, 0.06);
   --card-shadow:         0 10px 30px rgba(0, 0, 0, 0.04);
   --border:              rgba(0, 0, 0, 0.08);
-  --nav-bg:              rgba(255, 255, 255, 0.97);
+  --nav-bg:              rgba(248, 248, 248, 0.97);
   
-  --dot-grid:            radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  --dot-grid:            radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px);
   --dot-grid-size:       28px 28px;
   
   --title-color:         #6D83F2; /* Centered title color */
