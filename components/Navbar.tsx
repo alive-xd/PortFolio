@@ -44,22 +44,10 @@ export const Navbar: React.FC = () => {
   const navLinks = [
     { href: '#home', label: 'Home', id: 'home' },
     { href: '#about', label: 'About', id: 'about' },
-    {
-      label: 'Resume',
-      id: 'resume',
-      subLinks: [
-        { href: '#experience', label: 'Experience', id: 'experience' },
-        { href: '#education', label: 'Education', id: 'education' },
-      ]
-    },
-    {
-      label: 'Qualifications',
-      id: 'qualifications',
-      subLinks: [
-        { href: '#skills', label: 'Skills', id: 'skills' },
-        { href: '#certs', label: 'Certifications', id: 'certs' },
-      ]
-    },
+    { href: '#experience', label: 'Experience', id: 'experience' },
+    { href: '#education', label: 'Education', id: 'education' },
+    { href: '#skills', label: 'Skills', id: 'skills' },
+    { href: '#certs', label: 'Certifications', id: 'certs' },
     { href: '#projects', label: 'Projects', id: 'projects' },
     { href: '#contact', label: 'Contact', id: 'contact' },
   ];
@@ -70,46 +58,22 @@ export const Navbar: React.FC = () => {
         <a href="#home" className="nav-logo" aria-label="Sushen Kumar">
           <span className="logo-text">Port<span className="logo-accent">folio</span></span>
         </a>
+        
         <div className="nav-menu-wrap">
           <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`} role="list">
-            {navLinks.map((link) => {
-              if (link.subLinks) {
-                const isParentActive = link.subLinks.some(sub => activeSection === sub.id);
-                return (
-                  <li key={link.label} className="nav-item dropdown">
-                    <span className={`nav-link dropdown-toggle ${isParentActive ? 'active' : ''}`}>
-                      {link.label}
-                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '4px', verticalAlign: 'middle' }}><polyline points="6 9 12 15 18 9"/></svg>
-                    </span>
-                    <ul className="dropdown-menu" role="list">
-                      {link.subLinks.map((sub) => (
-                        <li key={sub.href}>
-                          <a
-                            href={sub.href}
-                            className={`dropdown-item ${activeSection === sub.id ? 'active' : ''}`}
-                            onClick={() => setIsMenuOpen(false)}
-                          >
-                            {sub.label}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </li>
-                );
-              }
-              return (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className={`nav-link ${activeSection === link.id ? 'active' : ''}`}
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              );
-            })}
+            {navLinks.map((link) => (
+              <li key={link.href} className="nav-item">
+                <a
+                  href={link.href}
+                  className={`nav-link ${activeSection === link.id ? 'active' : ''}`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
           </ul>
+          
           <div className="nav-right">
             <button
               className="theme-toggle"
@@ -150,6 +114,7 @@ export const Navbar: React.FC = () => {
                 <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/>
               </svg>
             </button>
+            
             <button
               className={`hamburger ${isMenuOpen ? 'open' : ''}`}
               id="hamburger"
