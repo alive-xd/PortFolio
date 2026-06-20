@@ -54,7 +54,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <header id="header" className={`header ${isScrolled ? 'scrolled' : ''}`}>
-      <nav className="nav container">
+      <nav className="nav">
         <a href="#home" className="nav-logo" aria-label="Sushen Kumar">
           <span className="logo-text">Port<span className="logo-accent">folio</span></span>
         </a>

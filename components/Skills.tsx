@@ -130,7 +130,7 @@ export const Skills: React.FC = () => {
         .skills-subtitle {
           text-align: center;
           color: var(--text-secondary);
-          margin: -10px auto 40px auto;
+          margin: -16px auto 20px auto;
           font-size: 1.05rem;
           max-width: 600px;
         }
@@ -139,7 +139,7 @@ export const Skills: React.FC = () => {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
           gap: 24px;
-          margin-top: 20px;
+          margin-top: 10px;
         }
 
         .skill-card-new {

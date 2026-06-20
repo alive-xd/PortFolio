@@ -11,7 +11,7 @@
   --font-mono:  'JetBrains Mono', monospace;
 
   /* Colors - Light Theme */
-  --bg:                  #F8F8F8;
+  --bg:                  #FFFFFF;
   --text-primary:        #2D2D2D;
   --text-secondary:      #5E5E5E;
   --text-muted:          #8E8E8E;
@@ -28,9 +28,9 @@
   --card-border:         rgba(0, 0, 0, 0.06);
   --card-shadow:         0 10px 30px rgba(0, 0, 0, 0.04);
   --border:              rgba(0, 0, 0, 0.08);
-  --nav-bg:              rgba(248, 248, 248, 0.85);
+  --nav-bg:              rgba(255, 255, 255, 0.97);
   
-  --dot-grid:            radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  --dot-grid:            radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px);
   --dot-grid-size:       28px 28px;
   
   --title-color:         #6D83F2; /* Centered title color */
@@ -78,9 +78,9 @@
   --card-border:         rgba(255, 255, 255, 0.07);
   --card-shadow:         0 10px 30px rgba(0, 0, 0, 0.2);
   --border:              rgba(255, 255, 255, 0.08);
-  --nav-bg:              rgba(10, 10, 15, 0.85);
+  --nav-bg:              rgba(5, 5, 10, 0.97);
   
-  --dot-grid:            radial-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  --dot-grid:            radial-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px);
   
   --title-color:         #6D83F2;
   --hero-tagline-color:  #A8A8C8;
@@ -124,8 +124,6 @@ body {
   background-image: var(--dot-grid);
   background-size: var(--dot-grid-size);
   transition: background-color var(--transition-speed), color var(--transition-speed);
-  max-width: 1440px;
-  margin: 0 auto;
 }
 
 body::before {
@@ -189,7 +187,7 @@ ul[role="list"] {
 }
 
 .section {
-  padding: 6rem 0;
+  padding: 4rem 0;
   position: relative;
 }
 
@@ -200,7 +198,7 @@ ul[role="list"] {
   font-weight: 700;
   color: var(--title-color);
   text-align: center;
-  margin-bottom: 56px;
+  margin-bottom: 24px;
   letter-spacing: -0.03em;
 }
 
@@ -283,7 +281,7 @@ ul[role="list"] {
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  max-width: 1440px;
+  max-width: 100%;
   z-index: 1000;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   background: transparent;
@@ -293,7 +291,7 @@ ul[role="list"] {
 .header.scrolled {
   top: 15px;
   width: calc(100% - 30px);
-  max-width: var(--container-max-width);
+  max-width: 1200px;
   background: var(--nav-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -310,6 +308,9 @@ ul[role="list"] {
   height: 70px;
   transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .header.scrolled .nav {
@@ -1004,7 +1005,7 @@ ul[role="list"] {
 
 /* ── 7. SECTION DIVIDERS & DIVISIONS ──────────────── */
 .section {
-  padding: 6rem 0;
+  padding: 4rem 0;
   position: relative;
   border-bottom: 1px solid var(--border);
 }
@@ -1018,7 +1019,7 @@ ul[role="list"] {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   gap: 50px;
-  align-items: start;
+  align-items: center;
 }
 
 .about-left-side {
@@ -2279,8 +2280,8 @@ ul[role="list"] {
 }
 
 .footer-copy {
-  font-size: 0.82rem;
-  color: var(--text-muted);
+  font-size: 1.1rem;
+  color: var(--text-secondary);
 }
 
 .footer-admin {

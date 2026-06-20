@@ -118,7 +118,7 @@ export const Certifications: React.FC = () => {
         .certs-subtitle {
           text-align: center;
           color: var(--text-secondary);
-          margin: -10px auto 40px auto;
+          margin: -16px auto 20px auto;
           font-size: 1.05rem;
           max-width: 600px;
         }

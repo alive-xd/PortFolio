@@ -202,43 +202,7 @@ export const Projects: React.FC = () => {
 
   const p = PROJECTS[currentIdx];
 
-  // Render the three small preview cards
-  const smallCards = [];
-  for (let i = 1; i <= 3; i++) {
-    const smallProjIdx = (currentIdx + i) % n;
-    const sp = PROJECTS[smallProjIdx];
-    smallCards.push(
-      <article
-        key={sp.name}
-        className="project-card-small"
-        style={{ cursor: 'pointer', background: sp.bg }}
-        onClick={() => goTo(smallProjIdx, 'right')}
-      >
-        <div className="project-small-header">
-          <span 
-            className="project-tag-small" 
-            style={{ color: sp.color, borderColor: `${sp.color}33`, background: `${sp.color}12`, padding: '4px 8px', borderRadius: '4px', fontSize: '0.72rem', fontWeight: 700 }}
-          >
-            {sp.tag}
-          </span>
-          {sp.github && (
-            <a 
-              href={sp.github} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="project-small-link" 
-              aria-label="GitHub"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {GH_ICON}
-            </a>
-          )}
-        </div>
-        <h4 className="project-small-name">{sp.name}</h4>
-        <p className="project-small-desc">{sp.desc}</p>
-      </article>
-    );
-  }
+
 
   // Touch Swipe Handlers
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -330,10 +294,7 @@ export const Projects: React.FC = () => {
           </article>
         </div>
 
-        {/* 3 small cards */}
-        <div id="projSmallRow" className="small-projects-row">
-          {smallCards}
-        </div>
+
 
         {/* Dot indicators */}
         <div id="projDots" className="proj-dots" role="tablist" aria-label="Project pagination">

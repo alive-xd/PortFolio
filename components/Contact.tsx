@@ -95,7 +95,7 @@ export const Contact: React.FC = () => {
         .contact-subtitle {
           text-align: center;
           max-width: 600px;
-          margin: -10px auto 40px auto;
+          margin: -16px auto 20px auto;
           color: var(--text-secondary);
           font-size: 1.05rem;
           line-height: 1.6;
@@ -108,8 +108,8 @@ export const Contact: React.FC = () => {
         }
 
         .contact-box-card {
-          background: var(--card-bg);
-          border: 1px solid var(--card-border);
+          background: rgba(255, 255, 255, 0.45);
+          border: 1px solid rgba(255, 255, 255, 0.4);
           border-radius: var(--radius-lg);
           padding: 30px 24px;
           text-align: center;
@@ -119,16 +119,25 @@ export const Contact: React.FC = () => {
           justify-content: space-between;
           min-height: 220px;
           box-shadow: var(--card-shadow);
-          backdrop-filter: blur(10px);
-          -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
           transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
           text-decoration: none;
+        }
+
+        [data-theme="dark"] .contact-box-card {
+          background: rgba(19, 19, 31, 0.55);
+          border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .contact-box-card:hover {
           transform: translateY(-5px);
           border-color: var(--accent);
-          box-shadow: var(--card-shadow);
+          background: rgba(255, 255, 255, 0.6);
+        }
+
+        [data-theme="dark"] .contact-box-card:hover {
+          background: rgba(19, 19, 31, 0.7);
         }
 
         .contact-box-icon-wrap {
