@@ -24,8 +24,11 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Sushen Kumar | Cybersecurity Researcher & AI Security Engineer',
-  description: 'Sushen Kumar — Cybersecurity Researcher, SOC Analyst Track, and Penetration Tester based in Bangalore. Specialising in offensive security, OSINT tooling, digital forensics, and security automation. Fresher open to remote and on-site roles across India.',
+  title: 'Sushen Kumar',
+  description: 'Sushen Kumar — Cybersecurity Researcher & Penetration Tester. Specializing in offensive security, SOC analyst workflows, and security automation.',
+  alternates: {
+    canonical: 'https://sushen-kumar.vercel.app',
+  },
   keywords: [
     'sushen kumar',
     'cybersecurity researcher',
@@ -42,14 +45,14 @@ export const metadata: Metadata = {
     'TryHackMe'
   ],
   openGraph: {
-    title: 'Sushen Kumar | Cybersecurity Researcher & AI Security Engineer',
-    description: 'Sushen Kumar — Cybersecurity Researcher, SOC Analyst Track, and Penetration Tester based in Bangalore. Specialising in offensive security, OSINT tooling, digital forensics, and security automation. Fresher open to remote and on-site roles across India.',
+    title: 'Sushen Kumar',
+    description: 'Sushen Kumar — Cybersecurity Researcher & Penetration Tester. Specializing in offensive security, SOC analyst workflows, and security automation.',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sushen Kumar | Cybersecurity Researcher & AI Security Engineer',
-    description: 'Sushen Kumar — Cybersecurity Researcher, SOC Analyst Track, and Penetration Tester based in Bangalore. Specialising in offensive security, OSINT tooling, digital forensics, and security automation. Fresher open to remote and on-site roles across India.',
+    title: 'Sushen Kumar',
+    description: 'Sushen Kumar — Cybersecurity Researcher & Penetration Tester. Specializing in offensive security, SOC analyst workflows, and security automation.',
   },
   verification: {
     google: 'SwAF9DsUXtpz96PNAOBCTzcWeC7s2FocZ9JL-C5jf44',
@@ -70,6 +73,30 @@ export default function RootLayout({
     'alternateName': ['sushen', 'sushen.raw', 'sushen.pvt'],
     'jobTitle': 'Cybersecurity Researcher, SOC Analyst, & Penetration Tester',
     'description': 'Sushen Kumar — Cybersecurity Researcher, SOC Analyst Track, and Penetration Tester based in Bangalore. Specialising in offensive security, OSINT tooling, digital forensics, and security automation.'
+  };
+
+  // FAQ Schema to support Google Rich snippets and Answer Engine Optimization (AEO)
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    'mainEntity': [
+      {
+        '@type': 'Question',
+        'name': "What is Sushen Kumar's area of expertise?",
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': 'Sushen Kumar is a cybersecurity researcher specializing in offensive security, penetration testing, SOC analyst workflows, and security automation.'
+        }
+      },
+      {
+        '@type': 'Question',
+        'name': 'Is Sushen Kumar available for cybersecurity roles?',
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': 'Yes, Sushen Kumar is graduating in August 2026 and is actively seeking entry-level SOC Analyst, Penetration Tester, or Security Engineer positions across India.'
+        }
+      }
+    ]
   };
 
   return (
@@ -94,6 +121,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
       </head>
       <body>{children}</body>
