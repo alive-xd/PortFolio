@@ -86,7 +86,7 @@ const PROJECTS: Project[] = [
   },
   {
     name: 'CineAI',
-    tag: 'Featured Project',
+    tag: 'AI-Powered Movie Recommendation & Explainable AI Engine',
     desc: 'CineAI is a production-grade, full-stack AI movie recommendation platform combining semantic vector search, a 4-signal hybrid recommendation engine, and explainable AI to deliver personalised movie discovery. Unlike traditional platforms relying on keyword matching, CineAI understands natural language queries, learns user taste over time via adaptive per-user weights, and explains every recommendation through direct score attribution.',
     features: [],
     featuresDetail: [

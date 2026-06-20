@@ -62,26 +62,6 @@ export const About: React.FC = () => {
           </div>
         </div>
 
-        <div className="about-ctf-container reveal" style={{ marginTop: '50px', paddingTop: '30px', borderTop: '1px solid var(--border)' }}>
-          <h3 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '20px', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ color: '#de1f26' }}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            CTF &amp; Community
-          </h3>
-          <div className="strength-card" style={{ display: 'flex', flexDirection: 'column', gap: '12px', padding: '24px 30px', alignItems: 'flex-start' }}>
-            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', width: '100%', alignItems: 'center', gap: '12px' }}>
-              <span style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--text-primary)' }}>TryHackMe</span>
-              <a href="https://tryhackme.com/p/alivexd" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-sm" style={{ padding: '6px 14px', fontSize: '0.82rem' }}>
-                Profile: tryhackme.com/p/alivexd
-              </a>
-            </div>
-            <div style={{ fontSize: '0.95rem', color: 'var(--text-secondary)' }}>
-              <strong>Status:</strong> Top 1% globally — active on SOC and offensive security learning paths
-            </div>
-            <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', margin: 0 }}>
-              Actively practicing threat detection, log analysis, and offensive security challenges on TryHackMe. Profile: @alivexd
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );
