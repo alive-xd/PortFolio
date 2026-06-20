@@ -19,6 +19,72 @@ interface Project {
 
 const PROJECTS: Project[] = [
   {
+    name: 'ReconX',
+    tag: 'All-in-one OSINT & Reconnaissance Toolkit Directory',
+    desc: 'ReconX is a curated, production-ready OSINT and reconnaissance toolkit directory built for ethical hackers, security researchers, and bug bounty hunters. Aggregates 54+ hand-picked recon tools across 8 intelligence categories — network reconnaissance, subdomain enumeration, social media OSINT, credential verification, and more — into a single searchable interface. Used as a personal operational reference during active bug bounty research on Bugcrowd. Designed to reduce tool-switching time during timed engagements.',
+    features: [],
+    featuresDetail: [
+      { title: '54+ Tools Catalogued', desc: 'Catalogued across 8 OSINT/recon categories to reduce tool-switching time.' },
+      { title: 'Full Recon Lifecycle', desc: 'Covers the full reconnaissance lifecycle from passive to active scanning and exploitation support.' },
+      { title: 'Operationally Proven', desc: 'Used operationally as a personal reference during real bug bounty engagements on Bugcrowd.' },
+      { title: 'Searchable Interface', desc: 'Built for speed and immediate tool retrieval during timed CTF and bounty sessions.' }
+    ],
+    stack: ['Next.js', 'Tailwind CSS', 'Vercel'],
+    live: 'https://getreconx.vercel.app/',
+    github: 'https://github.com/alive-xd/ReconX',
+    color: '#10b981',
+    bg: 'linear-gradient(135deg, rgba(16,185,129,0.12) 0%, rgba(124,58,237,0.08) 100%)',
+    icon: <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>,
+    terminal: true,
+  },
+  {
+    name: 'VaporID',
+    tag: 'Synthetic Identity Generator for Security Testing & OSINT Training',
+    desc: 'VaporID is a browser-based synthetic identity generator designed for cybersecurity testing, red team operations, privacy research, and OSINT training scenarios. Generates complete fake personas — names, addresses, phone numbers, emails, and bank identification numbers — using free, zero-cost APIs with no paid dependencies. Built for use in controlled test environments where realistic but fictitious identity data is required for social engineering simulations, OSINT training, and digital forensics practice scenarios.',
+    features: [],
+    featuresDetail: [
+      { title: 'Red Team Support', desc: 'Supports red team identity generation for social engineering simulations.' },
+      { title: 'OSINT Training', desc: 'Used in OSINT training scenarios requiring realistic fictitious personas.' },
+      { title: 'Zero Cost API', desc: 'Zero paid dependencies — fully operational on free-tier APIs and client-side logic.' },
+      { title: 'Browser-Based', desc: 'Runs entirely in the browser; no local installation required.' }
+    ],
+    stack: ['JavaScript', 'HTML5', 'CSS3', 'Vercel'],
+    live: '',
+    github: 'https://github.com/alive-xd/VaporID',
+    color: '#f97316',
+    bg: 'linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(239,68,68,0.08) 100%)',
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+      </svg>
+    ),
+  },
+  {
+    name: 'Chat Decoder',
+    tag: 'WhatsApp Forensics & Communication Intelligence Platform',
+    desc: 'Chat Decoder is a full-stack AI-powered WhatsApp chat analysis platform that transforms raw .txt exports into deep communication intelligence. Applies forensic analysis techniques to identify communication patterns, sentiment shifts, relationship dynamics, and behavioural anomalies — applicable to insider threat investigation, OSINT research, and digital forensics practice. Combines a RAG retrieval pipeline, per-participant sentiment analysis, and AI relationship scoring. Privacy-first — zero data stored server-side.',
+    features: [],
+    featuresDetail: [
+      { title: 'Insider Threat Detection', desc: 'Applicable to insider threat detection and communication forensics.' },
+      { title: 'RAG Querying Pipeline', desc: 'Retrieval-augmented generation enables natural language querying of chat history.' },
+      { title: 'Behavioural Profiling', desc: 'Per-participant behavioural and sentiment profiling over time.' },
+      { title: 'Privacy-First Architecture', desc: 'Privacy-first setup with zero server-side data retention.' }
+    ],
+    stack: ['Python', 'Next.js', 'Gemini 1.5 Flash', 'ChromaDB', 'FastAPI', 'sentence-transformers'],
+    live: '',
+    github: 'https://github.com/alive-xd/ChatDecoder',
+    color: '#a78bfa',
+    bg: 'linear-gradient(135deg, rgba(124,58,237,0.12) 0%, rgba(167,139,250,0.08) 100%)',
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+      </svg>
+    ),
+  },
+  {
     name: 'CineAI',
     tag: 'Featured Project',
     desc: 'CineAI is a production-grade, full-stack AI movie recommendation platform combining semantic vector search, a 4-signal hybrid recommendation engine, and explainable AI to deliver personalised movie discovery. Unlike traditional platforms relying on keyword matching, CineAI understands natural language queries, learns user taste over time via adaptive per-user weights, and explains every recommendation through direct score attribution.',
@@ -44,74 +110,6 @@ const PROJECTS: Project[] = [
         <line x1="2" y1="17" x2="7" y2="17" />
         <line x1="17" y1="17" x2="22" y2="17" />
         <line x1="17" y1="7" x2="22" y2="7" />
-      </svg>
-    ),
-  },
-  {
-    name: 'ReconX',
-    tag: 'Featured Project',
-    desc: 'ReconX is a curated, all-in-one OSINT and reconnaissance toolkit directory built for ethical hackers, security researchers, and bug bounty hunters. It aggregates 54+ hand-picked recon tools across 8 categories — from network intelligence and subdomain enumeration to social media OSINT and credential verification — into a single, searchable interface.',
-    features: [],
-    featuresDetail: [
-      { title: '54-Tool OSINT Directory', desc: 'Organises reconnaissance tools across 8 categories (Basic Recon, Network, Email & Creds, Social Media, Financial, Web App, Ethical Doxing, Utility) with direct launch links — replacing hours of tool-hunting with one platform.' },
-      { title: 'Category-Based Tool Navigation', desc: 'Tabbed filtering system lets users jump directly to the relevant tool category for their engagement phase (passive recon → active scanning → web app testing).' },
-      { title: 'Integrated Web Terminal (Premium)', desc: 'Browser-based terminal interface providing access to 25+ penetration testing tools including nmap, sqlmap, gobuster, nuclei, and httpx without local installation.' },
-      { title: 'Community Tool Suggestions', desc: 'Built-in submission flow allowing users to suggest tools for inclusion, keeping the directory actively maintained.' }
-    ],
-    stack: ['Next.js', 'Tailwind CSS', 'Vercel'],
-    live: 'https://getreconx.vercel.app/',
-    github: 'https://github.com/alive-xd/ReconX',
-    color: '#10b981',
-    bg: 'linear-gradient(135deg, rgba(16,185,129,0.12) 0%, rgba(124,58,237,0.08) 100%)',
-    icon: <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>,
-    terminal: true,
-  },
-  {
-    name: 'Chat Decoder',
-    tag: 'AI / Security Tool',
-    desc: 'A full-stack AI-powered WhatsApp chat analysis platform that transforms raw .txt exports into deep conversation intelligence. Combines a RAG retrieval pipeline, per-participant sentiment analysis, and AI relationship scoring — entirely free, privacy-first, with zero data stored server-side.\n\nUnlike basic analyzers showing simple stats, Chat Decoder goes deeper to analyze relationship dynamics, communication styles, and sentiment shifts over time using AI.',
-    features: [],
-    featuresDetail: [
-      { title: 'RAG-Powered Chat Q&A', desc: 'Chunks and embeds conversation history into ChromaDB using all-MiniLM-L6-v2, enabling natural language retrieval via Gemini 1.5 Flash — "when did we last fight?" returns contextually accurate answers.' },
-      { title: 'Mood Arc Visualization', desc: 'Sliding-window sentiment scoring per participant rendered as an interactive timeline, surfacing emotional drift across months of conversation.' },
-      { title: 'AI Relationship Health Score', desc: 'Gemini-generated composite score analyzing initiation balance, response symmetry, engagement depth, and conversation consistency.' },
-      { title: 'Personality Style Profiling', desc: 'Infers per-participant communication traits (tone, assertiveness, humor density) from message patterns using few-shot prompting.' },
-      { title: 'Privacy-First, Zero Backend Storage', desc: 'Chat parsing is fully client-side; no raw messages leave the browser. Backend handles only anonymized embedding queries.' },
-      { title: 'Free Public Deployment', desc: 'Powered entirely by free-tier APIs (Gemini, ChromaDB in-memory) with 10 req/min rate limiting — zero cost, no credit card, publicly accessible.' }
-    ],
-    stack: ['Python', 'Next.js', 'Gemini 1.5 Flash', 'ChromaDB', 'FastAPI', 'sentence-transformers'],
-    live: '',
-    github: 'https://github.com/alive-xd/ChatDecoder',
-    color: '#a78bfa',
-    bg: 'linear-gradient(135deg, rgba(124,58,237,0.12) 0%, rgba(167,139,250,0.08) 100%)',
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-      </svg>
-    ),
-  },
-  {
-    name: 'VaporID',
-    tag: 'Security Tool',
-    desc: 'VaporID is a browser-based synthetic identity generator for cybersecurity testing, privacy research, and OSINT training scenarios. It generates complete fake personas — including names, addresses, phone numbers, emails, and bank identification numbers — entirely using free, zero-cost APIs with no paid dependencies.',
-    features: [],
-    featuresDetail: [
-      { title: 'Multi-module Identity Generation', desc: 'Produces synthetic identities across 8+ data types: personal details, photorealistic faces, addresses, phone numbers, email addresses, BINs, IMEI numbers, and PGP keypairs.' },
-      { title: 'Zero Paid API Architecture', desc: 'Entire tool runs on free/open APIs and client-side logic, keeping operational costs at zero while remaining fully functional.' },
-      { title: 'Bulk Export', desc: 'One-click export of generated identity data for use in test environments, form-fill automation, or security training exercises.' },
-      { title: 'Security Research Utilities', desc: 'Includes supplementary tools like a VPN recommendations guide and breach simulation module to support broader OSINT and privacy research workflows.' }
-    ],
-    stack: ['JavaScript', 'HTML5', 'CSS3', 'Vercel'],
-    live: '',
-    github: 'https://github.com/alive-xd/VaporID',
-    color: '#f97316',
-    bg: 'linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(239,68,68,0.08) 100%)',
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-        <circle cx="9" cy="7" r="4" />
-        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
       </svg>
     ),
   },

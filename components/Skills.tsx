@@ -12,40 +12,52 @@ interface SkillRow {
 export const Skills: React.FC = () => {
   const skillsList: SkillRow[] = [
     {
-      category: 'OFFENSIVE OPS',
+      category: 'BLUE TEAM',
+      title: 'SOC & Blue Team Operations',
+      tags: ['alert triage', 'log analysis', 'incident response', 'IOC analysis', 'threat hunting', 'SIEM fundamentals', 'network monitoring', 'Security Onion'],
+      tintClass: 'tint-indigo'
+    },
+    {
+      category: 'OFFENSIVE',
       title: 'Offensive Security & Threat Research',
-      tags: ['pen testing', 'vulnerability research', 'malware analysis', 'forensics', 'recon'],
+      tags: ['nmap', 'burp suite', 'metasploit', 'sqlmap', 'wireshark', 'nikto', 'gobuster', 'maltego', 'shodan', 'vulnerability research', 'malware analysis', 'recon', 'OSINT', 'pen testing'],
       tintClass: 'tint-cyan'
+    },
+    {
+      category: 'FORENSICS',
+      title: 'Digital Forensics',
+      tags: ['autopsy', 'FTK imager', 'memory forensics', 'disk imaging', 'evidence acquisition', 'artifact analysis'],
+      tintClass: 'tint-blue'
     },
     {
       category: 'AI & SECURITY',
       title: 'AI Security & Intelligent Systems',
-      tags: ['llm engineering', 'ai security', 'rag', 'machine learning', 'neural networks'],
+      tags: ['LLM engineering', 'AI security', 'RAG', 'machine learning', 'neural networks', 'semantic search'],
       tintClass: 'tint-purple'
     },
     {
       category: 'PLATFORM ENG',
       title: 'Software & Platform Engineering',
-      tags: ['full stack', 'api design', 'secure coding', 'cloud native', 'automation'],
-      tintClass: 'tint-blue'
+      tags: ['full stack', 'API design', 'secure coding', 'cloud native', 'automation'],
+      tintClass: 'tint-violet'
     },
     {
       category: 'CORE TECH',
       title: 'Languages & Frameworks',
-      tags: ['python', 'java', 'javascript', 'go', 'c++', 'next.js', 'pytorch', 'docker'],
-      tintClass: 'tint-violet'
+      tags: ['python', 'java', 'javascript', 'Go', 'C++', 'Next.js', 'PyTorch', 'Docker', 'DSA'],
+      tintClass: 'tint-emerald'
     },
     {
-      category: 'INFRASTRUCTURE',
+      category: 'DEVOPS',
       title: 'Infrastructure & DevOps',
-      tags: ['cloud infra', 'containers', 'ci/cd pipelines', 'linux systems', 'orchestration'],
+      tags: ['cloud infra', 'containers', 'CI/CD pipelines', 'Linux systems', 'orchestration'],
       tintClass: 'tint-indigo'
     },
     {
       category: 'FRONTEND & UX',
-      title: 'Frontend & Experience Engineering',
-      tags: ['ui/ux systems', 'design systems', 'creative code', 'interactive dev'],
-      tintClass: 'tint-emerald'
+      title: 'Frontend & UX',
+      tags: ['UI/UX systems', 'design systems', 'creative code', 'interactive dev'],
+      tintClass: 'tint-cyan'
     }
   ];
 

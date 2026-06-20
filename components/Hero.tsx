@@ -10,10 +10,6 @@ export const Hero: React.FC = () => {
           {/* Left Column: Copy & CTAs */}
           <div className="hero-left-col">
             <div className="hero-badges">
-              <div className="hero-badge">
-                <span className="badge-dot"></span>
-                <span>A tech guy</span>
-              </div>
               <div className="hero-badge availability-badge">
                 <span className="badge-dot pulse-green"></span>
                 <span>Open to full-time roles</span>
@@ -26,7 +22,7 @@ export const Hero: React.FC = () => {
             </h1>
 
             <p className="hero-tagline">
-              CYBERSECURITY RESEARCHER &nbsp;•&nbsp; SECURITY AUTOMATION &nbsp;•&nbsp; AI ENGINEERING
+              CYBERSECURITY RESEARCHER • SECURITY AUTOMATION • AI ENGINEERING
             </p>
 
             {/* TryHackMe & LeetCode Stats Bar */}
@@ -42,7 +38,7 @@ export const Hero: React.FC = () => {
             </div>
 
             <p className="hero-bio">
-              A cybersecurity researcher and automation engineer dedicated to building secure, resilient, and intelligent systems. Fusing deep security expertise, automated workflows, and artificial intelligence to defend modern infrastructure.
+              Cybersecurity researcher, security automation engineer, and AI specialist based in Bangalore — open to SOC Analyst, Security Analyst, and Penetration Testing roles. I build offensive security tools, intelligent automation frameworks, and AI-powered systems focused on threat analysis, vulnerability research, and real-world security operations. Fresher actively seeking full-time opportunities — open to remote and relocation.
             </p>
 
             <div className="hero-cta">

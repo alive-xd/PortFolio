@@ -25,23 +25,32 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: 'Sushen Kumar | Cybersecurity Researcher & AI Security Engineer',
-  description: 'Portfolio of Sushen Kumar (sushen.raw), a cybersecurity researcher and AI security engineer specializing in penetration testing, threat research, and secure software development.',
+  description: 'Sushen Kumar — Cybersecurity Researcher, SOC Analyst Track, and Penetration Tester based in Bangalore. Specialising in offensive security, OSINT tooling, digital forensics, and security automation. Fresher open to remote and on-site roles across India.',
   keywords: [
     'sushen kumar',
-    'sushen',
-    'sushen.raw',
     'cybersecurity researcher',
-    'security engineer',
-    'ai security',
-    'ethical hacker',
+    'SOC analyst',
     'penetration tester',
-    'security portfolio'
+    'OSINT',
+    'ethical hacker',
+    'security automation',
+    'AI security',
+    'bangalore',
+    'fresher cybersecurity',
+    'bug bounty researcher',
+    'bugcrowd',
+    'TryHackMe'
   ],
   openGraph: {
     title: 'Sushen Kumar | Cybersecurity Researcher & AI Security Engineer',
-    description: 'Portfolio of Sushen Kumar (sushen.raw) — Cybersecurity Researcher, Ethical Hacker, and Software Engineer.',
+    description: 'Sushen Kumar — Cybersecurity Researcher, SOC Analyst Track, and Penetration Tester based in Bangalore. Specialising in offensive security, OSINT tooling, digital forensics, and security automation. Fresher open to remote and on-site roles across India.',
     type: 'website',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sushen Kumar | Cybersecurity Researcher & AI Security Engineer',
+    description: 'Sushen Kumar — Cybersecurity Researcher, SOC Analyst Track, and Penetration Tester based in Bangalore. Specialising in offensive security, OSINT tooling, digital forensics, and security automation. Fresher open to remote and on-site roles across India.',
+  }
 };
 
 export default function RootLayout({
@@ -55,9 +64,9 @@ export default function RootLayout({
     '@type': 'Person',
     'name': 'Sushen Kumar',
     'url': 'https://sushen-kumar.vercel.app', // Updated to the custom domain
-    'alternateName': ['sushen', 'sushen.raw'],
-    'jobTitle': 'Cybersecurity Researcher & AI Security Engineer',
-    'description': 'Sushen Kumar (sushen.raw) is a cybersecurity researcher, developer, and security engineer specializing in AI security, software engineering, and defensive operations.'
+    'alternateName': ['sushen', 'sushen.raw', 'sushen.pvt'],
+    'jobTitle': 'Cybersecurity Researcher, SOC Analyst, & Penetration Tester',
+    'description': 'Sushen Kumar — Cybersecurity Researcher, SOC Analyst Track, and Penetration Tester based in Bangalore. Specialising in offensive security, OSINT tooling, digital forensics, and security automation.'
   };
 
   return (

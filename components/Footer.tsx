@@ -7,7 +7,7 @@ export const Footer: React.FC = () => {
     <footer className="footer">
       <div className="container footer-inner">
         <p className="footer-copy">
-          Designed With ❤️ | Built by <a href="https://github.com/alive-xd" target="_blank" rel="noopener noreferrer" className="footer-admin">Sushen Kumar</a>
+          Designed &amp; built by <a href="https://github.com/alive-xd" target="_blank" rel="noopener noreferrer" className="footer-admin">Sushen Kumar</a>
         </p>
       </div>
     </footer>

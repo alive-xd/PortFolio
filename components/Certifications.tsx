@@ -14,27 +14,11 @@ interface Certification {
 export const Certifications: React.FC = () => {
   const certificationsList: Certification[] = [
     {
-      title: 'SAP Analytics Cloud',
-      issuer: 'SAP',
-      issued: 'Jan 2026',
-      id: 'SAP-SAC-2026-904',
-      link: 'https://www.credly.com/badges/d159757b-983d-4a08-a390-32f6c245b5ea'
-    },
-    {
-      title: 'Privacy and Security in Online Social Media',
-      issuer: 'NPTEL',
-      issued: 'Dec 2025',
-      expires: 'Dec 2029',
-      id: 'NPTEL25CS117S1358701853',
-      link: 'https://nptel.ac.in/'
-    },
-    {
-      title: 'Fortinet Certified Fundamentals',
-      issuer: 'Fortinet',
-      issued: 'Apr 2025',
-      expires: 'Apr 2027',
-      id: '83294560935K',
-      link: 'https://www.credly.com/badges/8c47a3bb-6e97-4f56-b6d0-b8bb9cf2a917'
+      title: 'Ethical Hacker',
+      issuer: 'Cisco Networking Academy',
+      issued: 'Oct 2024',
+      id: '799e311f-6c9e-4aaf-ac68-c316e4535f38',
+      link: 'https://www.credly.com/badges/799e311f-6c9e-4aaf-ac68-c316e4535f38'
     },
     {
       title: 'Fortinet Certified Associate',
@@ -45,6 +29,14 @@ export const Certifications: React.FC = () => {
       link: 'https://linkedin.com/in/sushen-kumar'
     },
     {
+      title: 'Fortinet Certified Fundamentals',
+      issuer: 'Fortinet',
+      issued: 'Apr 2025',
+      expires: 'Apr 2027',
+      id: '83294560935K',
+      link: 'https://www.credly.com/badges/8c47a3bb-6e97-4f56-b6d0-b8bb9cf2a917'
+    },
+    {
       title: 'Penetration Testing and Ethical Hacking',
       issuer: 'Cybrary',
       issued: 'Nov 2024',
@@ -52,11 +44,19 @@ export const Certifications: React.FC = () => {
       link: 'https://app.cybrary.it/courses/api/certificate/CC-0e57b62e-2d17-49e4-9022-083abf7c03ad/view'
     },
     {
-      title: 'Ethical Hacker',
-      issuer: 'Cisco Networking Academy',
-      issued: 'Oct 2024',
-      id: '799e311f-6c9e-4aaf-ac68-c316e4535f38',
-      link: 'https://www.credly.com/badges/799e311f-6c9e-4aaf-ac68-c316e4535f38'
+      title: 'Privacy and Security in Online Social Media',
+      issuer: 'NPTEL',
+      issued: 'Dec 2025',
+      expires: 'Dec 2029',
+      id: 'NPTEL25CS117S1358701853',
+      link: 'https://nptel.ac.in/'
+    },
+    {
+      title: 'SAP Analytics Cloud',
+      issuer: 'SAP',
+      issued: 'Jan 2026',
+      id: 'SAP-SAC-2026-904',
+      link: 'https://www.credly.com/badges/d159757b-983d-4a08-a390-32f6c245b5ea'
     }
   ];
 

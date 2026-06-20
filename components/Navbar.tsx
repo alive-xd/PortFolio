@@ -17,7 +17,7 @@ export const Navbar: React.FC = () => {
       setIsScrolled(window.scrollY > 20);
 
       // Active section calculation
-      const sections = ['home', 'about', 'skills', 'certs', 'projects', 'contact'];
+      const sections = ['home', 'about', 'experience', 'education', 'skills', 'certs', 'projects', 'contact'];
       let current = 'home';
       for (const id of sections) {
         const el = document.getElementById(id);
@@ -44,6 +44,8 @@ export const Navbar: React.FC = () => {
   const navLinks = [
     { href: '#home', label: 'Home', id: 'home' },
     { href: '#about', label: 'About', id: 'about' },
+    { href: '#experience', label: 'Experience', id: 'experience' },
+    { href: '#education', label: 'Education', id: 'education' },
     { href: '#skills', label: 'Skills', id: 'skills' },
     { href: '#certs', label: 'Certifications', id: 'certs' },
     { href: '#projects', label: 'Projects', id: 'projects' },
