@@ -128,6 +128,18 @@ body {
   margin: 0 auto;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  opacity: 0.018;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -1477,184 +1489,236 @@ ul[role="list"] {
   padding: 100px 0;
 }
 
-/* ── 9. CERTIFICATIONS TIMELINE LAYOUT ────────────── */
-.certs-timeline-container {
+/* ── 9. RESUME (EXPERIENCE & EDUCATION) SECTION ────── */
+.resume-section {
+  padding: 80px 0;
   position: relative;
-  max-width: 860px;
-  margin: 50px auto 0 auto;
-  padding-left: 20px;
 }
 
-.certs-timeline-line {
-  position: absolute;
-  top: 25px; /* offset slightly so it starts at the first dot center */
-  bottom: 25px; /* offset slightly so it ends at the last dot center */
-  left: 40px;
-  width: 2px;
-  background: rgba(255, 255, 255, 0.2);
-  z-index: 1;
+.resume-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 60px;
+  align-items: start;
 }
 
-.certs-timeline-item {
+.resume-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.resume-col-title {
+  font-family: var(--font-sans);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 8px;
   position: relative;
-  padding-left: 80px;
-  margin-bottom: 40px;
-  z-index: 2;
+  letter-spacing: -0.02em;
 }
 
-.certs-timeline-item:last-child {
-  margin-bottom: 0;
-}
-
-.certs-timeline-dot {
+.resume-col-title::after {
+  content: '';
   position: absolute;
-  left: 41px; /* center on the 2px line at 40px */
-  top: 56px; /* align vertically with the center of the cert badge (52px tall + 30px padding = 56px center) */
-  width: 14px;
-  height: 14px;
+  left: 0;
+  bottom: -8px;
+  width: 40px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.resume-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+  border-left: 2px solid var(--border);
+  padding-left: 24px;
+  margin-left: 4px;
+  margin-top: 15px;
+}
+
+.resume-item {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.resume-item::before {
+  content: '';
+  position: absolute;
+  left: -30px; /* align center with the 2px left border */
+  top: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background: #ffffff;
-  border: 3.5px solid var(--accent);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
-  transform: translate(-50%, -50%);
+  background: var(--bg);
+  border: 2.5px solid var(--accent);
   transition: all 0.3s ease;
   z-index: 3;
 }
 
-/* Horizontal connecting link line */
-.certs-timeline-item::before {
-  content: "";
-  position: absolute;
-  left: 41px;
-  top: 56px;
-  width: 39px;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.15);
-  transition: all 0.3s ease;
-  z-index: 1;
+.resume-item:hover::before {
+  background: var(--accent);
+  transform: scale(1.2);
+  box-shadow: 0 0 10px var(--accent);
 }
 
-/* Hover effects */
-.certs-timeline-item:hover .certs-timeline-dot {
-  background: var(--accent-hover);
-  border-color: #ffffff;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 8px var(--accent);
-  transform: translate(-50%, -50%) scale(1.25);
+.resume-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
 }
 
-.certs-timeline-item:hover::before {
-  background: rgba(255, 255, 255, 0.4);
-  height: 1.5px;
+.resume-item-role {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
 }
 
-/* Responsive Tweak for mobile */
-@media (max-width: 600px) {
-  .certs-timeline-container {
-    padding-left: 0;
-  }
-
-  .certs-timeline-line {
-    left: 20px;
-    top: 25px;
-    bottom: 25px;
-  }
-
-  .certs-timeline-item {
-    padding-left: 45px;
-    margin-bottom: 25px;
-  }
-
-  .certs-timeline-dot {
-    left: 21px;
-    top: 56px;
-    width: 12px;
-    height: 12px;
-    border-width: 3px;
-  }
-
-  .certs-timeline-item::before {
-    left: 21px;
-    top: 56px;
-    width: 24px;
-  }
+.resume-item-date {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
 }
 
+.resume-item-org {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
 
-.cert-card {
+.resume-item-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Coursework Styles */
+.coursework-box {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.coursework-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.coursework-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.coursework-tags span {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-secondary);
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  border-radius: var(--radius-lg);
-  padding: 30px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: lowercase;
+  transition: all 0.2s ease;
+}
+
+.resume-item:hover .coursework-tags span {
+  border-color: var(--accent);
+  color: var(--text-primary);
+}
+
+/* CTF & Community Styles */
+.ctf-section-title {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ctf-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
   box-shadow: var(--card-shadow);
   display: flex;
   flex-direction: column;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-  text-align: left;
+  gap: 8px;
+  transition: all 0.3s ease;
 }
 
-.cert-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-  border-color: rgba(109, 131, 242, 0.2);
+.ctf-card:hover {
+  transform: translateY(-2px);
+  border-color: #de1f26; /* TryHackMe red */
+  box-shadow: 0 8px 25px rgba(222, 31, 38, 0.05);
 }
 
-[data-theme="dark"] .cert-card:hover {
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-}
-
-.cert-header {
+.ctf-card-header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
-.cert-badge-container {
-  width: 52px;
-  height: 52px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.cert-badge-svg {
-  width: 100%;
-  height: 100%;
-}
-
-.cert-meta {
-  display: flex;
-  flex-direction: column;
-}
-
-.cert-org {
-  font-family: var(--font-sans);
-  font-size: 0.72rem;
+.ctf-platform {
+  font-size: 1.05rem;
   font-weight: 700;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  letter-spacing: 0.08em;
-}
-
-.cert-title {
-  font-family: var(--font-sans);
-  font-size: 1.15rem;
-  font-weight: 800;
   color: var(--text-primary);
-  margin-top: 4px;
-  line-height: 1.3;
-  letter-spacing: -0.01em;
 }
 
+.ctf-link-btn {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
 
+.ctf-link-btn:hover {
+  background: var(--accent-light);
+  border-color: var(--accent);
+  color: var(--accent);
+}
 
-.cert-btn {
-  width: 100%;
-  text-align: center;
+.ctf-rank-text {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.ctf-rank-text strong {
+  color: #de1f26;
+}
+
+.ctf-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 992px) {
+  .resume-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
 }
 
 /* ── 10. PROJECTS CAROUSEL SECTION ────────────────── */

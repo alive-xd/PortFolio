@@ -121,8 +121,15 @@ export default function Home() {
       <main>
         <Hero />
         <About />
-        <Experience />
-        <Education />
+        {/* Side-by-side Experience and Education section */}
+        <section className="section resume-section">
+          <div className="container">
+            <div className="resume-grid">
+              <Experience />
+              <Education />
+            </div>
+          </div>
+        </section>
         <Skills />
         <Certifications />
         <Projects />
