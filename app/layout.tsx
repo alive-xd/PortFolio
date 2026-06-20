@@ -24,7 +24,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Sushen Kumar',
+  title: 'Sushen Kumar | Cybersecurity Portfolio',
   description: 'Sushen Kumar — Cybersecurity Researcher & Penetration Tester. Specializing in offensive security, SOC analyst workflows, and security automation.',
   alternates: {
     canonical: 'https://sushen-kumar.vercel.app',
@@ -45,13 +45,13 @@ export const metadata: Metadata = {
     'TryHackMe'
   ],
   openGraph: {
-    title: 'Sushen Kumar',
+    title: 'Sushen Kumar | Cybersecurity Portfolio',
     description: 'Sushen Kumar — Cybersecurity Researcher & Penetration Tester. Specializing in offensive security, SOC analyst workflows, and security automation.',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sushen Kumar',
+    title: 'Sushen Kumar | Cybersecurity Portfolio',
     description: 'Sushen Kumar — Cybersecurity Researcher & Penetration Tester. Specializing in offensive security, SOC analyst workflows, and security automation.',
   },
   verification: {
@@ -64,15 +64,48 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // JSON-LD Person/Profile Schema to boost ranking for search engines
-  const jsonLd = {
+  // Unified Graph Schema (including Person, Organization, and WebPage structures)
+  // to provide Google with rich metadata relationships, organization info, and citation signals (author, dates, etc.)
+  const graphJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Person',
-    'name': 'Sushen Kumar',
-    'url': 'https://sushen-kumar.vercel.app', // Updated to the custom domain
-    'alternateName': ['sushen', 'sushen.raw', 'sushen.pvt'],
-    'jobTitle': 'Cybersecurity Researcher, SOC Analyst, & Penetration Tester',
-    'description': 'Sushen Kumar — Cybersecurity Researcher, SOC Analyst Track, and Penetration Tester based in Bangalore. Specialising in offensive security, OSINT tooling, digital forensics, and security automation.'
+    '@graph': [
+      {
+        '@type': 'Person',
+        '@id': 'https://sushen-kumar.vercel.app/#person',
+        'name': 'Sushen Kumar',
+        'url': 'https://sushen-kumar.vercel.app',
+        'alternateName': ['sushen', 'sushen.raw', 'sushen.pvt'],
+        'jobTitle': 'Cybersecurity Researcher, SOC Analyst, & Penetration Tester',
+        'description': 'Sushen Kumar — Cybersecurity Researcher, SOC Analyst Track, and Penetration Tester based in Bangalore. Specialising in offensive security, OSINT tooling, digital forensics, and security automation.'
+      },
+      {
+        '@type': 'Organization',
+        '@id': 'https://sushen-kumar.vercel.app/#organization',
+        'name': 'Sushen Kumar',
+        'url': 'https://sushen-kumar.vercel.app',
+        'logo': 'https://sushen-kumar.vercel.app/icon.svg',
+        'description': 'Cybersecurity Research and Security Automation Engineering.',
+        'founder': { '@id': 'https://sushen-kumar.vercel.app/#person' }
+      },
+      {
+        '@type': 'WebPage',
+        '@id': 'https://sushen-kumar.vercel.app/#webpage',
+        'url': 'https://sushen-kumar.vercel.app',
+        'name': 'Sushen Kumar | Cybersecurity Portfolio',
+        'isPartOf': {
+          '@type': 'WebSite',
+          '@id': 'https://sushen-kumar.vercel.app/#website',
+          'url': 'https://sushen-kumar.vercel.app',
+          'name': 'Sushen Kumar Portfolio'
+        },
+        'about': { '@id': 'https://sushen-kumar.vercel.app/#person' },
+        'description': 'Sushen Kumar — Cybersecurity Researcher & Penetration Tester. Specializing in offensive security, SOC analyst workflows, and security automation.',
+        'author': { '@id': 'https://sushen-kumar.vercel.app/#person' },
+        'publisher': { '@id': 'https://sushen-kumar.vercel.app/#organization' },
+        'datePublished': '2026-06-20T00:00:00+05:30',
+        'dateModified': '2026-06-20T11:53:00+05:30'
+      }
+    ]
   };
 
   // FAQ Schema to support Google Rich snippets and Answer Engine Optimization (AEO)
@@ -120,7 +153,7 @@ export default function RootLayout({
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(graphJsonLd) }}
         />
         <script
           type="application/ld+json"
