@@ -17,7 +17,6 @@ export const Hero: React.FC = () => {
             </div>
 
             <h1 className="hero-title">
-              <small className="hero-greeting">Hello, I'm</small>
               <span className="hero-name">SUSHEN KUMAR</span>
             </h1>
 
@@ -38,7 +37,7 @@ export const Hero: React.FC = () => {
             </div>
 
             <p className="hero-bio">
-              Cybersecurity researcher, security automation engineer, and AI specialist based in Bangalore — open to SOC Analyst, Security Analyst, and Penetration Testing roles. I build offensive security tools, intelligent automation frameworks, and AI-powered systems focused on threat analysis, vulnerability research, and real-world security operations. Fresher actively seeking full-time opportunities — open to remote and relocation.
+              Cybersecurity researcher and security automation engineer based in Bangalore. I build offensive security tools, intelligent automation frameworks, and AI-powered systems for real-world threat analysis. Fresher — open to full-time roles.
             </p>
 
             <div className="hero-cta">
@@ -251,12 +250,12 @@ export const Hero: React.FC = () => {
           position: relative;
           border-radius: var(--radius-lg);
           overflow: hidden;
-          border: 4px solid var(--card-border);
+          border: 2px solid var(--card-border);
           box-shadow: var(--card-shadow), 0 0 30px rgba(109, 131, 242, 0.15);
           background: var(--card-bg);
           transition: all 0.3s ease;
-          width: 280px;
-          height: 280px;
+          width: 260px;
+          height: 260px;
         }
 
         .hero-photo-wrapper:hover {

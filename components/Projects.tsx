@@ -20,8 +20,8 @@ interface Project {
 const PROJECTS: Project[] = [
   {
     name: 'ReconX',
-    tag: 'All-in-one OSINT & Reconnaissance Toolkit Directory',
-    desc: 'ReconX is a curated, production-ready OSINT and reconnaissance toolkit directory built for ethical hackers, security researchers, and bug bounty hunters. Aggregates 54+ hand-picked recon tools across 8 intelligence categories — network reconnaissance, subdomain enumeration, social media OSINT, credential verification, and more — into a single searchable interface. Used as a personal operational reference during active bug bounty research on Bugcrowd. Designed to reduce tool-switching time during timed engagements.',
+    tag: 'OSINT & Recon Toolkit',
+    desc: 'ReconX is a curated, production-ready OSINT and reconnaissance toolkit directory built for ethical hackers, security researchers, and bug bounty hunters. Aggregates 54+ hand-picked recon tools across 8 intelligence categories — network reconnaissance, subdomain enumeration, social media OSINT, credential verification, and more — into a single searchable interface.',
     features: [],
     featuresDetail: [
       { title: '54+ Tools Catalogued', desc: 'Catalogued across 8 OSINT/recon categories to reduce tool-switching time.' },
@@ -39,8 +39,8 @@ const PROJECTS: Project[] = [
   },
   {
     name: 'VaporID',
-    tag: 'Synthetic Identity Generator for Security Testing & OSINT Training',
-    desc: 'VaporID is a browser-based synthetic identity generator designed for cybersecurity testing, red team operations, privacy research, and OSINT training scenarios. Generates complete fake personas — names, addresses, phone numbers, emails, and bank identification numbers — using free, zero-cost APIs with no paid dependencies. Built for use in controlled test environments where realistic but fictitious identity data is required for social engineering simulations, OSINT training, and digital forensics practice scenarios.',
+    tag: 'Synthetic Identity Generator',
+    desc: 'VaporID is a browser-based synthetic identity generator designed for cybersecurity testing, red team operations, privacy research, and OSINT training scenarios. Generates complete fake personas — names, addresses, phone numbers, emails, and bank identification numbers — using free, zero-cost APIs with no paid dependencies.',
     features: [],
     featuresDetail: [
       { title: 'Red Team Support', desc: 'Supports red team identity generation for social engineering simulations.' },
@@ -64,8 +64,8 @@ const PROJECTS: Project[] = [
   },
   {
     name: 'Chat Decoder',
-    tag: 'WhatsApp Forensics & Communication Intelligence Platform',
-    desc: 'Chat Decoder is a full-stack AI-powered WhatsApp chat analysis platform that transforms raw .txt exports into deep communication intelligence. Applies forensic analysis techniques to identify communication patterns, sentiment shifts, relationship dynamics, and behavioural anomalies — applicable to insider threat investigation, OSINT research, and digital forensics practice. Combines a RAG retrieval pipeline, per-participant sentiment analysis, and AI relationship scoring. Privacy-first — zero data stored server-side.',
+    tag: 'WhatsApp Forensics Platform',
+    desc: 'Chat Decoder is a full-stack AI-powered WhatsApp chat analysis platform that transforms raw .txt exports into deep communication intelligence. Applies forensic analysis techniques to identify communication patterns, sentiment shifts, relationship dynamics, and behavioural anomalies — applicable to insider threat investigation, OSINT research, and digital forensics practice.',
     features: [],
     featuresDetail: [
       { title: 'Insider Threat Detection', desc: 'Applicable to insider threat detection and communication forensics.' },
@@ -86,7 +86,7 @@ const PROJECTS: Project[] = [
   },
   {
     name: 'CineAI',
-    tag: 'AI-Powered Movie Recommendation & Explainable AI Engine',
+    tag: 'AI Movie Recommendation Engine',
     desc: 'CineAI is a production-grade, full-stack AI movie recommendation platform combining semantic vector search, a 4-signal hybrid recommendation engine, and explainable AI to deliver personalised movie discovery. Unlike traditional platforms relying on keyword matching, CineAI understands natural language queries, learns user taste over time via adaptive per-user weights, and explains every recommendation through direct score attribution.',
     features: [],
     featuresDetail: [
