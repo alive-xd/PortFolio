@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <!-- Definitions for Gradients and Glow Filters -->
+  <defs>
+    <!-- Main Neon Gradient -->
+    <linearGradient id="neonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6A98F0" />
+      <stop offset="100%" stop-color="#7c3aed" />
+    </linearGradient>
+    <!-- Glow Filter for High Tech Neon Feel -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Glowing Hexagonal Circuit Frame -->
+  <polygon points="256,45 435,150 435,362 256,467 77,362 77,150" 
+           fill="none" 
+           stroke="url(#neonGrad)" 
+           stroke-width="12" 
+           stroke-linejoin="round"
+           filter="url(#glow)"
+           opacity="0.85" />
+  
+  <!-- Outer Corner Circuit Dots -->
+  <circle cx="256" cy="45" r="8" fill="#6A98F0" filter="url(#glow)" />
+  <circle cx="435" cy="150" r="8" fill="#7c3aed" filter="url(#glow)" />
+  <circle cx="435" cy="362" r="8" fill="#7c3aed" filter="url(#glow)" />
+  <circle cx="256" cy="467" r="8" fill="#6A98F0" filter="url(#glow)" />
+  <circle cx="77" cy="362" r="8" fill="#6A98F0" filter="url(#glow)" />
+  <circle cx="77" cy="150" r="8" fill="#6A98F0" filter="url(#glow)" />
+
+  <!-- Monogram 'S' and 'K' High-Tech Paths -->
+  <!-- 'S' Path: Geometric Cyber Style -->
+  <path d="M 245 160 
+           L 175 160 
+           L 175 235 
+           L 245 235 
+           L 245 310 
+           L 175 310" 
+        fill="none" 
+        stroke="url(#neonGrad)" 
+        stroke-width="24" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"
+        filter="url(#glow)" />
+
+  <!-- 'K' Path: Geometric Cyber Style -->
+  <path d="M 325 160 
+           L 325 310 
+           M 325 235 
+           L 385 160 
+           M 325 235 
+           L 385 310" 
+        fill="none" 
+        stroke="url(#neonGrad)" 
+        stroke-width="24" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"
+        filter="url(#glow)" />
+
+  <!-- Circuit Trace Dots at key vertices -->
+  <circle cx="245" cy="160" r="10" fill="#6A98F0" filter="url(#glow)" />
+  <circle cx="175" cy="310" r="10" fill="#7c3aed" filter="url(#glow)" />
+  <circle cx="325" cy="160" r="10" fill="#6A98F0" filter="url(#glow)" />
+  <circle cx="325" cy="310" r="10" fill="#7c3aed" filter="url(#glow)" />
+  <circle cx="385" cy="160" r="10" fill="#6A98F0" filter="url(#glow)" />
+  <circle cx="385" cy="310" r="10" fill="#7c3aed" filter="url(#glow)" />
+</svg>
