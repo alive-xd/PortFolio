@@ -25,11 +25,11 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: 'Sushen Kumar | Cybersecurity Researcher & AI Security Engineer',
-  description: 'Portfolio of Sushen Kumar (sushen.pvt), a cybersecurity researcher and AI security engineer specializing in penetration testing, threat research, and secure software development.',
+  description: 'Portfolio of Sushen Kumar (sushen.raw), a cybersecurity researcher and AI security engineer specializing in penetration testing, threat research, and secure software development.',
   keywords: [
     'sushen kumar',
     'sushen',
-    'sushen.pvt',
+    'sushen.raw',
     'cybersecurity researcher',
     'security engineer',
     'ai security',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Sushen Kumar | Cybersecurity Researcher & AI Security Engineer',
-    description: 'Portfolio of Sushen Kumar (sushen.pvt) — Cybersecurity Researcher, Ethical Hacker, and Software Engineer.',
+    description: 'Portfolio of Sushen Kumar (sushen.raw) — Cybersecurity Researcher, Ethical Hacker, and Software Engineer.',
     type: 'website',
   },
 };
@@ -55,9 +55,9 @@ export default function RootLayout({
     '@type': 'Person',
     'name': 'Sushen Kumar',
     'url': 'https://sushen-kumar.vercel.app', // Updated to the custom domain
-    'alternateName': ['sushen', 'sushen.pvt'],
+    'alternateName': ['sushen', 'sushen.raw'],
     'jobTitle': 'Cybersecurity Researcher & AI Security Engineer',
-    'description': 'Sushen Kumar (sushen.pvt) is a cybersecurity researcher, developer, and security engineer specializing in AI security, software engineering, and defensive operations.'
+    'description': 'Sushen Kumar (sushen.raw) is a cybersecurity researcher, developer, and security engineer specializing in AI security, software engineering, and defensive operations.'
   };
 
   return (
