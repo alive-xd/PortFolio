@@ -30,7 +30,7 @@
   --border:              rgba(0, 0, 0, 0.08);
   --nav-bg:              rgba(248, 248, 248, 0.97);
   
-  --dot-grid:            radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  --dot-grid:            radial-gradient(rgba(0, 0, 0, 0.015) 1px, transparent 1px);
   --dot-grid-size:       28px 28px;
   
   --title-color:         #6D83F2; /* Centered title color */
@@ -80,7 +80,7 @@
   --border:              rgba(255, 255, 255, 0.08);
   --nav-bg:              rgba(5, 5, 10, 0.97);
   
-  --dot-grid:            radial-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  --dot-grid:            radial-gradient(rgba(255, 255, 255, 0.006) 1px, transparent 1px);
   
   --title-color:         #6D83F2;
   --hero-tagline-color:  #A8A8C8;
@@ -594,6 +594,32 @@ ul[role="list"] {
   height: 20px;
   background: var(--accent);
   animation: scrollDown 2s infinite ease-in-out;
+}
+
+/* Structural layout lines for premium grid aesthetic */
+.grid-lines {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: -1;
+  padding: 0 15px;
+}
+
+.grid-line {
+  width: 1px;
+  height: 100%;
+  background: var(--border);
+  opacity: 0.25;
+}
+
+[data-theme="dark"] .grid-line {
+  opacity: 0.15;
 }
 
 /* Aurora background glows */

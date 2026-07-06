@@ -19,17 +19,38 @@ interface Project {
 
 const PROJECTS: Project[] = [
   {
-    name: 'ReconX',
-    tag: 'OSINT & Recon Toolkit',
-    desc: 'ReconX is a curated, production-ready OSINT and reconnaissance toolkit directory built for ethical hackers, security researchers, and bug bounty hunters. Aggregates 54+ hand-picked recon tools across 8 intelligence categories — network reconnaissance, subdomain enumeration, social media OSINT, credential verification, and more — into a single searchable interface.',
+    name: 'SentriX',
+    tag: 'SOC Management Platform',
+    desc: 'SentriX is a modern, production-grade Security Operations Center (SOC) platform designed to streamline the lifecycle of security incidents from initial alert ingestion to case investigation and resolution. Moving away from disjointed security tools, SentriX provides a centralized, opinionated workflow with real-time alert triage, automated threat intelligence correlation, and strict role-based access control, allowing analysts to focus entirely on threat remediation rather than data gathering.',
     features: [],
     featuresDetail: [
-      { title: '54+ Tools Catalogued', desc: 'Catalogued across 8 OSINT/recon categories to reduce tool-switching time.' },
-      { title: 'Full Recon Lifecycle', desc: 'Covers the full reconnaissance lifecycle from passive to active scanning and exploitation support.' },
-      { title: 'Operationally Proven', desc: 'Used operationally as a personal reference during real bug bounty engagements on Bugcrowd.' },
-      { title: 'Searchable Interface', desc: 'Built for speed and immediate tool retrieval during timed CTF and bounty sessions.' }
+      { title: 'Asynchronous Backend Architecture', desc: 'Engineered a high-performance, non-blocking API layer utilizing FastAPI and asyncpg, capable of handling concurrent alert ingestions and database transactions with minimal overhead and robust Pydantic v2 input validation.' },
+      { title: 'Secure Authentication & RBAC', desc: 'Implemented a stateless security model featuring JWT authentication coupled with Redis-backed refresh token rotation and instant logout blocklisting, wrapped in a granular Role-Based Access Control (RBAC) system for Admins and Analysts.' },
+      { title: 'Threat Intelligence Integrations', desc: 'Built automated enrichment pipelines connecting directly to AlienVault OTX and VirusTotal APIs, allowing analysts to instantly correlate internal Indicators of Compromise (IoCs) against global threat databases.' },
+      { title: 'Structured Investigation Workflow', desc: 'Designed a decoupled Next.js Single Page Application utilizing React Query for caching and Zustand for global state management, enabling analysts to seamlessly escalate triaged alerts into structured Cases with immutable investigation timelines and artifact linking.' }
     ],
-    stack: ['Next.js', 'Tailwind CSS', 'Vercel'],
+    stack: ['Next.js 15', 'FastAPI', 'Python', 'PostgreSQL', 'Redis', 'Docker', 'Tailwind CSS', 'GitHub'],
+    live: '',
+    github: 'https://github.com/alive-xd/SentriX',
+    color: '#ef4444',
+    bg: 'linear-gradient(135deg, rgba(239,68,68,0.12) 0%, rgba(124,58,237,0.08) 100%)',
+    icon: <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
+    terminal: true,
+  },
+  {
+    name: 'ReconX',
+    tag: 'Client-Side OSINT & Intelligence Gathering Toolkit',
+    desc: 'ReconX is a production-ready OSINT platform that centralizes 80+ professional intelligence-gathering tools into a single, organized workspace for security researchers, penetration testers, and threat intelligence analysts. Built entirely on the client side, it eliminates backend dependencies, enabling fast, privacy-focused access to industry-standard reconnaissance resources through structured investigation workflows.',
+    features: [],
+    featuresDetail: [
+      { title: '80+ Curated Security Tools', desc: 'Brings together industry-standard platforms including Shodan, Censys, VirusTotal, GreyNoise, SecurityTrails, crt.sh, AbuseIPDB, MITRE ATT&CK, and many more within a single unified interface.' },
+      { title: 'Workflow-Oriented Intelligence Hub', desc: 'Organizes tools into six investigation workflows—Discovery, Infrastructure, Intelligence, Identity, Analysis, and Resources—allowing analysts to move through reconnaissance tasks efficiently instead of switching between dozens of bookmarks.' },
+      { title: 'Zero Backend Architecture', desc: 'Runs entirely in the browser using Static Site Generation (SSG), eliminating server infrastructure, databases, APIs, user tracking, and telemetry while providing instant page loads and improved privacy.' },
+      { title: 'Fast Global Delivery', desc: 'Statically generated pages deployed on Vercel\'s Edge Network provide low-latency access worldwide with minimal loading time and high availability.' },
+      { title: 'Optimized Investigation Experience', desc: 'Features powerful search, category-based navigation, responsive layouts, and lightweight client-side state management to streamline access to frequently used OSINT resources.' },
+      { title: 'Privacy-First Design', desc: 'Stores no user data, requires no authentication, performs no server-side processing, and minimizes third-party dependencies, making it suitable for security-conscious environments.' }
+    ],
+    stack: ['Next.js 15', 'TypeScript', 'Tailwind CSS', 'Zustand', 'Lucide React', 'Vercel', 'GitHub'],
     live: 'https://getreconx.vercel.app/',
     github: 'https://github.com/alive-xd/ReconX',
     color: '#10b981',
@@ -38,27 +59,30 @@ const PROJECTS: Project[] = [
     terminal: true,
   },
   {
-    name: 'VaporID',
-    tag: 'Synthetic Identity Generator',
-    desc: 'VaporID is a browser-based synthetic identity generator designed for cybersecurity testing, red team operations, privacy research, and OSINT training scenarios. Generates complete fake personas — names, addresses, phone numbers, emails, and bank identification numbers — using free, zero-cost APIs with no paid dependencies.',
+    name: 'NoCap',
+    tag: 'Traceable Threat Intelligence & Investigation Platform',
+    desc: 'NoCap is a production-grade threat intelligence and investigation platform designed for SOC analysts and incident responders. It aggregates intelligence from multiple security feeds into evidence-backed investigations where every score, severity, and finding is fully traceable to its original source. Instead of acting as a black-box reputation scanner, NoCap provides complete transparency through immutable evidence chains and explainable threat scoring.',
     features: [],
     featuresDetail: [
-      { title: 'Red Team Support', desc: 'Supports red team identity generation for social engineering simulations.' },
-      { title: 'OSINT Training', desc: 'Used in OSINT training scenarios requiring realistic fictitious personas.' },
-      { title: 'Zero Cost API', desc: 'Zero paid dependencies — fully operational on free-tier APIs and client-side logic.' },
-      { title: 'Browser-Based', desc: 'Runs entirely in the browser; no local installation required.' }
+      { title: 'Evidence-Backed Investigation Engine', desc: 'Builds investigations using a structured pipeline (Ingest → Parse → Analyze → Score), ensuring every finding can be traced back to its original API response and raw evidence.' },
+      { title: 'Explainable Threat Scoring', desc: 'Generates transparent risk scores by aggregating evidence from multiple intelligence providers, allowing analysts to inspect individual score contributions instead of relying on opaque reputation values.' },
+      { title: 'Multi-Source Threat Intelligence Aggregation', desc: 'Collects and correlates data from VirusTotal, AbuseIPDB, crt.sh, WHOIS, NVD, and other public intelligence feeds to create comprehensive investigation reports.' },
+      { title: 'Performance-Optimized Intelligence Pipeline', desc: 'Uses concurrent API requests, intelligent source-specific cache policies, and asynchronous processing to reduce investigation latency while minimizing external API usage.' },
+      { title: 'Secure Investigation Platform', desc: 'Implements row-level security (RLS), CSRF protection, ownership validation, rate limiting, parameterized database queries, and secure scheduled task authorization following enterprise security practices.' },
+      { title: 'Enterprise Investigation Workspace', desc: 'Provides structured case management, evidence tracking, investigation history, CVE monitoring, and analyst-friendly workflows designed around modern SOC triage processes.' }
     ],
-    stack: ['JavaScript', 'HTML5', 'CSS3', 'Vercel'],
+    stack: ['Next.js 15', 'TypeScript', 'Supabase', 'PostgreSQL', 'REST APIs', 'GitHub'],
     live: '',
-    github: 'https://github.com/alive-xd/VaporID',
-    color: '#f97316',
-    bg: 'linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(239,68,68,0.08) 100%)',
+    github: 'https://github.com/alive-xd/NoCap',
+    color: '#06b6d4',
+    bg: 'linear-gradient(135deg, rgba(6,182,212,0.12) 0%, rgba(59,130,246,0.08) 100%)',
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-        <circle cx="9" cy="7" r="4" />
-        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+        <polyline points="14 2 14 8 20 8" />
+        <line x1="16" y1="13" x2="8" y2="13" />
+        <line x1="16" y1="17" x2="8" y2="17" />
+        <line x1="10" y1="9" x2="8" y2="9" />
       </svg>
     ),
   },

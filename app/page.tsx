@@ -116,6 +116,13 @@ export default function Home() {
         <div className="aurora-blob aurora-sec"></div>
       </div>
 
+      {/* Structural layout lines for premium grid aesthetic */}
+      <div className="grid-lines" aria-hidden="true">
+        <div className="grid-line"></div>
+        <div className="grid-line"></div>
+        <div className="grid-line"></div>
+      </div>
+
       <Navbar />
 
       <main>
