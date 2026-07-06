@@ -16,13 +16,23 @@ export const Navbar: React.FC = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      // Active section calculation
+      // Active section calculation using viewport-relative bounding client rect
       const sections = ['home', 'about', 'experience', 'education', 'skills', 'certs', 'projects', 'contact'];
       let current = 'home';
       for (const id of sections) {
         const el = document.getElementById(id);
-        if (el && window.scrollY >= el.offsetTop - 120) {
-          current = id;
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          const absoluteTop = rect.top + window.scrollY;
+          if (window.scrollY >= absoluteTop - 140) {
+            // On desktop (>992px), Experience and Education are side-by-side. 
+            // Avoid highlighting Education and keep Experience active for the row.
+            if (id === 'education' && window.innerWidth > 992) {
+              // skip overriding experience
+            } else {
+              current = id;
+            }
+          }
         }
       }
       setActiveSection(current);
