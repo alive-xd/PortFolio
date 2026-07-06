@@ -19,23 +19,26 @@ interface Project {
 
 const PROJECTS: Project[] = [
   {
-    name: 'SentriX',
-    tag: 'SOC Management Platform',
-    desc: 'SentriX is a modern, production-grade Security Operations Center (SOC) platform designed to streamline the lifecycle of security incidents from initial alert ingestion to case investigation and resolution. Moving away from disjointed security tools, SentriX provides a centralized, opinionated workflow with real-time alert triage, automated threat intelligence correlation, and strict role-based access control, allowing analysts to focus entirely on threat remediation rather than data gathering.',
+    name: 'Trace',
+    tag: 'Detection Engineering Pipeline',
+    desc: 'Trace is a Sigma detection-rule validation pipeline that tests hand-written SOC detection logic against real, historically captured malware execution logs — not synthetic or self-generated test data. Unlike typical portfolio detection projects that validate rules against invented log entries, Trace sources genuine Windows Event Log captures from documented attack technique executions, exposes two real coverage gaps discovered through that testing, and ships a live interactive tool that runs the actual detection logic on demand against real historical samples or user-submitted input.',
     features: [],
     featuresDetail: [
-      { title: 'Asynchronous Backend Architecture', desc: 'Engineered a high-performance, non-blocking API layer utilizing FastAPI and asyncpg, capable of handling concurrent alert ingestions and database transactions with minimal overhead and robust Pydantic v2 input validation.' },
-      { title: 'Secure Authentication & RBAC', desc: 'Implemented a stateless security model featuring JWT authentication coupled with Redis-backed refresh token rotation and instant logout blocklisting, wrapped in a granular Role-Based Access Control (RBAC) system for Admins and Analysts.' },
-      { title: 'Threat Intelligence Integrations', desc: 'Built automated enrichment pipelines connecting directly to AlienVault OTX and VirusTotal APIs, allowing analysts to instantly correlate internal Indicators of Compromise (IoCs) against global threat databases.' },
-      { title: 'Structured Investigation Workflow', desc: 'Designed a decoupled Next.js Single Page Application utilizing React Query for caching and Zustand for global state management, enabling analysts to seamlessly escalate triaged alerts into structured Cases with immutable investigation timelines and artifact linking.' }
+      { title: 'Real-Data Validation Pipeline', desc: 'Fetches, parses, and evaluates 13 Sigma detection rules across 10 MITRE ATT&CK techniques against genuine captured Windows Event Logs from the EVTX-ATTACK-SAMPLES research dataset, rather than hand-written synthetic test cases.' },
+      { title: 'Registry Persistence Coverage Gap', desc: 'Discovered that a rule assuming command-line-based registry modification (reg.exe) completely missed a real malware sample that wrote its persistence key directly via the Windows API. Diagnosed the gap by pivoting detection from Process Creation (Event ID 1) to Registry Events (Event ID 12/13/14), closing the blind spot regardless of execution method.' },
+      { title: 'False-Positive Inflation Diagnosis', desc: 'Identified that an initial rundll32 detection rule was generating 85 matches, 74 of which were benign OS telemetry (module loads, not executions). Root-caused the issue to an overly broad log-source assumption and tightened the rule to Event ID 1 only, reducing output to 11 precise, actionable alerts — a real false-positive reduction caught before reaching production.' },
+      { title: 'Live Interactive Detection Tester', desc: 'A Vercel serverless function runs the actual Sigma rule-matching logic on demand against real historical samples or user-submitted JSON, returning genuine match/no-match results computed live, not pre-recorded output.' }
     ],
-    stack: ['Next.js 15', 'FastAPI', 'Python', 'PostgreSQL', 'Redis', 'Docker', 'Tailwind CSS', 'GitHub'],
-    live: '',
-    github: 'https://github.com/alive-xd/SentriX',
-    color: '#ef4444',
-    bg: 'linear-gradient(135deg, rgba(239,68,68,0.12) 0%, rgba(124,58,237,0.08) 100%)',
-    icon: <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
-    terminal: true,
+    stack: ['Python', 'Sigma', 'Vercel', 'JavaScript', 'HTML5'],
+    live: 'https://trace-sigma-five.vercel.app/',
+    github: 'https://github.com/alive-xd/Trace',
+    color: '#f97316',
+    bg: 'linear-gradient(135deg, rgba(249,115,22,0.12) 0%, rgba(236,72,153,0.08) 100%)',
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+      </svg>
+    ),
   },
   {
     name: 'ReconX',
@@ -136,6 +139,25 @@ const PROJECTS: Project[] = [
         <line x1="17" y1="7" x2="22" y2="7" />
       </svg>
     ),
+  },
+  {
+    name: 'SentriX',
+    tag: 'SOC Management Platform',
+    desc: 'SentriX is a modern, production-grade Security Operations Center (SOC) platform designed to streamline the lifecycle of security incidents from initial alert ingestion to case investigation and resolution. Moving away from disjointed security tools, SentriX provides a centralized, opinionated workflow with real-time alert triage, automated threat intelligence correlation, and strict role-based access control, allowing analysts to focus entirely on threat remediation rather than data gathering.',
+    features: [],
+    featuresDetail: [
+      { title: 'Asynchronous Backend Architecture', desc: 'Engineered a high-performance, non-blocking API layer utilizing FastAPI and asyncpg, capable of handling concurrent alert ingestions and database transactions with minimal overhead and robust Pydantic v2 input validation.' },
+      { title: 'Secure Authentication & RBAC', desc: 'Implemented a stateless security model featuring JWT authentication coupled with Redis-backed refresh token rotation and instant logout blocklisting, wrapped in a granular Role-Based Access Control (RBAC) system for Admins and Analysts.' },
+      { title: 'Threat Intelligence Integrations', desc: 'Built automated enrichment pipelines connecting directly to AlienVault OTX and VirusTotal APIs, allowing analysts to instantly correlate internal Indicators of Compromise (IoCs) against global threat databases.' },
+      { title: 'Structured Investigation Workflow', desc: 'Designed a decoupled Next.js Single Page Application utilizing React Query for caching and Zustand for global state management, enabling analysts to seamlessly escalate triaged alerts into structured Cases with immutable investigation timelines and artifact linking.' }
+    ],
+    stack: ['Next.js 15', 'FastAPI', 'Python', 'PostgreSQL', 'Redis', 'Docker', 'Tailwind CSS', 'GitHub'],
+    live: '',
+    github: 'https://github.com/alive-xd/SentriX',
+    color: '#ef4444',
+    bg: 'linear-gradient(135deg, rgba(239,68,68,0.12) 0%, rgba(124,58,237,0.08) 100%)',
+    icon: <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
+    terminal: true,
   },
 ];
 
