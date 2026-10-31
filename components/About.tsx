@@ -49,7 +49,6 @@ export const About: React.FC = () => {
     <section id="about" className="section about-section">
       <div className="container reveal">
         <div className="section-header-wrap">
-          <span className="section-overline">Identity &amp; Foundation</span>
           <h2 className="section-title-centered">About Me</h2>
           <p className="section-subtitle-text">
             Blending offensive security analysis with modern detection engineering and automation pipelines.

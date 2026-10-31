@@ -74,7 +74,6 @@ export const Skills: React.FC = () => {
     <section id="skills" className="section skills-section">
       <div className="container reveal">
         <div className="section-header-wrap">
-          <span className="section-overline">Core Domains</span>
           <h2 className="section-title-centered">Technical Skills</h2>
           <p className="section-subtitle-text">
             Security toolkits, investigation platforms, and automated analysis pipelines.

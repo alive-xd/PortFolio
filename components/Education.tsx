@@ -7,7 +7,6 @@ export const Education: React.FC = () => {
     <section id="education" className="section education-section">
       <div className="container reveal">
         <div className="section-header-wrap">
-          <span className="section-overline">Academic Credentials</span>
           <h2 className="section-title-centered">Education</h2>
           <p className="section-subtitle-text">
             Specialized engineering curriculum covering defensive methodologies, system internals, and applied cryptography.

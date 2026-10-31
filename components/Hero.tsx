@@ -69,29 +69,6 @@ export const Hero: React.FC = () => {
                   <span className="stat-label">TryHackMe Top 1% Global</span>
                 </div>
               </div>
-
-              <div className="stat-glass-chip">
-                <div className="stat-icon-wrapper blue-tint">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="16 18 22 12 16 6" />
-                    <polyline points="8 6 2 12 8 18" />
-                  </svg>
-                </div>
-                <div className="stat-text-meta">
-                  <span className="stat-label">13 Sigma rules · 10 MITRE ATT&amp;CK techniques</span>
-                </div>
-              </div>
-
-              <div className="stat-glass-chip">
-                <div className="stat-icon-wrapper green-tint">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-                  </svg>
-                </div>
-                <div className="stat-text-meta">
-                  <span className="stat-label">85 → 11 false-positive alerts (Trace)</span>
-                </div>
-              </div>
             </div>
 
             {/* Social Links */}
@@ -127,10 +104,6 @@ export const Hero: React.FC = () => {
                   alt="Sushen Kumar - Cybersecurity Graduate" 
                   className="portrait-image"
                 />
-              </div>
-              <div className="portrait-meta-badge">
-                <span className="portrait-badge-title">Sushen Kumar</span>
-                <span className="portrait-badge-spec">Cybersecurity Graduate</span>
               </div>
             </div>
           </div>
@@ -366,32 +339,7 @@ export const Hero: React.FC = () => {
           display: block;
         }
 
-        .portrait-meta-badge {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-          margin-top: 12px;
-          padding: 8px 12px;
-          border-radius: var(--radius-sm);
-          background: var(--bg-subtle);
-          border: 1px solid var(--border);
-        }
 
-        .portrait-badge-title {
-          font-family: var(--font-sans);
-          font-size: 0.88rem;
-          font-weight: 700;
-          color: var(--text-primary);
-        }
-
-        .portrait-badge-spec {
-          font-family: var(--font-sans);
-          font-size: 0.78rem;
-          font-weight: 600;
-          color: var(--accent);
-          margin-top: 2px;
-        }
 
         /* Responsive Breakpoints & Zoom Safe */
         @media (max-width: 960px) {

@@ -50,7 +50,6 @@ export const Contact: React.FC = () => {
     <section id="contact" className="section contact-section">
       <div className="container reveal">
         <div className="section-header-wrap">
-          <span className="section-overline">Direct Transmission</span>
           <h2 className="section-title-centered">Contact Me</h2>
           <p className="section-subtitle-text">
             Open to SOC Analyst, Security Analyst, and Penetration Testing roles — fresher, available immediately, open to remote and relocation. Reach out on any platform below.

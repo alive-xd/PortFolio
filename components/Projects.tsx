@@ -82,7 +82,6 @@ export const Projects: React.FC = () => {
     <section id="projects" className="section projects-section">
       <div className="container reveal">
         <div className="section-header-wrap">
-          <span className="section-overline">Engineered Solutions</span>
           <h2 className="section-title-centered">Featured Projects</h2>
           <p className="section-subtitle-text">
             Detection engineering pipelines, OSINT toolkits, and security platforms tested on real data.

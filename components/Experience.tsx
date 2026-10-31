@@ -48,36 +48,10 @@ export const Experience: React.FC = () => {
     <section id="experience" className="section experience-section">
       <div className="container reveal">
         <div className="section-header-wrap">
-          <span className="section-overline">Field Work &amp; Labs</span>
           <h2 className="section-title-centered">Experience &amp; Hands-on Practice</h2>
           <p className="section-subtitle-text">
             Applied security research, competitive hackathon prototyping, and adversarial reconnaissance.
           </p>
-        </div>
-
-        {/* Featured High-Impact Pointer to Trace */}
-        <div className="trace-callout-banner glass-card">
-          <div className="trace-callout-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-            </svg>
-          </div>
-          <div className="trace-callout-content">
-            <span className="trace-callout-tag font-mono">FLAGSHIP DETECTION ENGINEERING</span>
-            <h3 className="trace-callout-title">
-              Strongest hands-on work: <strong>Trace (see Projects)</strong>
-            </h3>
-            <p className="trace-callout-desc">
-              13 Sigma detection rules validated against genuine Windows Event Logs, exposing real registry persistence gaps and reducing false-positive alerts from 85 to 11.
-            </p>
-          </div>
-          <a href="#trace" className="btn btn-primary btn-sm trace-callout-btn">
-            View Trace
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"/>
-              <polyline points="12 5 19 12 12 19"/>
-            </svg>
-          </a>
         </div>
 
         {/* Experience Cards Grid */}
@@ -164,63 +138,7 @@ export const Experience: React.FC = () => {
       </div>
 
       <style>{`
-        .trace-callout-banner {
-          display: flex;
-          align-items: center;
-          gap: clamp(16px, 2.5vw, 24px);
-          padding: clamp(20px, 3vw, 28px);
-          margin-bottom: clamp(24px, 3.5vh, 36px);
-          border-left: 4px solid var(--accent);
-          background: var(--card-bg);
-        }
 
-        .trace-callout-icon {
-          width: 48px;
-          height: 48px;
-          border-radius: var(--radius-sm);
-          background: var(--accent-light);
-          color: var(--accent);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-shrink: 0;
-          border: 1px solid var(--accent-border);
-        }
-
-        .trace-callout-content {
-          flex-grow: 1;
-        }
-
-        .trace-callout-tag {
-          font-size: 0.74rem;
-          font-weight: 700;
-          color: var(--accent);
-          letter-spacing: 0.08em;
-          display: block;
-          margin-bottom: 4px;
-        }
-
-        .trace-callout-title {
-          font-family: var(--font-sans);
-          font-size: clamp(1.05rem, 1.4vw, 1.25rem);
-          font-weight: 700;
-          color: var(--text-primary);
-          margin-bottom: 4px;
-        }
-
-        .trace-callout-title strong {
-          color: var(--accent);
-        }
-
-        .trace-callout-desc {
-          font-size: 0.92rem;
-          color: var(--text-secondary);
-          line-height: 1.5;
-        }
-
-        .trace-callout-btn {
-          flex-shrink: 0;
-        }
 
         /* Experience Cards Grid */
         .experience-cards-grid {

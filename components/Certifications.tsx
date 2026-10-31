@@ -66,7 +66,6 @@ export const Certifications: React.FC = () => {
     <section id="certs" className="section certs-section">
       <div className="container reveal">
         <div className="section-header-wrap">
-          <span className="section-overline">Accreditations</span>
           <h2 className="section-title-centered">Certifications</h2>
           <p className="section-subtitle-text">
             Verified credentials and vendor certifications across offensive &amp; defensive security.

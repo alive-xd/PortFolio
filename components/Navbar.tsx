@@ -74,9 +74,9 @@ export const Navbar: React.FC = () => {
         <div className="nav-dock-container">
           <nav className="nav-dock" aria-label="Main Navigation">
             {/* Clean Professional Logo */}
-            <a href="#home" className="nav-logo-group" aria-label="Sushen Kumar Portfolio">
+            <a href="#home" className="nav-logo-group" aria-label="Portfolio">
               <span className="logo-callsign">
-                Sushen<span>.</span>
+                Portfolio
               </span>
             </a>
 
