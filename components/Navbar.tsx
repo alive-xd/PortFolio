@@ -9,36 +9,29 @@ export const Navbar: React.FC = () => {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   useEffect(() => {
-    // Initialize theme from HTML element attribute set by head script
+    // Read saved theme from document
     const currentTheme = (document.documentElement.getAttribute('data-theme') as 'light' | 'dark') || 'light';
     setTheme(currentTheme);
 
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 15);
 
-      // 1. If reached bottom of document -> contact
+      // Bottom reached -> Contact active
       const scrollBottom = window.innerHeight + window.scrollY;
       const docHeight = document.documentElement.scrollHeight;
-      if (scrollBottom >= docHeight - 80) {
+      if (scrollBottom >= docHeight - 70) {
         setActiveSection('contact');
         return;
       }
 
-      // 2. Focal reading line: 32% of viewport height from top
-      const triggerY = window.innerHeight * 0.32;
-
-      // Ordered list of sections from top to bottom
+      // Reading trigger point
+      const triggerY = window.innerHeight * 0.35;
       const sections = ['contact', 'projects', 'certs', 'skills', 'education', 'experience', 'about', 'home'];
 
       for (const id of sections) {
         const el = document.getElementById(id);
         if (el) {
           const rect = el.getBoundingClientRect();
-          // On desktop (>992px), experience and education are side by side;
-          // allow experience to represent the row when scrolling naturally
-          if (id === 'education' && window.innerWidth > 992) {
-            continue;
-          }
           if (rect.top <= triggerY && rect.bottom > 80) {
             setActiveSection(id);
             return;
@@ -76,79 +69,95 @@ export const Navbar: React.FC = () => {
   ];
 
   return (
-    <header id="header" className={`header ${isScrolled ? 'scrolled' : ''}`}>
-      <nav className="nav">
-        <a href="#home" className="nav-logo" aria-label="Sushen Kumar">
-          <span className="logo-text">Port<span className="logo-accent">folio</span></span>
-        </a>
-        
-        <div className="nav-menu-wrap">
-          <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`} role="list">
-            {navLinks.map((link) => (
-              <li key={link.href} className="nav-item">
-                <a
-                  href={link.href}
-                  className={`nav-link ${activeSection === link.id ? 'active' : ''}`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-          
-          <div className="nav-right">
-            <button
-              className="theme-toggle"
-              id="themeToggle"
-              onClick={toggleTheme}
-              aria-label="Toggle light/dark mode"
-              title="Toggle theme"
-            >
-              <svg 
-                className="icon-sun" 
-                xmlns="http://www.w3.org/2000/svg" 
-                width="18" 
-                height="18" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                style={{ display: theme === 'dark' ? 'block' : 'none' }}
+    <>
+      <header id="header" className={`header ${isScrolled ? 'scrolled' : ''}`}>
+        <div className="nav-dock-container">
+          <nav className="nav-dock" aria-label="Main Navigation">
+            {/* Logo with technical status dot */}
+            <a href="#home" className="nav-logo-group" aria-label="Sushen Kumar Portfolio">
+              <span className="logo-callsign">
+                SUSHI<span>.SEC</span>
+              </span>
+              <span className="logo-status-chip">
+                <span className="pulse-dot" />
+                <span>ONLINE</span>
+              </span>
+            </a>
+
+            {/* Desktop Pill Dock */}
+            <ul className="nav-links-dock" role="list">
+              {navLinks.map((link) => (
+                <li key={link.href} className="nav-dock-item">
+                  <a
+                    href={link.href}
+                    className={`nav-dock-link ${activeSection === link.id ? 'active' : ''}`}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            {/* Controls */}
+            <div className="nav-actions-group">
+              <button
+                className="theme-toggle-btn"
+                id="themeToggle"
+                onClick={toggleTheme}
+                aria-label="Toggle light or dark theme"
+                title="Toggle theme"
               >
-                <circle cx="12" cy="12" r="4"/>
-                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
-              </svg>
-              <svg 
-                className="icon-moon" 
-                xmlns="http://www.w3.org/2000/svg" 
-                width="18" 
-                height="18" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                style={{ display: theme === 'light' ? 'block' : 'none' }}
+                {theme === 'dark' ? (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="4" />
+                    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+                  </svg>
+                ) : (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z" />
+                  </svg>
+                )}
+              </button>
+
+              <button
+                className="hamburger-btn"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-label="Toggle Navigation Menu"
+                aria-expanded={isMenuOpen}
               >
-                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/>
-              </svg>
-            </button>
-            
-            <button
-              className={`hamburger ${isMenuOpen ? 'open' : ''}`}
-              id="hamburger"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              <span></span><span></span><span></span>
-            </button>
-          </div>
+                {isMenuOpen ? (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                ) : (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="4" y1="8" x2="20" y2="8" />
+                    <line x1="4" y1="16" x2="20" y2="16" />
+                  </svg>
+                )}
+              </button>
+            </div>
+          </nav>
         </div>
-      </nav>
-    </header>
+      </header>
+
+      {/* Mobile Drawer */}
+      <div className={`mobile-nav-drawer ${isMenuOpen ? 'open' : ''}`} onClick={() => setIsMenuOpen(false)}>
+        <ul className="mobile-nav-menu" role="list" onClick={(e) => e.stopPropagation()}>
+          {navLinks.map((link) => (
+            <li key={link.href}>
+              <a
+                href={link.href}
+                className={`mobile-nav-link ${activeSection === link.id ? 'active' : ''}`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 };

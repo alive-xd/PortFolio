@@ -4,179 +4,286 @@ import React from 'react';
 
 export const Education: React.FC = () => {
   return (
-    <div id="education" className="resume-col">
-      <h2 className="resume-col-title">Education</h2>
-
-      <div className="resume-list">
-        <div className="resume-item reveal" style={{ transitionDelay: '0.1s' }}>
-          <div className="resume-item-header">
-            <h3 className="resume-item-role">B.Tech in Computer Science</h3>
-            <span className="resume-item-date font-mono">2022 – Aug 2026 (Graduated)</span>
-          </div>
-          <div className="resume-item-org">Lovely Professional University · Punjab, India</div>
-          <p className="resume-item-desc">
-            Specialisation in Cybersecurity. Comprehensive engineering curriculum focused on applied security standards, network defense, system internals, and defensive security methodologies.
+    <section id="education" className="section education-section">
+      <div className="container reveal">
+        <div className="section-header-wrap">
+          <span className="section-overline">Academic Credentials</span>
+          <h2 className="section-title-centered">Education</h2>
+          <p className="section-subtitle-text">
+            Specialized engineering curriculum covering defensive methodologies, system internals, and applied cryptography.
           </p>
+        </div>
 
-          {/* Prominent Coursework Showcase */}
-          <div className="coursework-box-prominent">
-            <span className="coursework-label-prominent">Core Security &amp; Computing Coursework</span>
-            <div className="coursework-tags-grid">
-              <div className="coursework-tag-card">
-                <span className="coursework-tag-title">Network Security</span>
-                <span className="coursework-tag-sub">Protocols, firewalls &amp; packet inspection</span>
+        <div className="education-layout-grid">
+          {/* Main Degree Glass Card */}
+          <div className="education-degree-card glass-card">
+            <div className="degree-card-top">
+              <div className="degree-institution-info">
+                <span className="degree-track-pill font-mono">B.TECH GRADUATE</span>
+                <h3 className="degree-title">B.Tech in Computer Science</h3>
+                <div className="degree-univ-name">
+                  Lovely Professional University · Punjab, India
+                </div>
               </div>
-              <div className="coursework-tag-card">
-                <span className="coursework-tag-title">Ethical Hacking</span>
-                <span className="coursework-tag-sub">Methodologies, recon &amp; penetration testing</span>
+              <div className="degree-timeline-badge font-mono">
+                2022 – Aug 2026 (Graduated)
               </div>
-              <div className="coursework-tag-card">
-                <span className="coursework-tag-title">Cryptography</span>
-                <span className="coursework-tag-sub">Ciphers, hashing, PKI &amp; authentication</span>
+            </div>
+
+            <p className="degree-focus-summary">
+              Specialisation in Cybersecurity. Comprehensive engineering curriculum focused on applied security standards, network defense, system internals, and defensive security methodologies.
+            </p>
+
+            {/* Prominent Coursework Grid */}
+            <div className="coursework-prominent-block">
+              <div className="coursework-block-header">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--accent-red)' }}>
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                </svg>
+                <span className="coursework-block-title">Core Security &amp; Computing Coursework</span>
               </div>
-              <div className="coursework-tag-card">
-                <span className="coursework-tag-title">Digital Forensics</span>
-                <span className="coursework-tag-sub">Evidence acquisition &amp; artifact analysis</span>
-              </div>
-              <div className="coursework-tag-card">
-                <span className="coursework-tag-title">Operating Systems</span>
-                <span className="coursework-tag-sub">Kernel architecture, memory &amp; processes</span>
-              </div>
-              <div className="coursework-tag-card">
-                <span className="coursework-tag-title">DSA</span>
-                <span className="coursework-tag-sub">Data structures &amp; algorithmic efficiency</span>
+
+              <div className="coursework-cards-grid">
+                <div className="coursework-cell">
+                  <span className="cell-topic-name">Network Security</span>
+                  <span className="cell-topic-detail">Protocols, firewalls &amp; packet inspection</span>
+                </div>
+                <div className="coursework-cell">
+                  <span className="cell-topic-name">Ethical Hacking</span>
+                  <span className="cell-topic-detail">Methodologies, recon &amp; penetration testing</span>
+                </div>
+                <div className="coursework-cell">
+                  <span className="cell-topic-name">Cryptography</span>
+                  <span className="cell-topic-detail">Ciphers, hashing, PKI &amp; authentication</span>
+                </div>
+                <div className="coursework-cell">
+                  <span className="cell-topic-name">Digital Forensics</span>
+                  <span className="cell-topic-detail">Evidence acquisition &amp; artifact analysis</span>
+                </div>
+                <div className="coursework-cell">
+                  <span className="cell-topic-name">Operating Systems</span>
+                  <span className="cell-topic-detail">Kernel architecture, memory &amp; processes</span>
+                </div>
+                <div className="coursework-cell">
+                  <span className="cell-topic-name">DSA</span>
+                  <span className="cell-topic-detail">Data structures &amp; algorithmic efficiency</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Academic Labs & Practical Foundation to balance with Experience column */}
-        <div className="education-lab-card reveal" style={{ transitionDelay: '0.18s' }}>
-          <div className="education-lab-header">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--accent)' }}>
-              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-              <path d="M6 12v5c3 3 9 3 12 0v-5"/>
-            </svg>
-            <h4 className="education-lab-title">Academic Security Labs &amp; Practicals</h4>
-          </div>
-          <p className="education-lab-desc">
-            Hands-on university lab curriculum encompassing network packet capture analysis, cipher implementation, controlled penetration testing simulations, and digital evidence recovery.
-          </p>
-          <div className="education-badges">
-            <span className="edu-badge">Hands-on Lab Practicals</span>
-            <span className="edu-badge">Vulnerability Lab Simulations</span>
-            <span className="edu-badge">Incident Analysis</span>
+          {/* Academic Labs & Practicals Glass Card */}
+          <div className="education-practicals-card glass-card">
+            <div className="practicals-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+              </svg>
+            </div>
+
+            <h3 className="practicals-heading">Academic Security Labs &amp; Practicals</h3>
+            
+            <p className="practicals-description">
+              Hands-on university lab curriculum encompassing network packet capture analysis, cipher implementation, controlled penetration testing simulations, and digital evidence recovery.
+            </p>
+
+            <div className="practicals-tags-cluster">
+              <span className="practicals-tag">Hands-on Lab Practicals</span>
+              <span className="practicals-tag">Vulnerability Lab Simulations</span>
+              <span className="practicals-tag">Incident Analysis</span>
+              <span className="practicals-tag">Host &amp; Network Defense</span>
+            </div>
           </div>
         </div>
       </div>
 
       <style>{`
-        .coursework-box-prominent {
-          margin-top: 20px;
-          padding: 18px 20px;
+        .education-layout-grid {
+          display: grid;
+          grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+          gap: clamp(20px, 3vw, 32px);
+          align-items: stretch;
+        }
+
+        .education-degree-card {
+          padding: clamp(24px, 3.5vw, 36px);
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+
+        .degree-card-top {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          flex-wrap: wrap;
+          gap: 14px;
+          margin-bottom: 16px;
+        }
+
+        .degree-track-pill {
+          font-size: 0.72rem;
+          font-weight: 700;
+          color: var(--accent-red);
+          letter-spacing: 0.08em;
+          display: block;
+          margin-bottom: 4px;
+        }
+
+        .degree-title {
+          font-family: var(--font-sans);
+          font-size: clamp(1.25rem, 1.6vw, 1.5rem);
+          font-weight: 800;
+          color: var(--text-primary);
+          margin-bottom: 4px;
+        }
+
+        .degree-univ-name {
+          font-size: 0.95rem;
+          font-weight: 600;
+          color: var(--text-secondary);
+        }
+
+        .degree-timeline-badge {
+          padding: 6px 12px;
+          border-radius: var(--radius-sm);
+          background: var(--accent-red-light);
+          border: 1px solid var(--accent-red-border);
+          font-size: 0.85rem;
+          font-weight: 700;
+          color: var(--accent-red);
+          white-space: nowrap;
+        }
+
+        .degree-focus-summary {
+          font-size: 0.95rem;
+          color: var(--text-secondary);
+          line-height: 1.65;
+          margin-bottom: 24px;
+        }
+
+        /* Coursework */
+        .coursework-prominent-block {
+          padding: clamp(16px, 2.5vw, 22px);
           border-radius: var(--radius-md);
-          background: var(--bg);
+          background: var(--bg-subtle);
           border: 1px solid var(--border);
         }
 
-        .coursework-label-prominent {
-          display: block;
+        .coursework-block-header {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          margin-bottom: 14px;
+        }
+
+        .coursework-block-title {
           font-family: var(--font-sans);
           font-size: 0.88rem;
           font-weight: 700;
           color: var(--text-primary);
-          margin-bottom: 12px;
           text-transform: uppercase;
           letter-spacing: 0.05em;
         }
 
-        .coursework-tags-grid {
+        .coursework-cards-grid {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
           gap: 10px;
         }
 
-        .coursework-tag-card {
+        .coursework-cell {
           display: flex;
           flex-direction: column;
-          padding: 10px 12px;
+          padding: 10px 14px;
           background: var(--card-bg);
           border: 1px solid var(--card-border);
           border-radius: var(--radius-sm);
-          transition: border-color 0.2s ease, transform 0.2s ease;
+          transition: all 0.2s ease;
         }
 
-        .coursework-tag-card:hover {
-          border-color: var(--accent);
+        .coursework-cell:hover {
+          border-color: var(--accent-red);
           transform: translateY(-2px);
         }
 
-        .coursework-tag-title {
+        .cell-topic-name {
           font-family: var(--font-sans);
           font-size: 0.88rem;
           font-weight: 700;
           color: var(--text-primary);
         }
 
-        .coursework-tag-sub {
+        .cell-topic-detail {
           font-size: 0.78rem;
           color: var(--text-secondary);
           margin-top: 2px;
-          line-height: 1.3;
+          line-height: 1.35;
         }
 
-        .education-lab-card {
-          padding: 20px 22px;
-          background: var(--card-bg);
-          border: 1px solid var(--card-border);
+        /* Practicals Card */
+        .education-practicals-card {
+          padding: clamp(24px, 3.5vw, 36px);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 16px;
+        }
+
+        .practicals-icon-box {
+          width: 50px;
+          height: 50px;
           border-radius: var(--radius-md);
-          box-shadow: var(--card-shadow);
-          margin-top: 24px;
-        }
-
-        .education-lab-header {
+          background: var(--accent-blue-light);
+          border: 1px solid rgba(37, 99, 235, 0.25);
+          color: var(--accent-blue);
           display: flex;
           align-items: center;
-          gap: 10px;
-          margin-bottom: 10px;
+          justify-content: center;
         }
 
-        .education-lab-title {
+        .practicals-heading {
           font-family: var(--font-sans);
-          font-size: 1.05rem;
+          font-size: 1.25rem;
           font-weight: 700;
           color: var(--text-primary);
         }
 
-        .education-lab-desc {
-          font-size: 0.88rem;
+        .practicals-description {
+          font-size: 0.95rem;
           color: var(--text-secondary);
-          line-height: 1.55;
-          margin-bottom: 14px;
+          line-height: 1.65;
         }
 
-        .education-badges {
+        .practicals-tags-cluster {
           display: flex;
           flex-wrap: wrap;
           gap: 8px;
+          margin-top: 6px;
         }
 
-        .edu-badge {
+        .practicals-tag {
           display: inline-block;
-          padding: 4px 10px;
-          background: var(--accent-light);
-          color: var(--accent);
-          border-radius: 6px;
-          font-size: 0.8rem;
+          padding: 5px 12px;
+          border-radius: var(--radius-pill);
+          background: var(--bg-subtle);
+          border: 1px solid var(--border);
+          font-size: 0.82rem;
           font-weight: 600;
+          color: var(--text-secondary);
         }
 
-        @media (max-width: 576px) {
-          .coursework-tags-grid {
+        @media (max-width: 960px) {
+          .education-layout-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .coursework-cards-grid {
             grid-template-columns: 1fr;
           }
         }
       `}</style>
-    </div>
+    </section>
   );
 };

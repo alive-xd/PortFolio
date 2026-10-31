@@ -6,6 +6,7 @@ interface ExperienceEntry {
   role: string;
   organisation: string;
   duration: string;
+  badge: string;
   bullets: string[];
 }
 
@@ -15,6 +16,7 @@ export const Experience: React.FC = () => {
       role: 'Bug Bounty Practice',
       organisation: 'Bugcrowd (Self-directed)',
       duration: '2025',
+      badge: 'VULNERABILITY RESEARCH',
       bullets: [
         'Practiced web application testing across recon, enumeration and OWASP Top 10 vulnerability classes.',
         'Documented findings with proof-of-concept steps and remediation recommendations.'
@@ -24,6 +26,7 @@ export const Experience: React.FC = () => {
       role: 'Joint Vulnerability Assessment & OSINT Project',
       organisation: 'Peer collaboration',
       duration: '2024–25',
+      badge: 'THREAT MODELING',
       bullets: [
         'Carried out reconnaissance and threat modelling with a peer in shared test environments.',
         'Co-wrote a report covering findings and recommended mitigations.'
@@ -33,6 +36,7 @@ export const Experience: React.FC = () => {
       role: 'Code-A-Haunt 2.0',
       organisation: '48-hour Hackathon',
       duration: 'Feb 2024',
+      badge: 'RAPID PROTOTYPING',
       bullets: [
         'Built a working security prototype under a 48-hour deadline.',
         'Presented a live demo to judges.'
@@ -41,136 +45,400 @@ export const Experience: React.FC = () => {
   ];
 
   return (
-    <div id="experience" className="resume-col">
-      <h2 className="resume-col-title">Experience &amp; Hands-on Practice</h2>
-
-      {/* One-line pointer linking to Trace project */}
-      <div className="experience-pointer-box reveal">
-        <a href="#trace" className="experience-pointer-link">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <polyline points="9 18 15 12 9 6" />
-          </svg>
-          <span>Strongest hands-on work: <strong>Trace (see Projects)</strong></span>
-        </a>
-      </div>
-
-      <div className="resume-list">
-        {experiences.map((exp, index) => (
-          <div 
-            key={index} 
-            className="resume-item reveal"
-            style={{ transitionDelay: `${index * 0.08}s` }}
-          >
-            <div className="resume-item-header">
-              <h3 className="resume-item-role">{exp.role}</h3>
-              <span className="resume-item-date font-mono">{exp.duration}</span>
-            </div>
-            <div className="resume-item-org">{exp.organisation}</div>
-            <ul className="resume-bullets">
-              {exp.bullets.map((bullet, bIdx) => (
-                <li key={bIdx} className="resume-bullet-item">{bullet}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
-
-        {/* Other volunteering moved to single line */}
-        <div className="resume-other-box reveal" style={{ transitionDelay: '0.24s' }}>
-          <h4 className="resume-other-heading">Other</h4>
-          <p className="resume-other-line">
-            Volunteer, Jeet Foundation NGO (July 2023) — Supported community impact programs and outreach operations.
+    <section id="experience" className="section experience-section">
+      <div className="container reveal">
+        <div className="section-header-wrap">
+          <span className="section-overline">Field Work &amp; Labs</span>
+          <h2 className="section-title-centered">Experience &amp; Hands-on Practice</h2>
+          <p className="section-subtitle-text">
+            Applied security research, competitive hackathon prototyping, and adversarial reconnaissance.
           </p>
         </div>
-      </div>
 
-      {/* Retitled TryHackMe Card */}
-      <div className="experience-ctf-container reveal" style={{ marginTop: '28px', paddingTop: '20px', borderTop: '1px solid var(--border)' }}>
-        <h3 className="ctf-section-title" style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '14px', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--accent)' }}>
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-          </svg>
-          Hands-on Labs &amp; CTFs
-        </h3>
-        <div className="strength-card" style={{ display: 'flex', flexDirection: 'column', gap: '10px', padding: '20px 22px', alignItems: 'flex-start', borderRadius: '12px', background: 'var(--card-bg)', border: '1px solid var(--card-border)', boxShadow: 'var(--card-shadow)' }}>
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', width: '100%', alignItems: 'center', gap: '10px' }}>
-            <span style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--text-primary)' }}>TryHackMe</span>
-            <a href="https://tryhackme.com/p/alivexd" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-sm" style={{ padding: '4px 10px', fontSize: '0.88rem' }}>
-              Profile: tryhackme.com/p/alivexd
-            </a>
+        {/* Featured High-Impact Pointer to Trace */}
+        <div className="trace-callout-banner glass-card">
+          <div className="trace-callout-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            </svg>
           </div>
-          <div style={{ fontSize: '0.92rem', color: 'var(--text-secondary)' }}>
-            <strong style={{ color: 'var(--text-primary)' }}>Status:</strong> Top 1% globally — active on SOC and offensive security learning paths
+          <div className="trace-callout-content">
+            <span className="trace-callout-tag">FLAGSHIP DETECTION ENGINEERING</span>
+            <h3 className="trace-callout-title">
+              Strongest hands-on work: <strong>Trace (see Projects)</strong>
+            </h3>
+            <p className="trace-callout-desc">
+              13 Sigma detection rules validated against genuine Windows Event Logs, exposing real registry persistence gaps and reducing false-positive alerts from 85 to 11.
+            </p>
           </div>
-          <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.5 }}>
-            Actively practicing threat detection, log analysis, and offensive security challenges on TryHackMe. Profile: @alivexd
-          </p>
+          <a href="#trace" className="btn btn-primary btn-sm trace-callout-btn">
+            View Trace
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+        </div>
+
+        {/* Experience Cards Grid */}
+        <div className="experience-cards-grid">
+          {experiences.map((exp, index) => (
+            <div 
+              key={index} 
+              className="exp-glass-card glass-card"
+              style={{ transitionDelay: `${index * 0.08}s` }}
+            >
+              <div className="exp-card-header">
+                <div className="exp-meta-left">
+                  <span className="exp-badge-track">{exp.badge}</span>
+                  <h3 className="exp-role-title">{exp.role}</h3>
+                  <div className="exp-org-line">{exp.organisation}</div>
+                </div>
+                <div className="exp-date-pill font-mono">{exp.duration}</div>
+              </div>
+
+              <ul className="exp-bullets-list">
+                {exp.bullets.map((bullet, bIdx) => (
+                  <li key={bIdx} className="exp-bullet-item">
+                    <span className="bullet-chevron">&gt;</span>
+                    <span>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom Split: TryHackMe Card & Other Activities */}
+        <div className="experience-bottom-split">
+          {/* TryHackMe Card */}
+          <div className="thm-featured-card glass-card">
+            <div className="thm-card-top">
+              <div className="thm-title-group">
+                <div className="thm-icon-box">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="thm-heading">Hands-on Labs &amp; CTFs</h3>
+                  <span className="thm-subheading">TryHackMe Profile @alivexd</span>
+                </div>
+              </div>
+              <a 
+                href="https://tryhackme.com/p/alivexd" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn btn-outline btn-sm"
+              >
+                Profile: tryhackme.com/p/alivexd
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                  <polyline points="15 3 21 3 21 9"/>
+                  <line x1="10" x2="21" y1="14" y2="3"/>
+                </svg>
+              </a>
+            </div>
+            
+            <div className="thm-status-badge-row">
+              <div className="thm-rank-pill">
+                <span className="rank-dot-red" />
+                <span><strong>Status:</strong> Top 1% globally — active on SOC and offensive security learning paths</span>
+              </div>
+            </div>
+
+            <p className="thm-desc-text">
+              Actively practicing threat detection, log analysis, and offensive security challenges on TryHackMe. Profile: @alivexd
+            </p>
+          </div>
+
+          {/* Other Single Line Card */}
+          <div className="other-activity-card glass-card">
+            <span className="other-overline font-mono">COMMUNITY &amp; OUTREACH</span>
+            <h4 className="other-title">Other</h4>
+            <p className="other-desc">
+              Volunteer, Jeet Foundation NGO (July 2023) — Supported community impact programs and outreach operations.
+            </p>
+          </div>
         </div>
       </div>
 
       <style>{`
-        .experience-pointer-box {
-          margin-bottom: 8px;
+        .trace-callout-banner {
+          display: flex;
+          align-items: center;
+          gap: clamp(16px, 2.5vw, 24px);
+          padding: clamp(20px, 3vw, 28px);
+          margin-bottom: clamp(24px, 3.5vh, 36px);
+          border-left: 4px solid var(--accent-red);
+          background: linear-gradient(135deg, var(--accent-red-light) 0%, var(--card-bg) 60%);
         }
 
-        .experience-pointer-link {
+        .trace-callout-icon {
+          width: 48px;
+          height: 48px;
+          border-radius: var(--radius-sm);
+          background: var(--accent-red-light);
+          color: var(--accent-red);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          border: 1px solid var(--accent-red-border);
+        }
+
+        .trace-callout-content {
+          flex-grow: 1;
+        }
+
+        .trace-callout-tag {
+          font-family: var(--font-mono);
+          font-size: 0.75rem;
+          font-weight: 700;
+          color: var(--accent-red);
+          letter-spacing: 0.08em;
+          display: block;
+          margin-bottom: 4px;
+        }
+
+        .trace-callout-title {
+          font-family: var(--font-sans);
+          font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+          font-weight: 700;
+          color: var(--text-primary);
+          margin-bottom: 4px;
+        }
+
+        .trace-callout-title strong {
+          color: var(--accent-red);
+        }
+
+        .trace-callout-desc {
+          font-size: 0.92rem;
+          color: var(--text-secondary);
+          line-height: 1.5;
+        }
+
+        .trace-callout-btn {
+          flex-shrink: 0;
+        }
+
+        /* Experience Cards Grid */
+        .experience-cards-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+          gap: clamp(18px, 2.5vw, 24px);
+          margin-bottom: clamp(24px, 3.5vh, 36px);
+        }
+
+        .exp-glass-card {
+          padding: clamp(22px, 3vw, 28px);
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+
+        .exp-card-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          gap: 12px;
+          margin-bottom: 18px;
+          padding-bottom: 14px;
+          border-bottom: 1px solid var(--border);
+        }
+
+        .exp-badge-track {
+          font-family: var(--font-mono);
+          font-size: 0.72rem;
+          font-weight: 700;
+          color: var(--accent-red);
+          letter-spacing: 0.08em;
+          display: block;
+          margin-bottom: 4px;
+        }
+
+        .exp-role-title {
+          font-family: var(--font-sans);
+          font-size: 1.2rem;
+          font-weight: 700;
+          color: var(--text-primary);
+          margin-bottom: 2px;
+        }
+
+        .exp-org-line {
+          font-size: 0.92rem;
+          font-weight: 600;
+          color: var(--text-secondary);
+        }
+
+        .exp-date-pill {
+          padding: 4px 10px;
+          border-radius: var(--radius-sm);
+          background: var(--bg-subtle);
+          border: 1px solid var(--border);
+          font-size: 0.82rem;
+          font-weight: 700;
+          color: var(--text-secondary);
+          white-space: nowrap;
+        }
+
+        .exp-bullets-list {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          margin: 0;
+          padding: 0;
+        }
+
+        .exp-bullet-item {
+          display: flex;
+          align-items: flex-start;
+          gap: 8px;
+          font-size: 0.92rem;
+          color: var(--text-secondary);
+          line-height: 1.55;
+        }
+
+        .bullet-chevron {
+          font-family: var(--font-mono);
+          font-size: 0.92rem;
+          font-weight: 700;
+          color: var(--accent-red);
+          flex-shrink: 0;
+          margin-top: 2px;
+        }
+
+        /* Bottom Split */
+        .experience-bottom-split {
+          display: grid;
+          grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.6fr);
+          gap: clamp(18px, 2.5vw, 24px);
+        }
+
+        .thm-featured-card {
+          padding: clamp(22px, 3vw, 28px);
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+        }
+
+        .thm-card-top {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 14px;
+        }
+
+        .thm-title-group {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+        }
+
+        .thm-icon-box {
+          width: 44px;
+          height: 44px;
+          border-radius: var(--radius-sm);
+          background: var(--accent-red-light);
+          border: 1px solid var(--accent-red-border);
+          color: var(--accent-red);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .thm-heading {
+          font-family: var(--font-sans);
+          font-size: 1.15rem;
+          font-weight: 700;
+          color: var(--text-primary);
+        }
+
+        .thm-subheading {
+          font-family: var(--font-mono);
+          font-size: 0.82rem;
+          color: var(--text-muted);
+        }
+
+        .thm-status-badge-row {
+          display: flex;
+          flex-wrap: wrap;
+        }
+
+        .thm-rank-pill {
           display: inline-flex;
           align-items: center;
           gap: 8px;
           padding: 8px 14px;
           border-radius: var(--radius-sm);
-          background: var(--accent-light);
-          color: var(--accent);
-          font-family: var(--font-sans);
-          font-size: 0.88rem;
-          font-weight: 600;
-          transition: background-color 0.2s ease, transform 0.2s ease;
-          border: 1px solid rgba(73, 97, 220, 0.15);
+          background: var(--bg-subtle);
+          border: 1px solid var(--border);
+          font-size: 0.92rem;
+          color: var(--text-secondary);
         }
 
-        .experience-pointer-link:hover {
-          background: var(--accent);
-          color: #ffffff;
-          transform: translateX(4px);
+        .rank-dot-red {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: var(--accent-red);
+          box-shadow: 0 0 8px var(--accent-red);
         }
 
-        .resume-bullets {
-          list-style: disc;
-          padding-left: 20px;
-          margin-top: 8px;
+        .thm-desc-text {
+          font-size: 0.9rem;
+          color: var(--text-secondary);
+          line-height: 1.55;
+          margin: 0;
+        }
+
+        /* Other Card */
+        .other-activity-card {
+          padding: clamp(22px, 3vw, 28px);
           display: flex;
           flex-direction: column;
+          justify-content: center;
           gap: 6px;
         }
 
-        .resume-bullet-item {
-          font-size: 0.92rem;
-          color: var(--text-secondary);
-          line-height: 1.5;
+        .other-overline {
+          font-size: 0.72rem;
+          font-weight: 700;
+          color: var(--text-muted);
+          letter-spacing: 0.08em;
         }
 
-        .resume-other-box {
-          padding-top: 14px;
-          border-top: 1px dashed var(--border);
-          margin-top: 6px;
-        }
-
-        .resume-other-heading {
+        .other-title {
           font-family: var(--font-sans);
-          font-size: 0.92rem;
+          font-size: 1.15rem;
           font-weight: 700;
           color: var(--text-primary);
-          margin-bottom: 4px;
-          text-transform: uppercase;
-          letter-spacing: 0.04em;
         }
 
-        .resume-other-line {
-          font-size: 0.88rem;
+        .other-desc {
+          font-size: 0.92rem;
           color: var(--text-secondary);
-          line-height: 1.5;
-          margin: 0;
+          line-height: 1.55;
+        }
+
+        @media (max-width: 900px) {
+          .trace-callout-banner {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+
+          .trace-callout-btn {
+            width: 100%;
+          }
+
+          .experience-bottom-split {
+            grid-template-columns: 1fr;
+          }
         }
       `}</style>
-    </div>
+    </section>
   );
 };
