@@ -37,7 +37,7 @@ export const Education: React.FC = () => {
             {/* Prominent Coursework Grid */}
             <div className="coursework-prominent-block">
               <div className="coursework-block-header">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--accent-red)' }}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--accent)' }}>
                   <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
                   <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
                 </svg>
@@ -89,10 +89,10 @@ export const Education: React.FC = () => {
             </p>
 
             <div className="practicals-tags-cluster">
-              <span className="practicals-tag">Hands-on Lab Practicals</span>
-              <span className="practicals-tag">Vulnerability Lab Simulations</span>
-              <span className="practicals-tag">Incident Analysis</span>
-              <span className="practicals-tag">Host &amp; Network Defense</span>
+              <span className="practicals-tag font-mono">Hands-on Lab Practicals</span>
+              <span className="practicals-tag font-mono">Vulnerability Lab Simulations</span>
+              <span className="practicals-tag font-mono">Incident Analysis</span>
+              <span className="practicals-tag font-mono">Host &amp; Network Defense</span>
             </div>
           </div>
         </div>
@@ -123,9 +123,9 @@ export const Education: React.FC = () => {
         }
 
         .degree-track-pill {
-          font-size: 0.72rem;
+          font-size: 0.74rem;
           font-weight: 700;
-          color: var(--accent-red);
+          color: var(--accent);
           letter-spacing: 0.08em;
           display: block;
           margin-bottom: 4px;
@@ -137,6 +137,7 @@ export const Education: React.FC = () => {
           font-weight: 800;
           color: var(--text-primary);
           margin-bottom: 4px;
+          letter-spacing: -0.01em;
         }
 
         .degree-univ-name {
@@ -146,13 +147,13 @@ export const Education: React.FC = () => {
         }
 
         .degree-timeline-badge {
-          padding: 6px 12px;
-          border-radius: var(--radius-sm);
-          background: var(--accent-red-light);
-          border: 1px solid var(--accent-red-border);
+          padding: 6px 14px;
+          border-radius: var(--radius-pill);
+          background: var(--accent-light);
+          border: 1px solid var(--accent-border);
           font-size: 0.85rem;
           font-weight: 700;
-          color: var(--accent-red);
+          color: var(--accent);
           white-space: nowrap;
         }
 
@@ -200,11 +201,11 @@ export const Education: React.FC = () => {
           background: var(--card-bg);
           border: 1px solid var(--card-border);
           border-radius: var(--radius-sm);
-          transition: all 0.2s ease;
+          transition: all var(--transition-fast);
         }
 
         .coursework-cell:hover {
-          border-color: var(--accent-red);
+          border-color: var(--accent);
           transform: translateY(-2px);
         }
 
@@ -235,9 +236,9 @@ export const Education: React.FC = () => {
           width: 50px;
           height: 50px;
           border-radius: var(--radius-md);
-          background: var(--accent-blue-light);
-          border: 1px solid rgba(37, 99, 235, 0.25);
-          color: var(--accent-blue);
+          background: var(--accent-light);
+          border: 1px solid var(--accent-border);
+          color: var(--accent);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -246,8 +247,9 @@ export const Education: React.FC = () => {
         .practicals-heading {
           font-family: var(--font-sans);
           font-size: 1.25rem;
-          font-weight: 700;
+          font-weight: 800;
           color: var(--text-primary);
+          letter-spacing: -0.01em;
         }
 
         .practicals-description {

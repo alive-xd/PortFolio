@@ -39,7 +39,7 @@ const OTHER_PROJECTS: StandardProject[] = [
     stack: ['Next.js 15', 'FastAPI', 'Python', 'PostgreSQL', 'Redis', 'Docker', 'Tailwind CSS'],
     live: '',
     github: 'https://github.com/alive-xd/SentriX',
-    accent: '#DC2626',
+    accent: '#2563EB',
   },
   {
     name: 'Chat Decoder',
@@ -94,13 +94,12 @@ export const Projects: React.FC = () => {
           <article id="trace" className="project-grid-card featured-trace-card glass-card">
             <div className="trace-header-row">
               <div className="trace-badge-group">
-                <span className="trace-badge">
-                  <span className="trace-pulse" />
-                  FLAGSHIP DETECTION ENGINEERING
+                <span className="trace-badge font-mono">
+                  FEATURED DETECTION ENGINEERING
                 </span>
               </div>
               <div className="trace-stats-strip">
-                <span className="trace-stat-pill">13 rules · 10 techniques · 85 → 11 alerts</span>
+                <span className="trace-stat-pill font-mono">13 rules · 10 techniques · 85 → 11 alerts</span>
               </div>
             </div>
 
@@ -166,22 +165,22 @@ export const Projects: React.FC = () => {
               {detailsOpen && (
                 <div className="trace-collapsible-content">
                   <div className="trace-detail-item">
-                    <div className="detail-tag">EVTX PIPELINE</div>
+                    <div className="detail-tag font-mono">EVTX PIPELINE</div>
                     <strong>Real-Data Validation Pipeline:</strong>
                     <span>Fetches, parses, and evaluates 13 Sigma detection rules across 10 MITRE ATT&amp;CK techniques against genuine captured Windows Event Logs from the EVTX-ATTACK-SAMPLES research dataset, rather than hand-written synthetic test cases.</span>
                   </div>
                   <div className="trace-detail-item">
-                    <div className="detail-tag">PERSISTENCE GAP</div>
+                    <div className="detail-tag font-mono">PERSISTENCE GAP</div>
                     <strong>Registry Persistence Coverage Gap:</strong>
                     <span>Discovered that a rule assuming command-line-based registry modification (reg.exe) completely missed a real malware sample that wrote its persistence key directly via the Windows API. Diagnosed the gap by pivoting detection from Process Creation (Event ID 1) to Registry Events (Event ID 12/13/14), closing the blind spot regardless of execution method.</span>
                   </div>
                   <div className="trace-detail-item">
-                    <div className="detail-tag">ALERT REDUCTION</div>
+                    <div className="detail-tag font-mono">ALERT REDUCTION</div>
                     <strong>False-Positive Inflation Diagnosis:</strong>
                     <span>Identified that an initial rundll32 detection rule was generating 85 matches, 74 of which were benign OS telemetry (module loads, not executions). Root-caused the issue to an overly broad log-source assumption and tightened the rule to Event ID 1 only, reducing output to 11 precise, actionable alerts — a real false-positive reduction caught before reaching production.</span>
                   </div>
                   <div className="trace-detail-item">
-                    <div className="detail-tag">LIVE ENGINE</div>
+                    <div className="detail-tag font-mono">LIVE ENGINE</div>
                     <strong>Live Interactive Detection Tester:</strong>
                     <span>A Vercel serverless function runs the actual Sigma rule-matching logic on demand against real historical samples or user-submitted JSON, returning genuine match/no-match results computed live.</span>
                   </div>
@@ -270,19 +269,7 @@ export const Projects: React.FC = () => {
         /* Trace Featured Card Spans Full Width */
         .featured-trace-card {
           grid-column: 1 / -1;
-          border: 1.5px solid var(--accent-red-border);
-          position: relative;
-          overflow: hidden;
-        }
-
-        .featured-trace-card::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 4px;
-          height: 100%;
-          background: linear-gradient(to bottom, var(--accent-red), transparent);
+          border-left: 4px solid var(--accent);
         }
 
         .trace-header-row {
@@ -295,27 +282,15 @@ export const Projects: React.FC = () => {
         }
 
         .trace-badge {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
+          display: inline-block;
           padding: 5px 14px;
-          background: var(--accent-red-light);
-          border: 1px solid var(--accent-red-border);
-          color: var(--accent-red);
+          background: var(--accent-light);
+          border: 1px solid var(--accent-border);
+          color: var(--accent);
           border-radius: var(--radius-pill);
-          font-family: var(--font-mono);
           font-size: 0.78rem;
           font-weight: 700;
           letter-spacing: 0.08em;
-        }
-
-        .trace-pulse {
-          width: 7px;
-          height: 7px;
-          border-radius: 50%;
-          background-color: var(--accent-red);
-          box-shadow: 0 0 8px var(--accent-red);
-          animation: pulse-dot-anim 2s infinite;
         }
 
         .trace-stats-strip {
@@ -328,11 +303,10 @@ export const Projects: React.FC = () => {
           background: var(--bg-surface);
           border: 1px solid var(--border);
           border-radius: var(--radius-pill);
-          font-family: var(--font-mono);
           font-size: 0.84rem;
           font-weight: 700;
-          color: var(--accent-red);
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+          color: var(--accent);
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
         }
 
         [data-theme="dark"] .trace-stat-pill {
@@ -398,7 +372,7 @@ export const Projects: React.FC = () => {
           gap: 8px;
           background: none;
           border: none;
-          color: var(--accent-red);
+          color: var(--accent);
           font-family: var(--font-sans);
           font-size: 0.92rem;
           font-weight: 700;
@@ -421,11 +395,10 @@ export const Projects: React.FC = () => {
           display: flex;
           flex-direction: column;
           gap: 16px;
-          animation: fadeIn 0.25s ease forwards;
         }
 
         [data-theme="dark"] .trace-collapsible-content {
-          background: rgba(14, 14, 20, 0.8);
+          background: rgba(17, 24, 39, 0.8);
         }
 
         .trace-detail-item {
@@ -435,10 +408,9 @@ export const Projects: React.FC = () => {
         }
 
         .detail-tag {
-          font-family: var(--font-mono);
           font-size: 0.72rem;
           font-weight: 700;
-          color: var(--accent-red);
+          color: var(--accent);
           letter-spacing: 0.08em;
           text-transform: uppercase;
         }

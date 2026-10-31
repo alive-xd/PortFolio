@@ -1,139 +1,107 @@
 /* ═══════════════════════════════════════════════════
-   SUSHEN KUMAR PORTFOLIO — MODERN CYBERSECURITY PORTFOLIO
-   Design System: Technical Solid Cream / Cyber Crimson / Deep Obsidian Glass
+   SUSHEN KUMAR — CYBERSECURITY PORTFOLIO
+   Design System: Architectural Grid · Solid Colors · Clean Glassmorphism
    Responsive & Zoom-Safe across 50% to 200% scale
    ═══════════════════════════════════════════════════ */
 
-/* ── 1. DESIGN TOKENS & THEMES ────────────────────── */
+/* ── 1. DESIGN TOKENS & THEMES (SOLID COLORS ONLY) ─ */
 :root, [data-theme="light"] {
   /* Fonts */
   --font-sans:  'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body:  'Karla', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono:  'JetBrains Mono', monospace;
 
-  /* Solid Cream Light Theme */
-  --bg:                  #FAF7F2;          /* Rich warm solid cream / alabaster */
-  --bg-subtle:           #F2ECE1;          /* Secondary contrasting warm cream */
+  /* Solid Warm Cream Light Theme */
+  --bg:                  #FAF7F2;          /* Solid rich warm cream */
+  --bg-subtle:           #F2ECE1;          /* Subtle contrasting cream */
   --bg-surface:          #FFFFFF;          /* Pure white card surface */
   
-  --text-primary:        #1A1715;          /* Deep warm charcoal for maximum readability (WCAG AAA) */
-  --text-secondary:      #4A4540;          /* Warm neutral body text */
-  --text-muted:          #7A746E;          /* Muted meta labels */
+  --text-primary:        #0F172A;          /* Solid deep slate for maximum readability (WCAG AAA) */
+  --text-secondary:      #334155;          /* Solid neutral body text */
+  --text-muted:          #64748B;          /* Solid muted metadata labels */
   
-  /* Cyber Crimson / Red Accents */
-  --accent-red:          #DC2626;          /* Bold cyber alert red */
-  --accent-red-hover:    #B91C1C;
-  --accent-red-light:    rgba(220, 38, 38, 0.08);
-  --accent-red-border:   rgba(220, 38, 38, 0.22);
+  /* Solid Blue Primary Accent */
+  --accent:              #2563EB;          /* Professional royal blue */
+  --accent-hover:        #1D4ED8;
+  --accent-light:        rgba(37, 99, 235, 0.08);
+  --accent-border:       rgba(37, 99, 235, 0.25);
 
-  /* Deep Technical Cobalt / Navy */
-  --accent-blue:         #2563EB;
-  --accent-blue-hover:   #1D4ED8;
-  --accent-blue-light:   rgba(37, 99, 235, 0.08);
-
-  /* Emerald Security */
-  --accent-sec:          #059669;
+  /* Secondary Accents (Solid) */
+  --accent-sec:          #059669;          /* Emerald security */
   --accent-sec-light:    rgba(5, 150, 105, 0.08);
-
-  /* Primary Accent Alias */
-  --accent:              var(--accent-red);
-  --accent-hover:        var(--accent-red-hover);
-  --accent-light:        var(--accent-red-light);
+  --accent-purple:       #7C3AED;
+  --accent-purple-light: rgba(124, 58, 237, 0.08);
 
   /* Frosted Glass & Surface Styling */
-  --card-bg:             rgba(255, 255, 255, 0.88);
-  --card-border:         rgba(195, 180, 165, 0.35);
-  --card-border-hover:   rgba(220, 38, 38, 0.45);
-  --card-shadow:         0 10px 30px -8px rgba(70, 50, 40, 0.06), 0 2px 6px rgba(70, 50, 40, 0.03);
-  --card-shadow-hover:   0 20px 40px -12px rgba(220, 38, 38, 0.12), 0 4px 12px rgba(70, 50, 40, 0.06);
+  --card-bg:             rgba(255, 255, 255, 0.85);
+  --card-border:         rgba(203, 213, 225, 0.7);
+  --card-border-hover:   rgba(37, 99, 235, 0.5);
+  --card-shadow:         0 8px 24px -6px rgba(15, 23, 42, 0.05), 0 2px 6px rgba(15, 23, 42, 0.02);
+  --card-shadow-hover:   0 16px 32px -8px rgba(37, 99, 235, 0.12);
   --card-glass-glow:     inset 0 1px 0 rgba(255, 255, 255, 0.9);
   
-  --border:              rgba(195, 180, 165, 0.35);
-  --border-strong:       rgba(165, 150, 135, 0.6);
+  --border:              rgba(203, 213, 225, 0.6);
+  --border-strong:       rgba(148, 163, 184, 0.8);
   
   /* Floating Glass Navbar */
-  --nav-bg:              rgba(250, 247, 242, 0.85);
-  --nav-border:          rgba(195, 180, 165, 0.4);
-  --nav-shadow:          0 10px 30px -10px rgba(70, 50, 40, 0.08);
+  --nav-bg:              rgba(250, 247, 242, 0.88);
+  --nav-border:          rgba(203, 213, 225, 0.7);
+  --nav-shadow:          0 10px 30px -10px rgba(15, 23, 42, 0.08);
 
   /* Architectural Technical Grid */
-  --grid-line:           rgba(45, 35, 30, 0.045);
-  --grid-cross:          rgba(220, 38, 38, 0.15);
-  --ambient-glow-1:      radial-gradient(circle at 85% 15%, rgba(220, 38, 38, 0.05) 0%, transparent 55%);
-  --ambient-glow-2:      radial-gradient(circle at 15% 75%, rgba(37, 99, 235, 0.04) 0%, transparent 60%);
-
-  /* Section Title Gradients */
-  --heading-gradient:    linear-gradient(135deg, #1A1715 30%, #DC2626 100%);
-  --blue-gradient:       linear-gradient(135deg, #1A1715 20%, #2563EB 100%);
-  --red-gradient:        linear-gradient(135deg, #DC2626 0%, #991B1B 100%);
+  --grid-line:           rgba(15, 23, 42, 0.045);
 
   /* Radii */
   --radius-xs:           4px;
   --radius-sm:           8px;
-  --radius-md:           14px;
-  --radius-lg:           20px;
+  --radius-md:           12px;
+  --radius-lg:           16px;
   --radius-pill:         999px;
 
-  --transition-fast:     0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-normal:   0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast:     0.18s ease;
+  --transition-normal:   0.25s ease;
 }
 
 [data-theme="dark"] {
-  /* Solid Carbon Obsidian Dark Theme */
-  --bg:                  #0A0A0E;          /* Deep technical carbon */
-  --bg-subtle:           #121218;
-  --bg-surface:          #16161E;
+  /* Solid Slate Carbon Dark Theme */
+  --bg:                  #0B0F19;          /* Solid deep technical dark slate */
+  --bg-subtle:           #111827;
+  --bg-surface:          #1A2234;
   
-  --text-primary:        #FAF6F4;          /* Pure crisp white-bone */
-  --text-secondary:      #D1CDCB;          /* Soft luminous gray */
-  --text-muted:          #8D8885;          /* Muted metadata */
+  --text-primary:        #F8FAFC;          /* Solid pure white */
+  --text-secondary:      #CBD5E1;          /* Solid soft light gray */
+  --text-muted:          #94A3B8;          /* Solid muted metadata */
   
-  /* Cyber Crimson / Neon Red */
-  --accent-red:          #F43F5E;          /* Luminous rose-red */
-  --accent-red-hover:    #FB7185;
-  --accent-red-light:    rgba(244, 63, 94, 0.12);
-  --accent-red-border:   rgba(244, 63, 94, 0.35);
+  /* Solid Blue Primary Accent (Luminous in Dark Mode) */
+  --accent:              #3B82F6;          /* Bright clean blue */
+  --accent-hover:        #60A5FA;
+  --accent-light:        rgba(59, 130, 246, 0.12);
+  --accent-border:       rgba(59, 130, 246, 0.35);
 
-  /* Deep Technical Cobalt */
-  --accent-blue:         #3B82F6;
-  --accent-blue-hover:   #60A5FA;
-  --accent-blue-light:   rgba(59, 130, 246, 0.12);
-
-  /* Emerald Security */
-  --accent-sec:          #10B981;
+  /* Secondary Accents (Solid) */
+  --accent-sec:          #10B981;          /* Emerald */
   --accent-sec-light:    rgba(16, 185, 129, 0.12);
-
-  /* Primary Accent Alias */
-  --accent:              var(--accent-red);
-  --accent-hover:        var(--accent-red-hover);
-  --accent-light:        var(--accent-red-light);
+  --accent-purple:       #A78BFA;
+  --accent-purple-light: rgba(167, 139, 250, 0.12);
 
   /* Frosted Glass & Surface Styling */
-  --card-bg:             rgba(20, 20, 28, 0.72);
+  --card-bg:             rgba(17, 24, 39, 0.72);
   --card-border:         rgba(255, 255, 255, 0.08);
-  --card-border-hover:   rgba(244, 63, 94, 0.45);
-  --card-shadow:         0 12px 35px -8px rgba(0, 0, 0, 0.55);
-  --card-shadow-hover:   0 20px 45px -10px rgba(244, 63, 94, 0.18), 0 0 20px rgba(244, 63, 94, 0.1);
+  --card-border-hover:   rgba(59, 130, 246, 0.45);
+  --card-shadow:         0 10px 30px -8px rgba(0, 0, 0, 0.6);
+  --card-shadow-hover:   0 18px 40px -10px rgba(59, 130, 246, 0.2);
   --card-glass-glow:     inset 0 1px 0 rgba(255, 255, 255, 0.08);
   
-  --border:              rgba(255, 255, 255, 0.09);
-  --border-strong:       rgba(255, 255, 255, 0.16);
+  --border:              rgba(255, 255, 255, 0.08);
+  --border-strong:       rgba(255, 255, 255, 0.15);
   
   /* Floating Glass Navbar */
-  --nav-bg:              rgba(10, 10, 14, 0.82);
+  --nav-bg:              rgba(11, 15, 25, 0.85);
   --nav-border:          rgba(255, 255, 255, 0.1);
-  --nav-shadow:          0 12px 35px -8px rgba(0, 0, 0, 0.6);
+  --nav-shadow:          0 10px 30px -10px rgba(0, 0, 0, 0.7);
 
   /* Architectural Technical Grid */
-  --grid-line:           rgba(255, 255, 255, 0.032);
-  --grid-cross:          rgba(244, 63, 94, 0.2);
-  --ambient-glow-1:      radial-gradient(circle at 85% 15%, rgba(244, 63, 94, 0.08) 0%, transparent 60%);
-  --ambient-glow-2:      radial-gradient(circle at 15% 75%, rgba(59, 130, 246, 0.06) 0%, transparent 65%);
-
-  /* Section Title Gradients */
-  --heading-gradient:    linear-gradient(135deg, #FFFFFF 40%, #F43F5E 100%);
-  --blue-gradient:       linear-gradient(135deg, #FFFFFF 30%, #60A5FA 100%);
-  --red-gradient:        linear-gradient(135deg, #F43F5E 0%, #FB7185 100%);
+  --grid-line:           rgba(255, 255, 255, 0.035);
 }
 
 /* ── 2. BASE RESETS & ZOOM-SAFE LAYOUT ────────────── */
@@ -145,7 +113,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px;
+  scroll-padding-top: 90px;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   background-color: var(--bg);
@@ -166,70 +134,39 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Technical Engineering Grid Background */
+/* Clean Architectural Technical Grid Background */
 .tech-grid-background {
   position: fixed;
   inset: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: -2;
+  z-index: -1;
   background-color: var(--bg);
   background-image: 
     linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
     linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
-  background-size: 48px 48px;
+  background-size: 40px 40px;
   background-position: center top;
-  mask-image: radial-gradient(ellipse 90% 80% at 50% 30%, #000 50%, transparent 95%);
-  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 30%, #000 50%, transparent 95%);
-}
-
-/* Ambient Ambient Glow Underlays */
-.ambient-glows {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-  overflow: hidden;
-}
-
-.ambient-glows::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: min(800px, 80vw);
-  height: min(800px, 80vh);
-  background: var(--ambient-glow-1);
-}
-
-.ambient-glows::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: min(700px, 70vw);
-  height: min(700px, 70vh);
-  background: var(--ambient-glow-2);
+  mask-image: radial-gradient(ellipse 95% 85% at 50% 20%, #000 65%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 95% 85% at 50% 20%, #000 65%, transparent 100%);
 }
 
 /* Fluid Zoom-Safe Container */
 .container {
-  width: min(100% - 2.5rem, 1200px);
+  width: min(100% - 2.5rem, 1160px);
   margin-inline: auto;
   position: relative;
 }
 
 @media (max-width: 640px) {
   .container {
-    width: min(100% - 1.5rem, 1200px);
+    width: min(100% - 1.5rem, 1160px);
   }
 }
 
 .section {
-  padding-block: clamp(60px, 10vh, 110px);
+  padding-block: clamp(56px, 8vh, 96px);
   position: relative;
   width: 100%;
 }
@@ -252,7 +189,7 @@ ul[role="list"] {
 
 /* Selection */
 ::selection {
-  background: var(--accent-red);
+  background: var(--accent);
   color: #FFFFFF;
 }
 
@@ -264,69 +201,55 @@ ul[role="list"] {
   background: var(--bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--card-border);
+  background: var(--border-strong);
   border-radius: var(--radius-pill);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-red);
+  background: var(--accent);
 }
 
-/* ── 3. TYPOGRAPHY & SECTION HEADINGS ─────────────── */
+/* ── 3. TYPOGRAPHY & SECTION HEADINGS (SOLID COLORS) ─ */
 .section-header-wrap {
   text-align: center;
-  max-width: 720px;
-  margin: 0 auto clamp(36px, 5vh, 52px) auto;
+  max-width: 680px;
+  margin: 0 auto clamp(32px, 4.5vh, 48px) auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .section-overline {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  display: inline-block;
   font-family: var(--font-mono);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--accent-red);
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+/* Pure Solid Color Heading - NO GRADIENTS */
+.section-title-centered {
+  font-family: var(--font-sans);
+  font-size: clamp(1.85rem, 3.2vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  text-align: center;
   margin-bottom: 10px;
 }
 
-.section-overline::before,
-.section-overline::after {
-  content: '';
-  width: 18px;
-  height: 2px;
-  background: var(--accent-red);
-  opacity: 0.7;
-}
-
-.section-title-centered {
-  font-family: var(--font-sans);
-  font-size: clamp(2rem, 3.5vw, 2.75rem);
-  font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -0.035em;
-  background: var(--heading-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: var(--text-primary);
-  text-align: center;
-  margin-bottom: 12px;
-}
-
 .section-subtitle-text {
-  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
   color: var(--text-secondary);
   line-height: 1.6;
   text-align: center;
-  max-width: 620px;
+  max-width: 600px;
 }
 
-/* ── 4. BUTTONS & INTERACTIVE PILLS ───────────────── */
+/* ── 4. BUTTONS & INTERACTIVE PILLS (SOLID COLORS) ─ */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -335,7 +258,7 @@ ul[role="list"] {
   font-family: var(--font-sans);
   font-size: 0.92rem;
   font-weight: 600;
-  padding: 11px 22px;
+  padding: 10px 22px;
   border-radius: var(--radius-pill);
   border: 1px solid transparent;
   cursor: pointer;
@@ -345,15 +268,15 @@ ul[role="list"] {
 }
 
 .btn-primary {
-  background: var(--accent-red);
+  background: var(--accent);
   color: #FFFFFF !important;
-  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.28);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
 }
 
 .btn-primary:hover {
-  background: var(--accent-red-hover);
+  background: var(--accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(220, 38, 38, 0.38);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35);
 }
 
 .btn-outline {
@@ -365,30 +288,18 @@ ul[role="list"] {
 }
 
 .btn-outline:hover {
-  border-color: var(--accent-red);
-  color: var(--accent-red) !important;
-  background: var(--accent-red-light);
+  border-color: var(--accent);
+  color: var(--accent) !important;
+  background: var(--accent-light);
   transform: translateY(-2px);
-}
-
-.btn-ghost {
-  background: transparent;
-  border: 1px solid var(--border);
-  color: var(--text-secondary);
-}
-
-.btn-ghost:hover {
-  background: var(--card-bg);
-  color: var(--text-primary);
-  border-color: var(--accent-red);
 }
 
 .btn-sm {
   padding: 7px 16px;
-  font-size: 0.88rem;
+  font-size: 0.86rem;
 }
 
-/* ── 5. FLOATING GLASS NAVBAR ─────────────────────── */
+/* ── 5. CLEAN FROSTED GLASS NAVBAR ───────────────── */
 .header {
   position: fixed;
   top: 0;
@@ -401,7 +312,7 @@ ul[role="list"] {
 }
 
 .nav-dock-container {
-  width: min(100% - 2rem, 1020px);
+  width: min(100% - 2rem, 980px);
   margin-inline: auto;
   pointer-events: auto;
 }
@@ -414,22 +325,21 @@ ul[role="list"] {
   background: var(--nav-bg);
   border: 1px solid var(--nav-border);
   border-radius: var(--radius-pill);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  box-shadow: var(--nav-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: var(--nav-shadow);
   transition: all var(--transition-normal);
 }
 
 .header.scrolled .nav-dock {
   background: var(--nav-bg);
-  box-shadow: var(--nav-shadow), 0 12px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--nav-shadow), 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
-/* Logo */
+/* Clean Professional Logo */
 .nav-logo-group {
   display: flex;
   align-items: center;
-  gap: 10px;
   text-decoration: none;
 }
 
@@ -442,44 +352,14 @@ ul[role="list"] {
 }
 
 .logo-callsign span {
-  color: var(--accent-red);
-}
-
-.logo-status-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 3px 8px;
-  background: var(--accent-red-light);
-  border: 1px solid var(--accent-red-border);
-  border-radius: var(--radius-pill);
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--accent-red);
-  letter-spacing: 0.04em;
-}
-
-.pulse-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: var(--accent-red);
-  box-shadow: 0 0 8px var(--accent-red);
-  animation: pulse-dot-anim 2s infinite;
-}
-
-@keyframes pulse-dot-anim {
-  0% { transform: scale(0.9); opacity: 1; }
-  50% { transform: scale(1.3); opacity: 0.6; }
-  100% { transform: scale(0.9); opacity: 1; }
+  color: var(--accent);
 }
 
 /* Nav links pill dock */
 .nav-links-dock {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 2px;
   list-style: none;
 }
 
@@ -500,18 +380,14 @@ ul[role="list"] {
 }
 
 .nav-dock-link:hover {
-  color: var(--text-primary);
-  background: rgba(0, 0, 0, 0.04);
-}
-
-[data-theme="dark"] .nav-dock-link:hover {
-  background: rgba(255, 255, 255, 0.06);
+  color: var(--accent);
+  background: var(--accent-light);
 }
 
 .nav-dock-link.active {
-  background: var(--accent-red) !important;
+  background: var(--accent) !important;
   color: #FFFFFF !important;
-  box-shadow: 0 2px 10px rgba(220, 38, 38, 0.35);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
 }
 
 .nav-actions-group {
@@ -535,9 +411,8 @@ ul[role="list"] {
 }
 
 .theme-toggle-btn:hover {
-  border-color: var(--accent-red);
-  color: var(--accent-red);
-  transform: rotate(20deg);
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 /* Hamburger for Mobile */
@@ -564,7 +439,7 @@ ul[role="list"] {
 .mobile-nav-drawer {
   position: fixed;
   inset: 0;
-  background: rgba(10, 10, 14, 0.6);
+  background: rgba(11, 15, 25, 0.65);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   z-index: 999;
@@ -588,7 +463,7 @@ ul[role="list"] {
   flex-direction: column;
   gap: 10px;
   list-style: none;
-  max-width: 400px;
+  max-width: 380px;
   margin: 0 auto;
   width: 100%;
 }
@@ -596,7 +471,7 @@ ul[role="list"] {
 .mobile-nav-link {
   display: block;
   font-family: var(--font-sans);
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--text-primary);
   padding: 12px 18px;
@@ -608,9 +483,9 @@ ul[role="list"] {
 }
 
 .mobile-nav-link.active {
-  background: var(--accent-red);
+  background: var(--accent);
   color: #FFFFFF;
-  border-color: var(--accent-red);
+  border-color: var(--accent);
 }
 
 /* ── 6. FROSTED GLASS CARDS & EFFECTS ─────────────── */
@@ -625,7 +500,7 @@ ul[role="list"] {
 }
 
 .glass-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   border-color: var(--card-border-hover);
   box-shadow: var(--card-shadow-hover), var(--card-glass-glow);
 }
@@ -633,8 +508,8 @@ ul[role="list"] {
 /* ── 7. SCROLL REVEAL ANIMATIONS ──────────────────── */
 .reveal {
   opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .reveal.visible {
@@ -647,8 +522,8 @@ ul[role="list"] {
   position: fixed;
   bottom: 28px;
   right: 28px;
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
@@ -672,8 +547,8 @@ ul[role="list"] {
 }
 
 .back-to-top:hover {
-  background: var(--accent-red);
+  background: var(--accent);
   color: #FFFFFF;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(220, 38, 38, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.3);
 }

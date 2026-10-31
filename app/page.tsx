@@ -61,27 +61,23 @@ export default function Home() {
 
   return (
     <ToastProvider>
-      {/* Scroll Progress Bar (Cyber Crimson) */}
+      {/* Scroll Progress Bar (Solid Blue) */}
       <div 
         style={{
           position: 'fixed',
           top: 0, 
           left: 0,
           height: '2px',
-          background: 'linear-gradient(90deg, #DC2626, #F43F5E, #2563EB)',
+          background: 'var(--accent)',
           zIndex: 9999,
           width: `${scrollProgress}%`,
           transition: 'width 0.1s linear',
-          boxShadow: '0 0 10px rgba(220, 38, 38, 0.7)',
         }}
         aria-hidden="true"
       />
 
-      {/* Engineering Technical Grid Background */}
+      {/* Clean Architectural Technical Grid Background */}
       <div className="tech-grid-background" aria-hidden="true" />
-
-      {/* Ambient Radial Spotlight Glows */}
-      <div className="ambient-glows" aria-hidden="true" />
 
       <Navbar />
 
@@ -98,17 +94,18 @@ export default function Home() {
 
       <Footer />
 
-      {/* Back to top floating button */}
-      <a 
-        href="#home" 
-        className={`back-to-top ${showBackToTop ? 'visible' : ''}`} 
-        onClick={scrollToTop}
-        aria-label="Back to top"
+      {/* Floating Back-To-Top Button */}
+      <button 
+        type="button" 
+        onClick={scrollToTop} 
+        className={`back-to-top ${showBackToTop ? 'visible' : ''}`}
+        aria-label="Back to Top"
+        title="Scroll to top"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="18 15 12 9 6 15" />
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="18 15 12 9 6 15"/>
         </svg>
-      </a>
+      </button>
     </ToastProvider>
   );
 }

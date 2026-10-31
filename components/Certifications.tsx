@@ -21,7 +21,7 @@ export const Certifications: React.FC = () => {
       issued: 'Apr 2025',
       status: 'Active · exp 2027',
       statusType: 'active-exp',
-      accentColor: '#DC2626',
+      accentColor: '#2563EB',
       link: 'https://linkedin.com/in/sushen-kumar'
     },
     {
@@ -30,7 +30,7 @@ export const Certifications: React.FC = () => {
       issued: 'Apr 2025',
       status: 'Active · exp 2027',
       statusType: 'active-exp',
-      accentColor: '#DC2626',
+      accentColor: '#2563EB',
       link: 'https://www.credly.com/badges/8c47a3bb-6e97-4f56-b6d0-b8bb9cf2a917'
     },
     {
@@ -39,7 +39,7 @@ export const Certifications: React.FC = () => {
       issued: 'Oct 2024',
       status: 'Active',
       statusType: 'active',
-      accentColor: '#2563EB',
+      accentColor: '#0284C7',
       link: 'https://www.credly.com/badges/799e311f-6c9e-4aaf-ac68-c316e4535f38'
     },
     {
@@ -84,8 +84,7 @@ export const Certifications: React.FC = () => {
                 <div 
                   className="cert-status-dot" 
                   style={{ 
-                    backgroundColor: cert.accentColor,
-                    boxShadow: `0 0 10px ${cert.accentColor}88` 
+                    backgroundColor: cert.accentColor 
                   }} 
                 />
                 <div className="cert-info-wrap">
@@ -122,7 +121,7 @@ export const Certifications: React.FC = () => {
         .certs-deck {
           max-width: 920px;
           margin: 0 auto;
-          padding: 10px 24px;
+          padding: 8px 24px;
           display: flex;
           flex-direction: column;
         }
@@ -131,7 +130,7 @@ export const Certifications: React.FC = () => {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 22px 14px;
+          padding: 20px 12px;
           border-bottom: 1px solid var(--border);
           transition: background-color var(--transition-fast), border-radius var(--transition-fast);
         }
@@ -148,13 +147,13 @@ export const Certifications: React.FC = () => {
         .cert-row-left {
           display: flex;
           align-items: center;
-          gap: 18px;
+          gap: 16px;
           text-align: left;
         }
 
         .cert-status-dot {
-          width: 9px;
-          height: 9px;
+          width: 8px;
+          height: 8px;
           border-radius: 50%;
           flex-shrink: 0;
         }
@@ -209,24 +208,24 @@ export const Certifications: React.FC = () => {
           font-family: var(--font-sans);
           font-size: 0.86rem;
           font-weight: 700;
-          color: var(--accent-red);
+          color: var(--accent);
           display: inline-flex;
           align-items: center;
           gap: 5px;
-          padding: 5px 12px;
+          padding: 5px 14px;
           border-radius: var(--radius-pill);
-          border: 1px solid var(--accent-red-border);
-          background: var(--accent-red-light);
+          border: 1px solid var(--accent-border);
+          background: var(--accent-light);
           transition: all var(--transition-fast);
           min-width: 74px;
           justify-content: center;
         }
 
         .cert-verify-btn:hover {
-          background: var(--accent-red);
+          background: var(--accent);
           color: #FFFFFF !important;
           transform: translateY(-1px);
-          box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
+          box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
         }
 
         @media (max-width: 768px) {
@@ -238,14 +237,14 @@ export const Certifications: React.FC = () => {
             flex-direction: column;
             align-items: flex-start;
             gap: 16px;
-            padding: 18px 10px;
+            padding: 18px 8px;
           }
 
           .cert-row-right {
             width: 100%;
             justify-content: space-between;
             gap: 10px;
-            padding-left: 27px;
+            padding-left: 24px;
           }
 
           .cert-item-date {

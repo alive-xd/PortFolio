@@ -63,7 +63,7 @@ export const Experience: React.FC = () => {
             </svg>
           </div>
           <div className="trace-callout-content">
-            <span className="trace-callout-tag">FLAGSHIP DETECTION ENGINEERING</span>
+            <span className="trace-callout-tag font-mono">FLAGSHIP DETECTION ENGINEERING</span>
             <h3 className="trace-callout-title">
               Strongest hands-on work: <strong>Trace (see Projects)</strong>
             </h3>
@@ -90,17 +90,17 @@ export const Experience: React.FC = () => {
             >
               <div className="exp-card-header">
                 <div className="exp-meta-left">
-                  <span className="exp-badge-track">{exp.badge}</span>
+                  <span className="exp-badge-track font-mono">{exp.badge}</span>
                   <h3 className="exp-role-title">{exp.role}</h3>
                   <div className="exp-org-line">{exp.organisation}</div>
                 </div>
                 <div className="exp-date-pill font-mono">{exp.duration}</div>
               </div>
 
-              <ul className="exp-bullets-list">
+              <ul className="exp-bullets-list" role="list">
                 {exp.bullets.map((bullet, bIdx) => (
                   <li key={bIdx} className="exp-bullet-item">
-                    <span className="bullet-chevron">&gt;</span>
+                    <span className="bullet-chevron font-mono">&gt;</span>
                     <span>{bullet}</span>
                   </li>
                 ))}
@@ -122,7 +122,7 @@ export const Experience: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="thm-heading">Hands-on Labs &amp; CTFs</h3>
-                  <span className="thm-subheading">TryHackMe Profile @alivexd</span>
+                  <span className="thm-subheading font-mono">TryHackMe Profile @alivexd</span>
                 </div>
               </div>
               <a 
@@ -142,7 +142,7 @@ export const Experience: React.FC = () => {
             
             <div className="thm-status-badge-row">
               <div className="thm-rank-pill">
-                <span className="rank-dot-red" />
+                <span className="rank-dot-green" />
                 <span><strong>Status:</strong> Top 1% globally — active on SOC and offensive security learning paths</span>
               </div>
             </div>
@@ -170,21 +170,21 @@ export const Experience: React.FC = () => {
           gap: clamp(16px, 2.5vw, 24px);
           padding: clamp(20px, 3vw, 28px);
           margin-bottom: clamp(24px, 3.5vh, 36px);
-          border-left: 4px solid var(--accent-red);
-          background: linear-gradient(135deg, var(--accent-red-light) 0%, var(--card-bg) 60%);
+          border-left: 4px solid var(--accent);
+          background: var(--card-bg);
         }
 
         .trace-callout-icon {
           width: 48px;
           height: 48px;
           border-radius: var(--radius-sm);
-          background: var(--accent-red-light);
-          color: var(--accent-red);
+          background: var(--accent-light);
+          color: var(--accent);
           display: flex;
           align-items: center;
           justify-content: center;
           flex-shrink: 0;
-          border: 1px solid var(--accent-red-border);
+          border: 1px solid var(--accent-border);
         }
 
         .trace-callout-content {
@@ -192,10 +192,9 @@ export const Experience: React.FC = () => {
         }
 
         .trace-callout-tag {
-          font-family: var(--font-mono);
-          font-size: 0.75rem;
+          font-size: 0.74rem;
           font-weight: 700;
-          color: var(--accent-red);
+          color: var(--accent);
           letter-spacing: 0.08em;
           display: block;
           margin-bottom: 4px;
@@ -210,7 +209,7 @@ export const Experience: React.FC = () => {
         }
 
         .trace-callout-title strong {
-          color: var(--accent-red);
+          color: var(--accent);
         }
 
         .trace-callout-desc {
@@ -249,10 +248,9 @@ export const Experience: React.FC = () => {
         }
 
         .exp-badge-track {
-          font-family: var(--font-mono);
           font-size: 0.72rem;
           font-weight: 700;
-          color: var(--accent-red);
+          color: var(--accent);
           letter-spacing: 0.08em;
           display: block;
           margin-bottom: 4px;
@@ -261,9 +259,10 @@ export const Experience: React.FC = () => {
         .exp-role-title {
           font-family: var(--font-sans);
           font-size: 1.2rem;
-          font-weight: 700;
+          font-weight: 800;
           color: var(--text-primary);
           margin-bottom: 2px;
+          letter-spacing: -0.01em;
         }
 
         .exp-org-line {
@@ -302,10 +301,9 @@ export const Experience: React.FC = () => {
         }
 
         .bullet-chevron {
-          font-family: var(--font-mono);
           font-size: 0.92rem;
           font-weight: 700;
-          color: var(--accent-red);
+          color: var(--accent);
           flex-shrink: 0;
           margin-top: 2px;
         }
@@ -342,100 +340,96 @@ export const Experience: React.FC = () => {
           width: 44px;
           height: 44px;
           border-radius: var(--radius-sm);
-          background: var(--accent-red-light);
-          border: 1px solid var(--accent-red-border);
-          color: var(--accent-red);
+          background: var(--accent-light);
+          border: 1px solid var(--accent-border);
+          color: var(--accent);
           display: flex;
           align-items: center;
           justify-content: center;
+          flex-shrink: 0;
         }
 
         .thm-heading {
           font-family: var(--font-sans);
           font-size: 1.15rem;
-          font-weight: 700;
+          font-weight: 800;
           color: var(--text-primary);
+          margin: 0;
         }
 
         .thm-subheading {
-          font-family: var(--font-mono);
           font-size: 0.82rem;
           color: var(--text-muted);
         }
 
         .thm-status-badge-row {
           display: flex;
-          flex-wrap: wrap;
         }
 
         .thm-rank-pill {
           display: inline-flex;
           align-items: center;
           gap: 8px;
-          padding: 8px 14px;
-          border-radius: var(--radius-sm);
-          background: var(--bg-subtle);
-          border: 1px solid var(--border);
-          font-size: 0.92rem;
-          color: var(--text-secondary);
+          padding: 6px 14px;
+          border-radius: var(--radius-pill);
+          background: var(--accent-sec-light);
+          border: 1px solid rgba(5, 150, 105, 0.25);
+          color: var(--accent-sec);
+          font-size: 0.86rem;
         }
 
-        .rank-dot-red {
-          width: 8px;
-          height: 8px;
+        .rank-dot-green {
+          width: 7px;
+          height: 7px;
           border-radius: 50%;
-          background: var(--accent-red);
-          box-shadow: 0 0 8px var(--accent-red);
+          background: var(--accent-sec);
+          flex-shrink: 0;
         }
 
         .thm-desc-text {
-          font-size: 0.9rem;
+          font-size: 0.92rem;
           color: var(--text-secondary);
-          line-height: 1.55;
+          line-height: 1.6;
           margin: 0;
         }
 
-        /* Other Card */
         .other-activity-card {
           padding: clamp(22px, 3vw, 28px);
           display: flex;
           flex-direction: column;
           justify-content: center;
-          gap: 6px;
+          gap: 8px;
         }
 
         .other-overline {
           font-size: 0.72rem;
           font-weight: 700;
-          color: var(--text-muted);
           letter-spacing: 0.08em;
+          color: var(--text-muted);
         }
 
         .other-title {
           font-family: var(--font-sans);
           font-size: 1.15rem;
-          font-weight: 700;
+          font-weight: 800;
           color: var(--text-primary);
+          margin: 0;
         }
 
         .other-desc {
           font-size: 0.92rem;
           color: var(--text-secondary);
-          line-height: 1.55;
+          line-height: 1.6;
+          margin: 0;
         }
 
         @media (max-width: 900px) {
+          .experience-bottom-split {
+            grid-template-columns: 1fr;
+          }
           .trace-callout-banner {
             flex-direction: column;
             align-items: flex-start;
-          }
-
-          .trace-callout-btn {
-            width: 100%;
-          }
-
-          .experience-bottom-split {
-            grid-template-columns: 1fr;
           }
         }
       `}</style>

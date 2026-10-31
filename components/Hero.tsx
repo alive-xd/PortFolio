@@ -14,11 +14,11 @@ export const Hero: React.FC = () => {
                 <span className="pulse-dot-green" />
                 <span>Open to full-time roles</span>
               </div>
-              <span className="hero-location-pill">Bangalore, India · Remote / Relocation</span>
+              <span className="hero-location-pill font-mono">Bangalore, India · Remote / Relocation</span>
             </div>
 
             <h1 className="hero-title-display">
-              <span className="hero-name-primary">SUSHEN KUMAR</span>
+              <span className="hero-name-primary">Sushen Kumar</span>
             </h1>
 
             <p className="hero-role-headline">
@@ -60,7 +60,7 @@ export const Hero: React.FC = () => {
             {/* Verified Stats Strip */}
             <div className="hero-stats-deck">
               <div className="stat-glass-chip">
-                <div className="stat-icon-wrapper red-tint">
+                <div className="stat-icon-wrapper blue-tint">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                   </svg>
@@ -118,21 +118,19 @@ export const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Visual Portrait Card */}
+          {/* Right Column: Clean Glass Portrait Card */}
           <div className="hero-visual-col">
-            <div className="portrait-cyber-card">
-              <div className="portrait-corner-tl" />
-              <div className="portrait-corner-br" />
+            <div className="portrait-glass-card glass-card">
               <div className="portrait-frame">
                 <img 
                   src="assets/profile.png" 
-                  alt="Sushen Kumar - Cybersecurity Graduate and Detection Engineer" 
+                  alt="Sushen Kumar - Cybersecurity Graduate" 
                   className="portrait-image"
                 />
               </div>
               <div className="portrait-meta-badge">
-                <span className="portrait-badge-title">SUSHI // THREAT ANALYST</span>
-                <span className="portrait-badge-spec">SOC &amp; DETECTION OPS</span>
+                <span className="portrait-badge-title">Sushen Kumar</span>
+                <span className="portrait-badge-spec">Cybersecurity Graduate</span>
               </div>
             </div>
           </div>
@@ -141,8 +139,8 @@ export const Hero: React.FC = () => {
 
       <style>{`
         .hero-section {
-          padding-top: clamp(100px, 14vh, 140px);
-          padding-bottom: clamp(40px, 8vh, 70px);
+          padding-top: clamp(96px, 13vh, 130px);
+          padding-bottom: clamp(40px, 7vh, 64px);
           position: relative;
           width: 100%;
         }
@@ -150,7 +148,7 @@ export const Hero: React.FC = () => {
         .hero-layout-grid {
           display: grid;
           grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
-          gap: clamp(28px, 4vw, 56px);
+          gap: clamp(28px, 4vw, 52px);
           align-items: center;
         }
 
@@ -166,7 +164,7 @@ export const Hero: React.FC = () => {
           flex-wrap: wrap;
           align-items: center;
           gap: 10px;
-          margin-bottom: 20px;
+          margin-bottom: 18px;
         }
 
         .hero-status-pill {
@@ -189,47 +187,39 @@ export const Hero: React.FC = () => {
           height: 8px;
           border-radius: 50%;
           background: #10B981;
-          box-shadow: 0 0 10px #10B981;
-          animation: pulse-dot-anim 2s infinite;
+          box-shadow: 0 0 8px #10B981;
         }
 
         .hero-location-pill {
-          font-family: var(--font-mono);
           font-size: 0.82rem;
           color: var(--text-muted);
           padding: 4px 10px;
           border-radius: var(--radius-sm);
-          background: rgba(0, 0, 0, 0.03);
+          background: var(--bg-subtle);
           border: 1px solid var(--border);
         }
 
-        [data-theme="dark"] .hero-location-pill {
-          background: rgba(255, 255, 255, 0.04);
-        }
-
+        /* Solid Color Title - NO GRADIENTS */
         .hero-title-display {
           font-family: var(--font-sans);
-          font-size: clamp(2.5rem, 5vw, 4rem);
-          font-weight: 900;
-          line-height: 1.05;
-          letter-spacing: -0.04em;
-          margin-bottom: 12px;
+          font-size: clamp(2.4rem, 4.8vw, 3.8rem);
+          font-weight: 800;
+          line-height: 1.1;
+          letter-spacing: -0.035em;
+          margin-bottom: 10px;
           color: var(--text-primary);
         }
 
         .hero-name-primary {
           display: block;
-          background: var(--heading-gradient);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
+          color: var(--text-primary);
         }
 
         .hero-role-headline {
           font-family: var(--font-sans);
-          font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+          font-size: clamp(1.05rem, 1.5vw, 1.25rem);
           font-weight: 700;
-          color: var(--accent-red);
+          color: var(--accent);
           margin-bottom: 8px;
           letter-spacing: -0.015em;
           line-height: 1.4;
@@ -245,11 +235,11 @@ export const Hero: React.FC = () => {
         }
 
         .hero-description-lead {
-          font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+          font-size: clamp(0.95rem, 1.15vw, 1.05rem);
           color: var(--text-secondary);
           line-height: 1.65;
           margin-bottom: 24px;
-          max-width: 620px;
+          max-width: 600px;
         }
 
         .hero-cta-group {
@@ -285,7 +275,7 @@ export const Hero: React.FC = () => {
 
         .stat-glass-chip:hover {
           transform: translateX(4px);
-          border-color: var(--accent-red);
+          border-color: var(--accent);
         }
 
         .stat-icon-wrapper {
@@ -298,14 +288,9 @@ export const Hero: React.FC = () => {
           flex-shrink: 0;
         }
 
-        .stat-icon-wrapper.red-tint {
-          background: var(--accent-red-light);
-          color: var(--accent-red);
-        }
-
         .stat-icon-wrapper.blue-tint {
-          background: var(--accent-blue-light);
-          color: var(--accent-blue);
+          background: var(--accent-light);
+          color: var(--accent);
         }
 
         .stat-icon-wrapper.green-tint {
@@ -344,12 +329,12 @@ export const Hero: React.FC = () => {
         }
 
         .hero-social-pill:hover {
-          border-color: var(--accent-red);
-          color: var(--accent-red);
+          border-color: var(--accent);
+          color: var(--accent);
           transform: translateY(-2px);
         }
 
-        /* Right Column Portrait Frame */
+        /* Right Column Clean Glass Portrait Card */
         .hero-visual-col {
           display: flex;
           justify-content: center;
@@ -357,23 +342,11 @@ export const Hero: React.FC = () => {
           width: 100%;
         }
 
-        .portrait-cyber-card {
-          position: relative;
+        .portrait-glass-card {
           padding: 12px;
-          background: var(--card-bg);
-          border: 1px solid var(--card-border);
-          border-radius: var(--radius-lg);
-          backdrop-filter: blur(20px);
-          -webkit-backdrop-filter: blur(20px);
-          box-shadow: var(--card-shadow), 0 0 35px rgba(220, 38, 38, 0.08);
-          max-width: 320px;
+          max-width: 310px;
           width: 100%;
-          transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .portrait-cyber-card:hover {
-          transform: translateY(-5px);
-          border-color: var(--accent-red);
+          border-radius: var(--radius-lg);
         }
 
         .portrait-frame {
@@ -406,41 +379,18 @@ export const Hero: React.FC = () => {
         }
 
         .portrait-badge-title {
-          font-family: var(--font-mono);
-          font-size: 0.78rem;
+          font-family: var(--font-sans);
+          font-size: 0.88rem;
           font-weight: 700;
-          color: var(--accent-red);
-          letter-spacing: 0.06em;
+          color: var(--text-primary);
         }
 
         .portrait-badge-spec {
           font-family: var(--font-sans);
-          font-size: 0.75rem;
+          font-size: 0.78rem;
           font-weight: 600;
-          color: var(--text-muted);
+          color: var(--accent);
           margin-top: 2px;
-        }
-
-        .portrait-corner-tl {
-          position: absolute;
-          top: -3px;
-          left: -3px;
-          width: 14px;
-          height: 14px;
-          border-top: 2px solid var(--accent-red);
-          border-left: 2px solid var(--accent-red);
-          border-top-left-radius: 4px;
-        }
-
-        .portrait-corner-br {
-          position: absolute;
-          bottom: -3px;
-          right: -3px;
-          width: 14px;
-          height: 14px;
-          border-bottom: 2px solid var(--accent-red);
-          border-right: 2px solid var(--accent-red);
-          border-bottom-right-radius: 4px;
         }
 
         /* Responsive Breakpoints & Zoom Safe */

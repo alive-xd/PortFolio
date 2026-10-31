@@ -13,7 +13,7 @@ export const About: React.FC = () => {
         </svg>
       ),
       tag: 'OFFENSIVE & DEFENSIVE',
-      tint: 'red'
+      tintClass: 'tint-blue'
     },
     {
       title: 'Security Automation',
@@ -25,7 +25,7 @@ export const About: React.FC = () => {
         </svg>
       ),
       tag: 'PIPELINES & SCRIPTS',
-      tint: 'blue'
+      tintClass: 'tint-emerald'
     },
     {
       title: 'AI Engineering',
@@ -37,11 +37,11 @@ export const About: React.FC = () => {
           <circle cx="19" cy="12" r="2.5"/>
           <circle cx="12" cy="19" r="2.5"/>
           <circle cx="12" cy="12" r="2.5"/>
-          <path d="M12 7.5v2m0 5v2.5M7.5 12h2m5 0h2.5M8.5 8.5l1.5 1.5m4 4l1.5 1.5M15.5 8.5L14 10m-4 4l-1.5 1.5"/>
+          <path d="M12 7.5v2m0 5v2.5M7.5 12h2m5 0h2.5"/>
         </svg>
       ),
       tag: 'RAG & INTELLIGENT AGENTS',
-      tint: 'purple'
+      tintClass: 'tint-purple'
     }
   ];
 
@@ -60,7 +60,7 @@ export const About: React.FC = () => {
           {/* Main Story Glass Card */}
           <div className="about-bio-card glass-card">
             <div className="card-top-indicator">
-              <span className="bio-terminal-prompt">$ cat profile_summary.md</span>
+              <span className="bio-terminal-prompt font-mono">$ cat profile_summary.md</span>
             </div>
             <div className="about-bio-body">
               <p className="bio-paragraph">
@@ -72,15 +72,15 @@ export const About: React.FC = () => {
             </div>
             <div className="bio-highlights-strip">
               <div className="bio-badge">
-                <span className="bio-badge-label">Focus:</span>
+                <span className="bio-badge-label font-mono">Focus:</span>
                 <span className="bio-badge-val">SOC &amp; Detection Engineering</span>
               </div>
               <div className="bio-badge">
-                <span className="bio-badge-label">Education:</span>
+                <span className="bio-badge-label font-mono">Education:</span>
                 <span className="bio-badge-val">B.Tech CS (Cybersecurity)</span>
               </div>
               <div className="bio-badge">
-                <span className="bio-badge-label">Status:</span>
+                <span className="bio-badge-label font-mono">Status:</span>
                 <span className="bio-badge-val">Graduated Aug 2026</span>
               </div>
             </div>
@@ -91,14 +91,14 @@ export const About: React.FC = () => {
             {strengths.map((item, index) => (
               <div 
                 key={item.title} 
-                className={`pillar-glass-card glass-card tint-${item.tint}`}
+                className={`pillar-glass-card glass-card ${item.tintClass}`}
                 style={{ transitionDelay: `${index * 0.08}s` }}
               >
                 <div className="pillar-header">
                   <div className="pillar-icon-box">
                     {item.icon}
                   </div>
-                  <span className="pillar-tag">{item.tag}</span>
+                  <span className="pillar-tag font-mono">{item.tag}</span>
                 </div>
                 <h3 className="pillar-title">{item.title}</h3>
                 <p className="pillar-desc">{item.desc}</p>
@@ -130,9 +130,8 @@ export const About: React.FC = () => {
         }
 
         .bio-terminal-prompt {
-          font-family: var(--font-mono);
-          font-size: 0.82rem;
-          color: var(--accent-red);
+          font-size: 0.84rem;
+          color: var(--accent);
           font-weight: 700;
           letter-spacing: 0.04em;
         }
@@ -214,19 +213,18 @@ export const About: React.FC = () => {
           justify-content: center;
           background: var(--bg-subtle);
           border: 1px solid var(--border);
-          transition: all 0.2s ease;
+          transition: transform var(--transition-fast);
         }
 
-        .tint-red .pillar-icon-box { color: var(--accent-red); }
-        .tint-blue .pillar-icon-box { color: var(--accent-blue); }
-        .tint-purple .pillar-icon-box { color: #8B5CF6; }
+        .tint-blue .pillar-icon-box { color: var(--accent); }
+        .tint-emerald .pillar-icon-box { color: var(--accent-sec); }
+        .tint-purple .pillar-icon-box { color: var(--accent-purple); }
 
         .pillar-glass-card:hover .pillar-icon-box {
           transform: scale(1.08);
         }
 
         .pillar-tag {
-          font-family: var(--font-mono);
           font-size: 0.72rem;
           font-weight: 700;
           letter-spacing: 0.08em;
@@ -236,7 +234,7 @@ export const About: React.FC = () => {
         .pillar-title {
           font-family: var(--font-sans);
           font-size: 1.15rem;
-          font-weight: 700;
+          font-weight: 800;
           color: var(--text-primary);
         }
 

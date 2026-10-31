@@ -73,14 +73,10 @@ export const Navbar: React.FC = () => {
       <header id="header" className={`header ${isScrolled ? 'scrolled' : ''}`}>
         <div className="nav-dock-container">
           <nav className="nav-dock" aria-label="Main Navigation">
-            {/* Logo with technical status dot */}
+            {/* Clean Professional Logo */}
             <a href="#home" className="nav-logo-group" aria-label="Sushen Kumar Portfolio">
               <span className="logo-callsign">
-                SUSHI<span>.SEC</span>
-              </span>
-              <span className="logo-status-chip">
-                <span className="pulse-dot" />
-                <span>ONLINE</span>
+                Sushen<span>.</span>
               </span>
             </a>
 
