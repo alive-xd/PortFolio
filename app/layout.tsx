@@ -24,14 +24,16 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://sushen-kumar.vercel.app'),
   title: 'Sushen Kumar | Cybersecurity Portfolio',
-  description: 'Sushen Kumar — Cybersecurity Researcher & Penetration Tester. Specializing in offensive security, SOC analyst workflows, and security automation.',
+  description: 'Cybersecurity Graduate · SOC & Detection Engineering · Security Automation. Sushen Kumar — offensive security, SOC analyst workflows, and security automation.',
   alternates: {
     canonical: 'https://sushen-kumar.vercel.app',
   },
   keywords: [
     'sushen kumar',
-    'cybersecurity researcher',
+    'cybersecurity graduate',
+    'detection engineering',
     'SOC analyst',
     'penetration tester',
     'OSINT',
@@ -39,20 +41,31 @@ export const metadata: Metadata = {
     'security automation',
     'AI security',
     'bangalore',
-    'fresher cybersecurity',
     'bug bounty researcher',
     'bugcrowd',
     'TryHackMe'
   ],
   openGraph: {
     title: 'Sushen Kumar | Cybersecurity Portfolio',
-    description: 'Sushen Kumar — Cybersecurity Researcher & Penetration Tester. Specializing in offensive security, SOC analyst workflows, and security automation.',
+    description: 'Cybersecurity Graduate · SOC & Detection Engineering · Security Automation. Explore detection pipelines, offensive tooling, and technical projects.',
+    url: 'https://sushen-kumar.vercel.app',
+    siteName: 'Sushen Kumar Portfolio',
+    images: [
+      {
+        url: '/assets/profile.png',
+        width: 800,
+        height: 800,
+        alt: 'Sushen Kumar - Cybersecurity Portfolio',
+      },
+    ],
+    locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Sushen Kumar | Cybersecurity Portfolio',
-    description: 'Sushen Kumar — Cybersecurity Researcher & Penetration Tester. Specializing in offensive security, SOC analyst workflows, and security automation.',
+    description: 'Cybersecurity Graduate · SOC & Detection Engineering · Security Automation.',
+    images: ['/assets/profile.png'],
   },
   verification: {
     google: 'SwAF9DsUXtpz96PNAOBCTzcWeC7s2FocZ9JL-C5jf44',
@@ -126,7 +139,7 @@ export default function RootLayout({
         'name': 'Is Sushen Kumar available for cybersecurity roles?',
         'acceptedAnswer': {
           '@type': 'Answer',
-          'text': 'Yes, Sushen Kumar is graduating in August 2026 and is actively seeking entry-level SOC Analyst, Penetration Tester, or Security Engineer positions across India.'
+          'text': 'Yes, Sushen Kumar graduated in August 2026 and is actively seeking entry-level SOC Analyst, Penetration Tester, or Security Engineer positions across India.'
         }
       }
     ]

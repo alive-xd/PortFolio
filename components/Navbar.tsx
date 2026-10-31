@@ -10,32 +10,45 @@ export const Navbar: React.FC = () => {
 
   useEffect(() => {
     // Initialize theme from HTML element attribute set by head script
-    const currentTheme = document.documentElement.getAttribute('data-theme') as 'light' | 'dark' || 'light';
+    const currentTheme = (document.documentElement.getAttribute('data-theme') as 'light' | 'dark') || 'light';
     setTheme(currentTheme);
 
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      // Active section calculation using viewport-relative bounding client rect
-      const sections = ['home', 'about', 'experience', 'education', 'skills', 'certs', 'projects', 'contact'];
-      let current = 'home';
+      // 1. If reached bottom of document -> contact
+      const scrollBottom = window.innerHeight + window.scrollY;
+      const docHeight = document.documentElement.scrollHeight;
+      if (scrollBottom >= docHeight - 80) {
+        setActiveSection('contact');
+        return;
+      }
+
+      // 2. Focal reading line: 32% of viewport height from top
+      const triggerY = window.innerHeight * 0.32;
+
+      // Ordered list of sections from top to bottom
+      const sections = ['contact', 'projects', 'certs', 'skills', 'education', 'experience', 'about', 'home'];
+
       for (const id of sections) {
         const el = document.getElementById(id);
         if (el) {
           const rect = el.getBoundingClientRect();
-          const absoluteTop = rect.top + window.scrollY;
-          if (window.scrollY >= absoluteTop - 140) {
-            // On desktop (>992px), Experience and Education are side-by-side. 
-            // Avoid highlighting Education and keep Experience active for the row.
-            if (id === 'education' && window.innerWidth > 992) {
-              // skip overriding experience
-            } else {
-              current = id;
-            }
+          // On desktop (>992px), experience and education are side by side;
+          // allow experience to represent the row when scrolling naturally
+          if (id === 'education' && window.innerWidth > 992) {
+            continue;
+          }
+          if (rect.top <= triggerY && rect.bottom > 80) {
+            setActiveSection(id);
+            return;
           }
         }
       }
-      setActiveSection(current);
+
+      if (window.scrollY < 200) {
+        setActiveSection('home');
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });

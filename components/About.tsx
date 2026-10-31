@@ -37,9 +37,9 @@ export const About: React.FC = () => {
         <div className="about-layout-grid">
           <div className="about-left-side">
             <p className="about-p-main" style={{ whiteSpace: 'pre-line' }}>
-              Hi, I'm <strong>Sushen Kumar</strong> — a cybersecurity researcher, security automation engineer, and AI specialist based in Bangalore. I design and build offensive security tooling, automated threat detection workflows, and AI-powered applications that solve real-world security problems.
+              Hi, I'm <strong>Sushen Kumar</strong> — a cybersecurity researcher and security automation engineer based in Bangalore. I design and build offensive security tooling, detection engineering pipelines, and intelligent automation frameworks that solve real-world security challenges.
               {"\n\n"}
-              I'm a fresher completing my B.Tech in Computer Science (Cybersecurity) from Lovely Professional University (graduating August 2026), actively seeking my first professional role in cybersecurity — SOC analysis, penetration testing, or security engineering. Open to remote work and relocation anywhere in India.
+              B.Tech in Computer Science (Cybersecurity), Lovely Professional University, graduated August 2026. Actively seeking SOC analysis, penetration testing, or security engineering roles. Open to remote work and relocation anywhere in India.
             </p>
           </div>
           

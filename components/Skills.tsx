@@ -77,7 +77,7 @@ export const Skills: React.FC = () => {
     {
       title: 'Infrastructure',
       subtitle: 'DevOps & platforms',
-      tags: ['docker', 'linux', 'CI/CD', 'Next.js', 'cloud infra', 'containers'],
+      tags: ['docker', 'linux', 'CI/CD', 'cloud infra', 'containers'],
       tintClass: 'tint-violet',
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -85,6 +85,19 @@ export const Skills: React.FC = () => {
           <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
           <line x1="6" x2="6" y1="6" y2="6"/>
           <line x1="6" x2="6" y1="18" y2="18"/>
+        </svg>
+      )
+    },
+    {
+      title: 'Web / Frameworks',
+      subtitle: 'Web architecture & UI',
+      tags: ['Next.js'],
+      tintClass: 'tint-cyan',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="2" y1="12" x2="22" y2="12"/>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
         </svg>
       )
     }
@@ -104,7 +117,7 @@ export const Skills: React.FC = () => {
             <div 
               key={skill.title} 
               className={`skill-card-new ${skill.tintClass} reveal`}
-              style={{ transitionDelay: `${index * 0.08}s` }}
+              style={{ transitionDelay: `${index * 0.06}s` }}
             >
               <div className="skill-card-header">
                 <div className="skill-card-icon-box">
@@ -151,7 +164,7 @@ export const Skills: React.FC = () => {
           transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
           display: flex;
           flex-direction: column;
-          gap: 20px;
+          gap: 18px;
         }
 
         .skill-card-new:hover {
@@ -175,6 +188,7 @@ export const Skills: React.FC = () => {
           background: var(--bg);
           border: 1px solid var(--border);
           transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+          flex-shrink: 0;
         }
 
         .skill-card-meta {
@@ -192,7 +206,7 @@ export const Skills: React.FC = () => {
         }
 
         .skill-card-subtitle {
-          font-size: 0.85rem;
+          font-size: 0.88rem;
           color: var(--text-secondary);
           font-weight: 500;
         }
@@ -205,11 +219,11 @@ export const Skills: React.FC = () => {
 
         .skill-card-tag {
           display: inline-block;
-          padding: 5px 11px;
+          padding: 6px 12px;
           background: var(--bg);
           border: 1px solid var(--border);
           border-radius: 8px;
-          font-size: 0.82rem;
+          font-size: 0.88rem;
           color: var(--text-secondary);
           transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
         }
@@ -305,7 +319,7 @@ export const Skills: React.FC = () => {
             gap: 16px;
           }
           .skill-card-new {
-            padding: 20px 24px;
+            padding: 20px 22px;
           }
         }
       `}</style>

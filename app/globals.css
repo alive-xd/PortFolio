@@ -12,9 +12,9 @@
 
   /* Colors - Light Theme */
   --bg:                  #F8F8F8;
-  --text-primary:        #2D2D2D;
-  --text-secondary:      #5E5E5E;
-  --text-muted:          #8E8E8E;
+  --text-primary:        #18181B;
+  --text-secondary:      #3F3F46;
+  --text-muted:          #52525B;
   
   --accent:              #4961DC;
   --accent-hover:        #354AB3;
@@ -25,29 +25,29 @@
   --accent-sec:          #059669;
   
   --card-bg:             #FFFFFF;
-  --card-border:         rgba(0, 0, 0, 0.06);
-  --card-shadow:         0 10px 30px rgba(0, 0, 0, 0.04);
-  --border:              rgba(0, 0, 0, 0.08);
-  --nav-bg:              rgba(248, 248, 248, 0.97);
+  --card-border:         rgba(0, 0, 0, 0.08);
+  --card-shadow:         0 10px 30px rgba(0, 0, 0, 0.05);
+  --border:              rgba(0, 0, 0, 0.1);
+  --nav-bg:              rgba(255, 255, 255, 0.98);
   
   --dot-grid:            radial-gradient(rgba(0, 0, 0, 0.015) 1px, transparent 1px);
   --dot-grid-size:       28px 28px;
   
-  --title-color:         #6D83F2; /* Centered title color */
-  --hero-tagline-color:  #555555;
+  --title-color:         #4961DC; /* Centered title color */
+  --hero-tagline-color:  #3F3F46;
   
   /* Buttons */
   --btn-outline-border:  #4961DC;
   --btn-outline-text:    #4961DC;
   
   /* Timeline */
-  --timeline-line-color: rgba(0, 0, 0, 0.1);
+  --timeline-line-color: rgba(0, 0, 0, 0.12);
   --timeline-dot-border: var(--bg);
   
   /* Gradients */
-  --blue-gradient:       linear-gradient(134deg, #6A98F0 0%, #4961DC 99%);
-  --cert-gradient:       linear-gradient(134deg, #6A98F0 0%, #4961DC 99%);
-  --contact-gradient:    linear-gradient(134deg, #6A98F0 0%, #4961DC 99%);
+  --blue-gradient:       linear-gradient(134deg, #5B8BF0 0%, #3550D6 99%);
+  --cert-gradient:       linear-gradient(134deg, #5B8BF0 0%, #3550D6 99%);
+  --contact-gradient:    linear-gradient(134deg, #5B8BF0 0%, #3550D6 99%);
   
   /* Scroll & Sizes */
   --container-max-width: 1100px;
@@ -62,9 +62,9 @@
 [data-theme="dark"] {
   /* Colors - Dark Theme */
   --bg:                  #05050A;
-  --text-primary:        #F0F0FF;
-  --text-secondary:      #A8A8C8;
-  --text-muted:          #6E6E9A;
+  --text-primary:        #F4F4F5;
+  --text-secondary:      #D4D4D8;
+  --text-muted:          #A1A1AA;
   
   --accent:              #6D83F2;
   --accent-hover:        #8B9DFF;
@@ -75,22 +75,22 @@
   --accent-sec:          #10b981;
   
   --card-bg:             #13131F;
-  --card-border:         rgba(255, 255, 255, 0.07);
-  --card-shadow:         0 10px 30px rgba(0, 0, 0, 0.2);
-  --border:              rgba(255, 255, 255, 0.08);
-  --nav-bg:              rgba(5, 5, 10, 0.97);
+  --card-border:         rgba(255, 255, 255, 0.09);
+  --card-shadow:         0 10px 30px rgba(0, 0, 0, 0.25);
+  --border:              rgba(255, 255, 255, 0.1);
+  --nav-bg:              rgba(10, 10, 18, 0.98);
   
   --dot-grid:            radial-gradient(rgba(255, 255, 255, 0.006) 1px, transparent 1px);
   
   --title-color:         #6D83F2;
-  --hero-tagline-color:  #A8A8C8;
+  --hero-tagline-color:  #D4D4D8;
   
   /* Buttons */
   --btn-outline-border:  #6D83F2;
   --btn-outline-text:    #6D83F2;
   
   /* Timeline */
-  --timeline-line-color: rgba(255, 255, 255, 0.1);
+  --timeline-line-color: rgba(255, 255, 255, 0.12);
 }
 
 /* Smooth theme transitions */
@@ -195,14 +195,20 @@ ul[role="list"] {
 .section-title-centered {
   font-family: var(--font-sans);
   font-size: 2.6rem;
-  font-weight: 700;
-  color: var(--title-color);
+  font-weight: 800;
+  background: var(--blue-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: var(--accent);
   text-align: center;
   margin-bottom: 24px;
   letter-spacing: -0.03em;
 }
 
 .section-title-centered.white-title {
+  background: none;
+  -webkit-text-fill-color: initial;
   color: #FFFFFF;
 }
 
@@ -260,7 +266,7 @@ ul[role="list"] {
 
 .btn-sm {
   padding: 8px 16px;
-  font-size: 0.8rem;
+  font-size: 0.88rem;
 }
 
 .btn-full {
@@ -293,11 +299,11 @@ ul[role="list"] {
   width: calc(100% - 30px);
   max-width: 1200px;
   background: var(--nav-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   padding: 0 20px;
 }
 
@@ -349,7 +355,7 @@ ul[role="list"] {
 
 .nav-link {
   font-family: var(--font-sans);
-  font-size: 0.82rem;
+  font-size: 0.88rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--text-secondary);
@@ -471,7 +477,7 @@ ul[role="list"] {
   border: 1px solid var(--card-border);
   border-radius: 30px;
   font-family: var(--font-sans);
-  font-size: 0.78rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: var(--text-secondary);
   margin-bottom: 24px;
@@ -517,12 +523,11 @@ ul[role="list"] {
 
 .hero-tagline {
   font-family: var(--font-sans);
-  font-size: 0.75rem;
+  font-size: 0.88rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.05em;
   color: var(--hero-tagline-color);
   margin-bottom: 20px;
-  opacity: 0.7;
 }
 
 .hero-bio {
@@ -1430,21 +1435,18 @@ ul[role="list"] {
   font-family: var(--font-sans);
   font-size: 1.8rem;
   font-weight: 800;
-  color: var(--text-primary);
-  margin-bottom: 8px;
+  background: var(--blue-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: var(--accent);
+  margin-bottom: 14px;
   position: relative;
   letter-spacing: -0.02em;
 }
 
 .resume-col-title::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -8px;
-  width: 40px;
-  height: 3px;
-  background: var(--accent);
-  border-radius: 2px;
+  display: none;
 }
 
 .resume-list {
@@ -1527,7 +1529,7 @@ ul[role="list"] {
 }
 
 .coursework-label {
-  font-size: 0.78rem;
+  font-size: 0.88rem;
   font-weight: 700;
   color: var(--text-primary);
   text-transform: uppercase;
@@ -1542,13 +1544,12 @@ ul[role="list"] {
 
 .coursework-tags span {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.88rem;
   color: var(--text-secondary);
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  padding: 3px 8px;
-  border-radius: 4px;
-  text-transform: lowercase;
+  padding: 4px 10px;
+  border-radius: 6px;
   transition: all 0.2s ease;
 }
 
@@ -1603,7 +1604,7 @@ ul[role="list"] {
 
 .ctf-link-btn {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.88rem;
   color: var(--text-secondary);
   border: 1px solid var(--border);
   padding: 4px 10px;
@@ -1618,7 +1619,7 @@ ul[role="list"] {
 }
 
 .ctf-rank-text {
-  font-size: 0.88rem;
+  font-size: 0.92rem;
   color: var(--text-secondary);
 }
 
@@ -1627,7 +1628,7 @@ ul[role="list"] {
 }
 
 .ctf-desc {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
   line-height: 1.5;
 }
